@@ -25,3 +25,25 @@ body{
     -webkit-text-stroke: 1px;
     -webkit-text-stroke-color: red;
 }
+
+
+
+.img2{
+    margin:1%;
+    width: 30%;
+    height: 50vh;
+    background-color:orangered;
+}
+
+.img3{
+    margin:1%;
+    width: 20%;
+    height: 50vh;
+    background-color:orangered;
+}
+
+.img4{
+    margin:1%;
+    width: 20%;
+    background-color:orangered;
+}
