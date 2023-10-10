@@ -1,5 +1,6 @@
 
 .footer{
+    z-index: 1;
     font-family: Arial, Helvetica, sans-serif;
     width: 100%;
     bottom: 0px;
@@ -10,7 +11,7 @@
     min-width: auto;
 }
 
-.flooter div{
+.footer div{
     width: 50%;
     margin-left: 15%;
 }
@@ -18,4 +19,4 @@
 .div2{
     color: white;
 }
-
+    
