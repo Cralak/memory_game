@@ -2,3 +2,48 @@
     background-color: rgb(26, 26, 56);
     color: white;
 }
+
+.background img{
+    position: relative;
+    color: white;
+    width: 100%;
+    opacity:60%;
+    
+}
+
+.content{
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+
+.box input{
+    height: 40px;
+    width: 500px;
+    color: gray;
+    margin-left: 32%;
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    background-color: rgb(18, 15, 41);
+    border-color:rgb(18, 15, 41) ;
+
+}
+
+.box a{
+    background-color: orange;
+    text-decoration: none;
+    border: 10px solid orange;
+    color: white;
+    margin-left: 32%;
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+
+}
+
