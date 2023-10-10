@@ -1,0 +1,38 @@
+header {
+  background-image: url("../../image/milky-way-galaxy.jpg");
+  color:aliceblue
+}
+#espace {
+  color: opacity;
+}
+
+body {
+  background-color: #120A2A;
+}
+
+h1 {
+  color: aliceblue;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif  
+}
+.static {
+  width: 250px;
+  border: 0px solid violet;
+  text-align: center;
+}
+.absolute {
+  position: absolute;
+  top: 30px;
+  left: 1250px;
+  width: 600px;
+  border: 0px solid blue;
+  text-align: center;
+
+}
+
+#liens {
+  color:aliceblue
+}
+
+form {
+  background-color: #08298A;
+}

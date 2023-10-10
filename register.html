@@ -4,23 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription</title>
+    <link rel="stylesheet" href="assets/css/register.css">
 </head>
 <body>
-    <h1>Inscription</h1>
-    <form>
-        <center><label for="nom">Nom :</label>
-        <input type="text" id="nom" name="nom" required></br>
-        
-        <label for="email">Adresse e-mail :</label>
-        <input type="email" id="email" name="email" required></br>
-        
-        <label for="motDePasse">Mot de passe :</label>
-        <input type="password" id="motDePasse" name="motDePasse" required></br>
+    <header>
+        <h1>
+            <div class="static">Memory Game</div>
+            <Div class="absolute" id="liens"> 
+                <a href=index.html>Acceuil</a>  
+                <a href=index.html> Jeu</a>
+                <a href=index.html> Scores</a>
+                <a href=index.html> Nous contacter</a>
+            </Div>
+            
+        </h1>
+        </br>
+    </header>
+    <p id="espace">
+        regv
+        zez
+        zea
+        t
+        erz
+    </p>
 
-        <label for="motDePasse">Confirmer le mot de passe :</label>
-        <input type="password" id="motDePasse" name="motDePasse" required></br>
-        
-        <input type="submit" value="S'inscrire"></center>
+    <h1><center>Inscription</center></h1>
+    </br>
+    <p id="espace">
+        regv
+        zez
+        zea
+        t
+        erz
+    </p>
+
+
+    <form class="absolute2">
+        <center>
+        <input type="text" id="nom" name="nom" required placeholder="Nom" ></br>
+        </br>
+        <input type="email" id="email" name="email" required placeholder="E mail"></br>
+        </br>
+        <input type="password" id="motDePasse" name="motDePasse" required placeholder="Mot de passe"></br>
+        </br>
+        <input type="password" id="motDePasse" name="motDePasse" required placeholder="Confirmer le mot de passe"></br>
+        </br>
+        <input type="submit" value="S'inscrire">
+        </center>
     </form>
 </body>
 </html>
