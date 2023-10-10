@@ -1,5 +1,4 @@
 header {
-  background-image: url("../../image/milky-way-galaxy.jpg");
   color:aliceblue
 }
 #espace {
@@ -7,12 +6,17 @@ header {
 }
 
 body {
-  background-color: #120A2A;
+  background-color: #0B0B3B;
 }
 
 span {
   color: aliceblue;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif  
+}
+
+h1 {
+  background-image: url(https://img.freepik.com/free-vector/fantastic-alien-city_1441-2814.jpg);
+  color: aliceblue;
 }
 .static {
   width: 250px;
@@ -29,10 +33,18 @@ span {
 
 }
 
+
 #liens {
   color:aliceblue
 }
 
-form {
-  background-color: #08298A;
+input  {
+  background-color :#210B61;
+  padding-left: 10px;
+  border-radius: 5px; 
+  color: aliceblue;
+  border: 0;
+}
+input[type="submit"]  {
+  background-color : orange; 
 }
