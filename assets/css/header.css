@@ -1,11 +1,12 @@
 body {
+    font-family: Avenir;
     margin: 0px;
     padding: 0px;
 }
 
 .menus{
+    padding:1.75%;
     font-size: medium;
-    font-family: Arial, Helvetica, sans-serif;
     margin-left: 5%;
     margin-right: 5%;
     width:90%;
@@ -13,10 +14,14 @@ body {
     justify-content: space-between;
 }
 
+.menus span{
+    color:white;
+}
+
 .menus1{
+    text-align: center;
     font-size: small;
-    font-family: Arial, Helvetica, sans-serif;
-    width:40%;
+    width:30%;
     display:flex;
     justify-content:space-between;
 
@@ -24,7 +29,6 @@ body {
 
 .menus2{
     font-size: small;
-    font-family: Arial, Helvetica, sans-serif;
     display:flex;
     justify-content: center;
 }
@@ -34,9 +38,30 @@ body {
     width: 100%;
     top: 0px;
     left: 0px;
-    background-color: rgb(18, 15, 41);
+    background-color: rgb(0, 0, 0);
+    opacity: 0.9;
     position: -webkit-sticky;
     position: sticky;
     font-size: 25px;
     z-index: 1;
+}
+
+.headerspans{
+    box-shadow: inset 0 0 0 0 orangered;
+    color: white;
+    margin: 0 -.25rem;
+    padding: 0 .25rem;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+.headerspans:hover {
+    box-shadow: inset 200px 0 0 0 orange;
+    color: white;
+}
+
+a:link{
+    text-decoration: none;
+}
+
+a:visited{
+    text-decoration: none;
 }
