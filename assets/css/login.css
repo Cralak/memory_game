@@ -22,28 +22,29 @@
 }
 
 
-.box input{
+.boite{
     height: 40px;
     width: 500px;
     color: gray;
-    margin-left: 32%;
     font-size: larger;
     font-family: Arial, Helvetica, sans-serif;
     position: relative;
     background-color: rgb(18, 15, 41);
     border-color:rgb(18, 15, 41) ;
-
+    border-radius: 5px;
+    border: 0
 }
 
-.box a{
+.connexion {
     background-color: orange;
     text-decoration: none;
     border: 10px solid orange;
     color: white;
-    margin-left: 32%;
+    margin-left: 36.5%;
     font-size: larger;
     font-family: Arial, Helvetica, sans-serif;
     position: relative;
-
+    padding-left: 3px;
+    border-radius: 5px;
 }
 

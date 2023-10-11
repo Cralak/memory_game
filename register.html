@@ -11,49 +11,57 @@
     <link rel="stylesheet" href="assets/css/login.css">
 </head>
 <body>
-    <br>
-    <header>
+    <!----------------header----------------->
+    <header class="header">
         <img src="">
         <div class="menus">
             <div>
                 <span class="menu1">The Power Of Memory</span>
             </div>
             <div class="menus1">
-            <span> <a href=index.html>ACCEUIL</a></span>
-                <span> <a href=index.html>JEU</a></span>
-                <span> <a href=index.html>SCORES</a></span>
-                <span> <a href=index.html>NOUS CONTACTER</a></span>
+            <span><a href="main.html" style="color: white;">ACCEUIL</a></span>
+            <span><a href="main.html" style="color: white;">JEU</a></span>
+            <span><a href="main.html" style="color: white;">SCORES</a></span>
+            <span><a href="main.html" style="color: white;">NOUS CONTACTER</a></span>
             </div>
         </div>
-        </br>
     </header>
+    <!----------------header----------------->
 
-    
-    
-
-    <h1><center><span><br><br>Inscription</span></center><br><br></h1>
-    
+    <div class="background">
+        <img src="assets/images/background.jpg">
+        <div class="content">
+            <h1>INSCRIPTION</h1>
+        </div>
+    </div>
     </br>
     <br>
 
-
     
     </br>
-    <form class="absolute2">
-        <center>
-        <input type="text" id="nom" name="nom" required placeholder="Nom" style="width: 300px;height: 30px;"></br>
+    <form class="box" method="POST" action="traitement.php">
+        <center><div>
+        <input class="boite" type="text" id="nom" name="nom" required placeholder="Nom" ></br>
         </br>
-        <input type="email" id="email" name="email" required placeholder="E mail" style="width: 300px;height: 30px;"></br>
+        <input class="boite" type="email" id="email" name="email" required placeholder="E mail" ></br>
+            </br>
+        <input class="boite" type="password" id="motDePasse" name="motDePasse" required placeholder="Mot de passe" ></br>
+            </br>
+        <input class="boite" type="password" id="motDePasse" name="motDePasse" required placeholder="Confirmer le mot de passe" ></br>
         </br>
-        <input type="password" id="motDePasse" name="motDePasse" required placeholder="Mot de passe" style="width: 300px;height: 30px;"></br>
+        </center></div>
         </br>
-        <input type="password" id="motDePasse" name="motDePasse" required placeholder="Confirmer le mot de passe" style="width: 300px;height: 30px;"></br>
-        </br>
-        <input type="submit" value="S'inscrire" style="width: 200px;height: 30px;">
-        </center>
+        <input class="connexion" type="submit" value="CONNEXION" href="main.html">
+        <br></br>   
+        <br></br>
+        <br></br>
     </form>
-    
-
+    <br>
+    </br>
+    <br>
+    </br>
+    <br>
+    </br>
 
     <footer class="footer">
         <div class="div">
