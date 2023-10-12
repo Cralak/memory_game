@@ -3,60 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>contact</title>
 
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/header.css">
-    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
 
 </head>
 <body class="body">
     <!----------------header----------------->
     <header class="header">
+        <img src="">
         <div class="menus">
             <div>
                 <span class="menu1">The Power Of Memory</span>
             </div>
             <div class="menus1">
-                <a href="main.html" class="headerspans"><span>ACCEUIL</span></a>
-                <a href="jeu.html" class="headerspans"><span>JEU</span></a>
-                <a href="" class="headerspans"><span>SCORES</span></a>
-                <a href="contact.html" class="headerspans"><span>NOUS CONTACTER</span></a>
+                <span><a href="main.html" style="color: white;">ACCEUIL</a></span>
+                <span><a href="main.html" style="color: white;">JEU</a></span>
+                <span><a href="main.html" style="color: white;">SCORES</a></span>
+                <span><a href="main.html" style="color: white;">NOUS CONTACTER</a></span>
             </div>
         </div>
     </header>
     <!----------------header----------------->
-    
 
     <div class="background">
-        <img src="assets/images/background4.jpg">
+        <img src="assets/images/background.jpg">
         <div class="content">
-            <h1>CONNEXION</h1>
+            <h1>NOUS CONTACTER</h1>
+        </div>
+    </div>  
+
+    <div class="cadre">
+        <div class="tel">
+            <div><img src="assets/images/phonelogo.png"></div>
+            <div>06 05 04 03 02</div>
+        </div>
+        <div class="mail">
+            <div><img src="assets/images/maillogo.png"></div>
+            <div>support@powerofmemory.com</div>
+        </div>
+        <div class="ville">
+            <div><img src="assets/images/locationlogo.png"></div>
+            <div>Paris</div>
         </div>
     </div>
-    <br></br>
-    <br></br>    
-    <form class="box" method="POST" action="memory.html">
-        <center><div>
-        <input class="boite" type="email" id="email" name="email" required placeholder="E mail" ></br>
-            </br>
-        <input class="boite" type="password" id="motDePasse" name="motDePasse" required placeholder="Mot de passe" ></br>
-            </br>
-        </center></div>
-        </br>
-        <input class="connexion" type="submit" value="CONNEXION" >
-        <br></br>
-        <span><center>Vous n'avez pas de compte ? Inscrivez vous <a href="register.html">ici</a></center></span>   
+
+    <form method="POST" action="traitement.php">
+        <div class="form-contact">
+            <input class="boite" type="nom" id="nom" name="nom" required placeholder="Nom">
+            <input class="boite" type="email" id="email" name="email" required placeholder="Email" >
+        </div>
+        <div class="form-contact2">
+        <input class="boite2" type="sujet" id="sujet" name="sujet" required placeholder="Sujet" >
+        </div>
+        <div class="form-contact3">
+            <textarea pseudo = "message"passe = "message"required placeholder="Message">
+            </textarea>
+        </div>
+    </form>
+
+    </form>
+        <input class="connexion" type="submit" value="Envoyer" href="main.html">
+        <br></br>   
         <br></br>
         <br></br>
     </form>
-    <br>
-    </br>
-    <br>
-    </br>
-    <br>
-    </br>
+    
 
+    
 
 
 
@@ -81,7 +97,7 @@
         
         <div class="div3">
             <h3>Power of Memory</h3>
-            <ul>
+            <ul class="liens">
                 <li><a href = "main.html" style="color: white;"> jouer !</a></li>
                 <br>
                 <li><a href="main.html"style="color: white;"> Les scores</a></li>
