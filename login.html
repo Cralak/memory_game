@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/login.css">
-    <link rel="stylesheet" href="assets/css/chat.css">
-
 
 </head>
 <body class="body">
@@ -20,12 +18,10 @@
                 <span class="menu1">The Power Of Memory</span>
             </div>
             <div class="menus1">
-                <a href="main.html" class="headerspans"><span>ACCUEIL</span></a>
+                <a href="main.html" class="headerspans"><span>ACCEUIL</span></a>
                 <a href="jeu.html" class="headerspans"><span>JEU</span></a>
                 <a href="" class="headerspans"><span>SCORES</span></a>
                 <a href="contact.html" class="headerspans"><span>NOUS CONTACTER</span></a>
-                <a href="myAccount.html" class="headerspans"><span>MON PROFIL</span></a>
-
             </div>
         </div>
     </header>
@@ -33,80 +29,35 @@
     
 
     <div class="background">
-        <img src="assets/images/background.jpg">
+        <img src="assets/images/background4.jpg">
         <div class="content">
             <h1>CONNEXION</h1>
         </div>
     </div>
     <br></br>
     <br></br>    
-    <form class="box" method="POST" action="traitement.php">
-            <div>
-                <input class="boite" type="email" id="email" name="email" required placeholder="E mail" ></br>
-                </br>
-                <input class="boite" type="password" id="motDePasse" name="motDePasse" required placeholder="Mot de passe" ></br>
-                </br>
-            </div>
-    </form>
-        <input class="connexion" type="submit" value="CONNEXION" href="main.html">
-        <br></br>   
-        <br></br>
-        <br></br>
-        <br></br>
-
-    </form>
-
-
-    <!----------------Chat----------------->
-     <div class="chat-container">
-        <div class="chat-header">
-            Chat en direct
+    <form method="POST" action="memory.html">
+        <div class="box1">
+            <input class="boite" type="email" id="email" name="email" required placeholder="E mail" >
+            </br>
+            </br>
+            <input class="boite" type="password" id="motDePasse" name="motDePasse" required placeholder="Mot de passe" >
+            </br>
+            </br>
+            <input class="connexion" type="submit" value="CONNEXION">
+            </br>
+            </br>
+            <span>Vous n'avez pas de compte ? Inscrivez vous <a href="register.html">ici</a></span>   
         </div>
-        <div class="chat-messages">
-        <!-- Ajoutez d'autres messages ici -->
-            <div class="message">
-                <div class="message-sender">Utilisateur 1</div>
-                <div class="test">
-                    <div class="message-content">Hello ! comment tu vas ?</div>
-                </div>                
-                <div class="date">Aujourd'hui à 15h22</div>
-            </div>
-            <div class="message2">
-                <div class="message-sender2">Utilisateur 2</div>
-                <div class="message-content2">Ça va bien, merci ! Et toi ?</div>
-                <div class="date2">Aujourd'hui à 15h22</div>
-
-            </div>
-            <div class="message">
-                <div class="message-sender">Utilisateur 1</div>
-                <div class="test">
-                    <div class="message-content">Hello ! comment tu vas ?</div>
-                </div>
-                <div class="date">Aujourd'hui à 15h22</div>
-
-            </div>
-            <div class="message2">
-                <div class="message-sender2">Utilisateur 2</div>
-                <div class="message-content2">Et toi ?</div>
-                <div class="date2">Aujourd'hui à 15h22</div>
-
-            </div>
-            <div class="message">
-                <div class="message-sender">Utilisateur 2</div>
-                <div class="test">
-                    <div class="message-content">Et toi ?</div>
-                </div>                
-                <div class="date">Aujourd'hui à 15h22</div>
-            </div>
-        <!-- Ajoutez d'autres messages ici -->
-            </div>
-        <div class="chat-input">
-            <input type="text" id="message-input" placeholder="Saisissez votre message...">
-            <button id="send-button">Envoyer</button>
-        </div>
-    </div>
-    <!----------------Chat----------------->
-
+        <br></br>
+        <br></br>
+    </form>
+    <br>
+    </br>
+    <br>
+    </br>
+    <br>
+    </br>
 
 
 

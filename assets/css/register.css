@@ -1,23 +1,27 @@
 
+
 #espace {
   color: opacity;
 }
 
 body {
+  background-image: url(https://bin.smwcentral.net/u/24573/ghost%2Bhouse_night1.png);
   background-color: rgb(26, 26, 56);
   color: white;
   font-family: avenir;
+  background-size: cover;
 }
 
 .background img{
   position: relative;
   color: white;
   width: 100%;
-  opacity:60%;
+  opacity:100%;
   
 }
 span {
   color: aliceblue;
+  font-family: Arial, Helvetica, sans-serif ;
 }
 
 
@@ -37,17 +41,13 @@ span {
 }
 
 
-#liens {
-  color:aliceblue
-}
-
 .boite{
   height: 40px;
   width: 500px;
   color: gray;
   font-size: larger;
   position: relative;
-  background-color: rgb(18, 15, 41);
+  background-color: #062C5E;
   border-color:rgb(18, 15, 41) ;
   border-radius: 5px;
   border: 0
@@ -58,7 +58,6 @@ span {
   text-decoration: none;
   border: 10px solid orange;
   color: white;
-  margin-left: 36.5%;
   font-size: larger;
   position: relative;
   padding-left: 3px;
