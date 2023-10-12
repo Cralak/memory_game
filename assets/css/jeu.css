@@ -1,0 +1,35 @@
+body{
+    background-color: #100e2e;
+    background-image: url(../images/fond.png);
+    background-size: contain;
+}
+
+.easy{
+    width: 30%;
+    border-collapse: collapse;
+}
+
+.medium{
+    width: 45%;
+    border-collapse: collapse;
+}
+
+.hard{
+    width: 60%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 1px;
+    text-align: center;
+}
+
+.card img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.table-container{
+    display:flex;
+    justify-content: center;
+}
