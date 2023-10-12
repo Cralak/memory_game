@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>myAccount</title>
+    <title>Login</title>
 
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/header.css">
-    <link rel="stylesheet" href="assets/css/myAccount.css">
+    <link rel="stylesheet" href="assets/css/login.css">
     <link rel="stylesheet" href="assets/css/chat.css">
 
 
@@ -26,7 +26,6 @@
                 <a href="contact.html" class="headerspans"><span>NOUS CONTACTER</span></a>
                 <a href="myAccount.html" class="headerspans"><span>MON PROFIL</span></a>
 
-                
             </div>
         </div>
     </header>
@@ -36,36 +35,29 @@
     <div class="background">
         <img src="assets/images/background.jpg">
         <div class="content">
-            <h1>MON PROFIL</h1>
+            <h1>CONNEXION</h1>
         </div>
     </div>
     <br></br>
     <br></br>    
     <form class="box" method="POST" action="traitement.php">
-        <div>
-            <h2>Gestion de l'Email :</h2>
-            <input class="boite" type="text" id="nom" name="nom" required placeholder="Em@il actuel" ></br>
-            </br>
-            <input class="boite" type="email" id="email" name="email" required placeholder="Nouvel Em@il" ></br>
+            <div>
+                <input class="boite" type="email" id="email" name="email" required placeholder="E mail" ></br>
                 </br>
-                <br></br>
-                <br></br>
-            <h2>Gestion du mot de passe :</h2>
-            <input class="boite" type="password" id="motDePasse" name="motDePasse" required placeholder="Mot de passe actuel" ></br>
+                <input class="boite" type="password" id="motDePasse" name="motDePasse" required placeholder="Mot de passe" ></br>
                 </br>
-            <input class="boite" type="password" id="motDePasse" name="motDePasse" required placeholder="Nouveau Mot de passe" ></br>
-            </br>
-            <input class="boite" type="password" id="motDePasse" name="motDePasse" required placeholder="Confirmer le nouveau mot de passe" ></br>
-            </br>
-        </div>
-        </br>
-        <input class="appliquer" type="submit" value="APPLIQUER" href="main.html">
+            </div>
+    </form>
+        <input class="connexion" type="submit" value="CONNEXION" href="main.html">
         <br></br>   
         <br></br>
         <br></br>
+        <br></br>
+
     </form>
 
-     <!----------------Chat----------------->
+
+    <!----------------Chat----------------->
      <div class="chat-container">
         <div class="chat-header">
             Chat en direct
@@ -114,6 +106,7 @@
         </div>
     </div>
     <!----------------Chat----------------->
+
 
 
 

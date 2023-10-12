@@ -32,23 +32,18 @@
     border-color:rgb(18, 15, 41) ;
     border-radius: 5px;
     border: 0;
-    margin-left: 36%;
-
+    margin-left: 32.6%;
 }
 
-.appliquer {
+.connexion {
     background-color: orange;
     text-decoration: none;
     border: 10px solid orange;
     color: white;
-    margin-left: 36%;
+    margin-left: 32.6%;
     font-size: larger;
     position: relative;
     padding-left: 3px;
     border-radius: 5px;
-}
-
-.box h2{
-    margin-left: 36%;
 }
 

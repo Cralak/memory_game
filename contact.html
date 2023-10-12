@@ -8,21 +8,24 @@
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/contact.css">
+    <link rel="stylesheet" href="assets/css/chat.css">
+
 
 </head>
 <body class="body">
     <!----------------header----------------->
     <header class="header">
-        <img src="">
         <div class="menus">
             <div>
                 <span class="menu1">The Power Of Memory</span>
             </div>
             <div class="menus1">
-                <span><a href="main.html" style="color: white;">ACCEUIL</a></span>
-                <span><a href="main.html" style="color: white;">JEU</a></span>
-                <span><a href="main.html" style="color: white;">SCORES</a></span>
-                <span><a href="main.html" style="color: white;">NOUS CONTACTER</a></span>
+                <a href="main.html" class="headerspans"><span>ACCUEIL</span></a>
+                <a href="jeu.html" class="headerspans"><span>JEU</span></a>
+                <a href="" class="headerspans"><span>SCORES</span></a>
+                <a href="contact.html" class="headerspans"><span>NOUS CONTACTER</span></a>
+                <a href="myAccount.html" class="headerspans"><span>MON PROFIL</span></a>
+
             </div>
         </div>
     </header>
@@ -70,6 +73,57 @@
         <br></br>
         <br></br>
     </form>
+
+
+     <!----------------Chat----------------->
+     <div class="chat-container">
+        <div class="chat-header">
+            Chat en direct
+        </div>
+        <div class="chat-messages">
+        <!-- Ajoutez d'autres messages ici -->
+            <div class="message">
+                <div class="message-sender">Utilisateur 1</div>
+                <div class="test">
+                    <div class="message-content">Hello ! comment tu vas ?</div>
+                </div>                
+                <div class="date">Aujourd'hui à 15h22</div>
+            </div>
+            <div class="message2">
+                <div class="message-sender2">Utilisateur 2</div>
+                <div class="message-content2">Ça va bien, merci ! Et toi ?</div>
+                <div class="date2">Aujourd'hui à 15h22</div>
+
+            </div>
+            <div class="message">
+                <div class="message-sender">Utilisateur 1</div>
+                <div class="test">
+                    <div class="message-content">Hello ! comment tu vas ?</div>
+                </div>
+                <div class="date">Aujourd'hui à 15h22</div>
+
+            </div>
+            <div class="message2">
+                <div class="message-sender2">Utilisateur 2</div>
+                <div class="message-content2">Et toi ?</div>
+                <div class="date2">Aujourd'hui à 15h22</div>
+
+            </div>
+            <div class="message">
+                <div class="message-sender">Utilisateur 2</div>
+                <div class="test">
+                    <div class="message-content">Et toi ?</div>
+                </div>                
+                <div class="date">Aujourd'hui à 15h22</div>
+            </div>
+        <!-- Ajoutez d'autres messages ici -->
+            </div>
+        <div class="chat-input">
+            <input type="text" id="message-input" placeholder="Saisissez votre message...">
+            <button id="send-button">Envoyer</button>
+        </div>
+    </div>
+    <!----------------Chat----------------->
     
 
     

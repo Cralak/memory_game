@@ -1,0 +1,22 @@
+
+.footer{
+    font-family: Avenir;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+    display: flex;
+    background-color: rgb(18, 15, 41);
+    color: white;
+    min-width: auto;
+}
+
+.footer div{
+    width: 50%;
+    margin-left: 15%;
+}
+
+.div2{
+    color: white;
+}
+
+
