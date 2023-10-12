@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeu!</title>
-    <link rel="stylesheet" href="assets/css/header.css">
-    <link rel="stylesheet" href="assets/css/register.css">
+    <title>myAccount</title>
+
     <link rel="stylesheet" href="assets/css/footer.css">
-    <link rel="stylesheet" href="assets/css/login.css">
-    <link rel="stylesheet" href="assets/css/memory.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/myAccount.css">
+
 </head>
-<body>
+<body class="body">
     <!----------------header----------------->
     <header class="header">
         <div class="menus">
@@ -26,22 +26,47 @@
         </div>
     </header>
     <!----------------header----------------->
-    <br></br>
+    
+
     <div class="background">
-        <img src="assets/images/background4.jpg">
+        <img src="assets/images/background.jpg">
         <div class="content">
-            <form>
-        <input class="bouton" type ="submit" value="JOUER">
-    </form>
+            <h1>MON PROFIL</h1>
         </div>
     </div>
-    <select class="deroulant">
-        <option class="scroll" value="option1">DIFFICULTY</option>
-        <option class="scroll" value="option2">Facile</option>
-        <option class="scroll" value="option3">Normal</option>
-        <option class="scroll" value="option4">Difficle</option>
-    </select>
     <br></br>
+    <br></br>    
+    <form class="box" method="POST" action="traitement.php">
+        <div>
+            <h2>Gestoin de l'Email :</h2>
+        <center>
+            <input class="boite" type="text" id="nom" name="nom" required placeholder="Em@il actuel" ></br>
+            </br>
+            <input class="boite" type="email" id="email" name="email" required placeholder="Nouvel Em@il" ></br>
+                </br>
+                <br></br>
+                <br></br>
+        </center>    
+            <h2>Gestoin du mot de passe :</h2>
+        <center>
+            <input class="boite" type="password" id="motDePasse" name="motDePasse" required placeholder="Mot de passe actuel" ></br>
+                </br>
+            <input class="boite" type="password" id="motDePasse" name="motDePasse" required placeholder="Nouveau Mot de passe" ></br>
+            </br>
+            <input class="boite" type="password" id="motDePasse" name="motDePasse" required placeholder="Confirmer le nouveau mot de passe" ></br>
+            </br>
+        </center>
+        </div>
+        </br>
+        <input class="appliquer" type="submit" value="APPLIQUER" href="main.html">
+        <br></br>   
+        <br></br>
+        <br></br>
+    </form>
+
+
+
+
     <!----------------Footer----------------->
     
     <footer class="footer">
@@ -74,5 +99,6 @@
         
     </footer>
     <!----------------Footer----------------->
+
 </body>
 </html>
