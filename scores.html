@@ -1,80 +1,78 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>contact</title>
-
-    <link rel="stylesheet" href="assets/css/footer.css">
+    <title>Scores</title>
     <link rel="stylesheet" href="assets/css/header.css">
-    <link rel="stylesheet" href="assets/css/contact.css">
-
+    <link rel="stylesheet" href="assets/css/register.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="assets/css/scores.css">
 </head>
-<body class="body">
-    <!----------------header----------------->
+<body>
     <header class="header">
         <div class="menus">
             <div>
                 <span class="menu1">The Power Of Memory</span>
             </div>
             <div class="menus1">
-                <a href="main.html" class="headerspans"><span>ACCUEIL</span></a>
+                <a href="main.html" class="headerspans"><span>ACCEUIL</span></a>
                 <a href="jeu.html" class="headerspans"><span>JEU</span></a>
                 <a href="" class="headerspans"><span>SCORES</span></a>
                 <a href="contact.html" class="headerspans"><span>NOUS CONTACTER</span></a>
             </div>
         </div>
     </header>
-    <!----------------header----------------->
 
     <div class="background">
-        <img src="assets/images/background.jpg">
+        <img src="assets/images/background4.jpg">
         <div class="content">
-            <h1>NOUS CONTACTER</h1>
-        </div>
-    </div>  
-
-    <div class="cadre">
-        <div class="tel">
-            <div><img src="assets/images/phonelogo.png"></div>
-            <div>06 05 04 03 02</div>
-        </div>
-        <div class="mail">
-            <div><img src="assets/images/maillogo.png"></div>
-            <div>support@powerofmemory.com</div>
-        </div>
-        <div class="ville">
-            <div><img src="assets/images/locationlogo.png"></div>
-            <div>Paris</div>
+            <h1 class="titre">TABLEAU DES SCORES</h1>
         </div>
     </div>
-
-    <form method="POST" action="traitement.php">
-        <div class="form-contact">
-            <input class="boite" type="nom" id="nom" name="nom" required placeholder="Nom">
-            <input class="boite" type="email" id="email" name="email" required placeholder="Email" >
-        </div>
-        <div class="form-contact2">
-        <input class="boite2" type="sujet" id="sujet" name="sujet" required placeholder="Sujet" >
-        </div>
-        <div class="form-contact3">
-            <textarea pseudo = "message"passe = "message"required placeholder="Message">
-            </textarea>
-        </div>
-    </form>
-
-    </form>
-        <input class="connexion" type="submit" value="Envoyer" href="main.html">
-        <br></br>   
-        <br></br>
-        <br></br>
-    </form>
-    
-
-    
-
-
-
+    <br></br>
+    <!--------------Tableau------------------>
+    <center>
+    <table>
+        <thead>
+          <tr width="100">
+            <th colspan="100">SCORES</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="titre">
+            <td>PSEUDO</td>
+            
+            <td>POINTS</td>
+            <td>DIFFCULTY</td>
+            <TD>DERNIERE PARTIE JOUER</TD>
+          </tr>
+          <tr class="case">
+            <td>kk</td>
+            <td>1000000</td>
+            <td>EXTREME</td>
+            <td>demain. 15h64</td>
+          </tr>
+          <tr class="case">
+            <td>kk</td>
+            <td>1000000</td>
+            <td>EXTREME</td>
+            <td>demain. 15h64</td>
+          </tr>
+          <tr class="case">
+            <td>kk</td>
+            <td>1000000</td>
+            <td>EXTREME</td>
+            <td>demain. 15h64</td>
+          </tr>
+        </tbody>
+      </table>
+    </center>
+    <!--------------Tableau------------------>
+    <br></br>
+    <br></br>
+    <br></br>
     <!----------------Footer----------------->
     
     <footer class="footer">
@@ -96,7 +94,7 @@
         
         <div class="div3">
             <h3>Power of Memory</h3>
-            <ul class="liens">
+            <ul>
                 <li><a href = "main.html" style="color: white;"> jouer !</a></li>
                 <br>
                 <li><a href="main.html"style="color: white;"> Les scores</a></li>
@@ -107,6 +105,5 @@
         
     </footer>
     <!----------------Footer----------------->
-
 </body>
 </html>
