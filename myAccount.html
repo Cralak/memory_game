@@ -8,12 +8,9 @@
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/myAccount.css">
-    <link rel="stylesheet" href="assets/css/chat.css">
-
 
 </head>
 <body class="body">
-    <!----------------header----------------->
     <header class="header">
         <div class="menus">
             <div>
@@ -21,17 +18,12 @@
             </div>
             <div class="menus1">
                 <a href="main.html" class="headerspans"><span>ACCUEIL</span></a>
-                <a href="jeu.html" class="headerspans"><span>JEU</span></a>
-                <a href="" class="headerspans"><span>SCORES</span></a>
+                <a href="login.html" class="headerspans"><span>JEU</span></a>
+                <a href="scores.html" class="headerspans"><span>SCORES</span></a>
                 <a href="contact.html" class="headerspans"><span>NOUS CONTACTER</span></a>
-                <a href="myAccount.html" class="headerspans"><span>MON PROFIL</span></a>
-
-                
             </div>
         </div>
     </header>
-    <!----------------header----------------->
-    
 
     <div class="background">
         <img src="assets/images/background.jpg">
@@ -43,20 +35,24 @@
     <br></br>    
     <form class="box" method="POST" action="traitement.php">
         <div>
-            <h2>Gestion de l'Email :</h2>
+            <h2>Gestoin de l'Email :</h2>
+        <center>
             <input class="boite" type="text" id="nom" name="nom" required placeholder="Em@il actuel" ></br>
             </br>
             <input class="boite" type="email" id="email" name="email" required placeholder="Nouvel Em@il" ></br>
                 </br>
                 <br></br>
                 <br></br>
-            <h2>Gestion du mot de passe :</h2>
+        </center>    
+            <h2>Gestoin du mot de passe :</h2>
+        <center>
             <input class="boite" type="password" id="motDePasse" name="motDePasse" required placeholder="Mot de passe actuel" ></br>
                 </br>
             <input class="boite" type="password" id="motDePasse" name="motDePasse" required placeholder="Nouveau Mot de passe" ></br>
             </br>
             <input class="boite" type="password" id="motDePasse" name="motDePasse" required placeholder="Confirmer le nouveau mot de passe" ></br>
             </br>
+        </center>
         </div>
         </br>
         <input class="appliquer" type="submit" value="APPLIQUER" href="main.html">
@@ -65,63 +61,11 @@
         <br></br>
     </form>
 
-     <!----------------Chat----------------->
-     <div class="chat-container">
-        <div class="chat-header">
-            Chat en direct
-        </div>
-        <div class="chat-messages">
-        <!-- Ajoutez d'autres messages ici -->
-            <div class="message">
-                <div class="message-sender">Utilisateur 1</div>
-                <div class="test">
-                    <div class="message-content">Hello ! comment tu vas ?</div>
-                </div>                
-                <div class="date">Aujourd'hui à 15h22</div>
-            </div>
-            <div class="message2">
-                <div class="message-sender2">Utilisateur 2</div>
-                <div class="message-content2">Ça va bien, merci ! Et toi ?</div>
-                <div class="date2">Aujourd'hui à 15h22</div>
-
-            </div>
-            <div class="message">
-                <div class="message-sender">Utilisateur 1</div>
-                <div class="test">
-                    <div class="message-content">Hello ! comment tu vas ?</div>
-                </div>
-                <div class="date">Aujourd'hui à 15h22</div>
-
-            </div>
-            <div class="message2">
-                <div class="message-sender2">Utilisateur 2</div>
-                <div class="message-content2">Et toi ?</div>
-                <div class="date2">Aujourd'hui à 15h22</div>
-
-            </div>
-            <div class="message">
-                <div class="message-sender">Utilisateur 2</div>
-                <div class="test">
-                    <div class="message-content">Et toi ?</div>
-                </div>                
-                <div class="date">Aujourd'hui à 15h22</div>
-            </div>
-        <!-- Ajoutez d'autres messages ici -->
-            </div>
-        <div class="chat-input">
-            <input type="text" id="message-input" placeholder="Saisissez votre message...">
-            <button id="send-button">Envoyer</button>
-        </div>
-    </div>
-    <!----------------Chat----------------->
 
 
 
-
-    <!----------------Footer----------------->
-    
     <footer class="footer">
-        <div class="div3">
+        <div class="div">
             <h3>Information</h3>
             <p>Quisque commodo facilisis purus,interdum volutpat arcu viverra sed.</p>
             <p>Tel : 06 05 04 03 02</p>
@@ -136,20 +80,18 @@
             <br><br>
 
         </div>
-        
-        <div class="div3">
+        <div class="div">
             <h3>Power of Memory</h3>
             <ul>
-                <li><a href = "main.html" style="color: white;"> jouer !</a></li>
+                <li><a href="login.html" class="colorwhite"> jouer !</a></li>
                 <br>
-                <li><a href="main.html"style="color: white;"> Les scores</a></li>
+                <li><a href="scores.html" class="colorwhite"> Les scores</a></li>
                 <br>
-                <li><a href="main.html"style="color: white;"> Nous contacter</a></li>
+                <li><a href="contact.html" class="colorwhite"> Nous contacter</a></li>
             </ul>
+            <div class="cases"></div>
         </div>
-        
     </footer>
-    <!----------------Footer----------------->
 
 </body>
 </html>
