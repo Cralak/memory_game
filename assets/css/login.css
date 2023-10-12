@@ -55,3 +55,10 @@ span {
     border-radius: 5px;
 }
 
+a{
+    color:white;
+}
+
+a:link{
+    text-decoration: underline;
+}
