@@ -29,14 +29,33 @@ body{
     margin-top:8%;
     color:#92abd4;
 }
-.maintext4{
+.button-play{
+    border-radius: 5px;
+    padding: 15px 32px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     margin-top:12%;
+    background-color: orange;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition: 0.3s;
 }
+
+.button-play:hover{
+    font-size: 32px;
+    border-radius: 50px;
+}
+
+.button-play
+
+
 
 .main{
     width: 100%;
@@ -208,17 +227,6 @@ h1{
     transform: translate(-50%, -50%);
 }
 
-.main button {
-    background-color: orange;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-}
-
 .colordarkblue{
     color: #3724a0;
 }
@@ -331,3 +339,4 @@ h1{
 .notre-equipe-subtext{
     display: flex; justify-content: center;color: rgb(209, 209, 209);
 }
+
