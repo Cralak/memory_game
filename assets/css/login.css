@@ -47,7 +47,6 @@ span {
     text-decoration: none;
     border: 10px solid orange;
     color: white;
-    margin-left: 36.5%;
     font-size: larger;
     font-family: Arial, Helvetica, sans-serif;
     position: relative;
@@ -61,4 +60,9 @@ a{
 
 a:link{
     text-decoration: underline;
+}
+
+.box1{
+    width:40%;
+    margin-left:34%;
 }
