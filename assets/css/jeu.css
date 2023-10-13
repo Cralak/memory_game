@@ -1,0 +1,42 @@
+.jeu {
+    background-color: #100e2e;
+    background-image: url(../images/fond.png);
+    background-size: contain;
+}
+
+.jeu .easy{
+    width: 30%;
+    
+    border-spacing: 5px;
+}
+
+.jeu .medium{
+    width: 45%;
+    border-collapse: collapse;
+}
+
+.jeu .hard{
+    width: 60%;
+    border-collapse: collapse;
+}
+
+.jeu th, td {
+    padding: 1px;
+    text-align: center;
+}
+
+.jeu .card img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.jeu .table-container{
+    display:flex;
+    justify-content: center;
+}
+.jeu .card {
+    background-color: white;
+    padding: 5px;
+    border-radius: 10px;
+    border-spacing: 50px;
+}
