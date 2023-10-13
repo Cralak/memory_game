@@ -58,42 +58,8 @@ span {
   text-decoration: none;
   border: 10px solid orange;
   color: white;
-  margin-left: 15%;
   font-size: larger;
   position: relative;
   padding-left: 3px;
   border-radius: 5px;
-}
-
-.boite{
-  margin-left: 36.5%;
-  height: 40px;
-  width: 240px;
-  color: gray;
-  font-size: larger;
-  position: relative;
-  background-color: rgb(18, 15, 41);
-  border-color:rgb(18, 15, 41) ;
-  border-radius: 5px;
-  border: 0
-  
-}
-
-.txte{
-  margin-left: 40%;
-  height: 40px;
-  width: 240px;
-  color: white;
-  font-size: larger;
-  position: relative;
-  border-radius: 5px;
-  border: 0
-  
-}
-
-.titre{
-  color: white;
-  position: relative;
-  border: 0
-  
 }
