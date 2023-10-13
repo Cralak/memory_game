@@ -582,12 +582,12 @@
     background-color: #100e2e;
     background-image: url(../images/fond.png);
     background-size: contain;
-    font-family: Avenir;
 }
 
 .jeu .easy{
     width: 30%;
-    border-collapse: collapse;
+    
+    border-spacing: 5px;
 }
 
 .jeu .medium{
@@ -613,6 +613,12 @@
 .jeu .table-container{
     display:flex;
     justify-content: center;
+}
+.jeu .card {
+    background-color: white;
+    padding: 5px;
+    border-radius: 10px;
+    border-spacing: 50px;
 }
 
 /*-------------------------jeu-------------------------*/
@@ -654,7 +660,7 @@
     border-radius: 5px;
   }
 
-.memory .content{
+  .memory .content{
     font-size: larger;
     position: absolute;
     top: 25%;
@@ -690,7 +696,7 @@ tfoot {
   
 }
 .memory table {
-    width: 1500px;
+    width: 70%;
     height: 200px;
     text-align: center;
 }
@@ -701,6 +707,10 @@ tfoot {
 
 .memory .case {
     background-color: #3B0661;
+}
+
+.choix:hover{
+    cursor:pointer;
 }
 
 /*-------------------------Memory----------------------------*/
@@ -988,48 +998,70 @@ border-radius: 5px;
 
 /*-------------------------Scores----------------------------------------------------------------------*/
 
-.scores {
-    background-color: #100e2e;
-    margin: 0;
-    color:white;
-    font-family: Avenir;
-  }
-  
-  
-  .scores .scorestable,td {
-    border: 1px solid white;
-    position: relative;
-    font-size: larger;
-    font-family: Arial, Helvetica, sans-serif ;
-    border-inline: 0px;
-    border-top: 0;
-  
-  }
-  
-  .scorestable{
-    width:100%;
-  }
+.scores-table table,
+td {
+  border: 1px solid white;
+  position: relative;
+  font-size: larger;
+  font-family: Arial, Helvetica, sans-serif ;
+  border-inline: 0px;
+  border-top: 0;
+  color:white;
 
-  .scores thead,
-  tfoot {
+}
+
+.scores-table thead,
+tfoot {
+
+  background-color: orange;
+  color: #fff;
   
-    background-color: orange;
-    color: #fff;
+}
+.scores-table table {
+    width: 70%;
+    height: 200px;
+    text-align: center;
+}
+
+.scores-table .titre {
+    color:white;
+}
+
+.scores-table .case {
+    background-color: #3B0661;
+}
+
+.scores-table .scores .content{
+  font-size: larger;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top:50px;
+}
+
+.scores-table .background img{
+    width:100%;
+  
+}
+
+.scores-table .content{
+    position:absolute;
+    top: 200px;
+    left: 50%;
+    transform: translate(-50%, -50%);
     
-  }
-  .scores table {
-      width: 1500px;
-      height: 200px;
-      text-align: center;
-  }
-  
-  .scores .titre {
-      background-color: rgb(26, 26, 56);
-  }
-  
-  .scores .case {
-      background-color: #3B0661;
-  }
+}
+
+.scores-table .scores body {
+  background-image: url(https://bin.smwcentral.net/u/24573/ghost%2Bhouse_night1.png);
+  background-color: rgb(26, 26, 56);
+  color: white;
+  font-family: avenir;
+  background-size: cover;
+}
+
+
   
   /*-------------------------Scores---------------------------------------------------------------------*/
   
