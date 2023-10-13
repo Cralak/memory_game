@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jeu!</title>
     <link rel="stylesheet" href="assets/css/header.css">
-    <link rel="stylesheet" href="assets/css/register.css">
     <link rel="stylesheet" href="assets/css/footer.css">
-    <link rel="stylesheet" href="assets/css/login.css">
-    <link rel="stylesheet" href="assets/css/memory.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    
 </head>
-<body>
+<body class="memory">
+        <!------------------header------------------>
+
     <header class="header">
         <div class="menus">
             <div>
@@ -24,6 +25,8 @@
             </div>
         </div>
     </header>
+        <!------------------header------------------>
+
 
     <br>
     </br>
@@ -35,14 +38,43 @@
     </form>
         </div>
     </div>
-    <select class="deroulant">
-        <option class="scroll" value="option1">DIFFICULTY</option>
-        <option class="scroll" value="option2">Facile</option>
-        <option class="scroll" value="option3">Normal</option>
-        <option class="scroll" value="option4">Difficle</option>
-    </select>
+    <center>
+    <table>
+        <thead>
+          <tr width="100">
+            <th colspan="100">GAMEPLAY</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr class="titre">
+                <td>Theme 1</td>
+                <td>Theme 2</td>
+                <td>Theme 2</td>
+            </tr>
+            <tr class="case">
+                <td><form action="jeu1.html"><input class="choix" type="submit" value="FACILE T1"></form></td>
+                <td><form action="jeu1.html"><input class="choix" type="submit" value="FACILE T2"></form></td>
+                <td><form action="jeu1.html"><input class="choix" type="submit" value="FACILE T3"></form></td>
+            </tr>
+            <tr class="case">
+                <td><form action="jeu2.html"><input class="choix" type="submit" value="NORMAL T1"></form></td>
+                <td><form action="jeu2.html"><input class="choix" type="submit" value="NORMAL T2"></form></td>
+                <td><form action="jeu2.html"><input class="choix" type="submit" value="NORMAL T3"></form></td>
+            </tr>
+            <tr class="case">
+                <td><form action="jeu3.html"><input class="choix" type="submit" value="DIFFICILE T1"></form></td>
+                <td><form action="jeu3.html"><input class="choix" type="submit" value="DIFFICILE T2"></form></td>
+                <td><form action="jeu3.html"><input class="choix" type="submit" value="DIFFICILE T3"></form></td>
+            </tr>
+        </tbody>
+    <br></br>
+    </table></center>
     <br>
-    </br>
+    <br>
+    <br>
+    <br>
+        <!------------------footer------------------>
+
     <footer class="footer">
         <div class="div">
             <h3>Information</h3>
@@ -62,7 +94,7 @@
         <div class="div">
             <h3>Power of Memory</h3>
             <ul>
-                <li><a href="login.html" class="colorwhite"> jouer !</a></li>
+                <li><a href="login.html" class="colorwhite"> Jouer !</a></li>
                 <br>
                 <li><a href="scores.html" class="colorwhite"> Les scores</a></li>
                 <br>
@@ -71,6 +103,8 @@
             <div class="cases"></div>
         </div>
     </footer>
+        <!------------------footer------------------>
+
 
 </body>
 </html>

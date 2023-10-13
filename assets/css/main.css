@@ -1,39 +1,258 @@
-body{
-    background-color: #100e2e;
-    margin: 0;
+/*-------------------------Contact-------------------------*/
+
+.contact{
+    background-color: rgb(26, 26, 56);
+    color: white;
+    font-family: Avenir;
+}
+
+.contact .background img{
+    position: relative;
+    color: white;
+    width: 100%;
+    opacity:60%;
+    
+}
+
+.contact .content{
+    font-size: medium;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+
+
+.contact .cadre{
+    margin-top: 7%;
+    margin-bottom: 3%;
+    margin-inline: 15%;
+    border-radius: 15px;
+
+
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact .tel{
+    padding-block: 3%;
+    padding-inline: 11%;
+    background-color: rgb(18, 15, 41);
+}
+
+.contact .mail{
+    padding-block: 3%;
+    padding-inline: 5%;
+    background-color: rgb(18, 15, 41);
+}
+
+.contact .ville{
+    padding-block: 3%;
+    padding-inline: 12%;
+    background-color: rgb(18, 15, 41);
+}
+
+.contact .tel img{
+    margin-bottom: 30%;
+}
+
+.contact .mail img{
+    margin-bottom: 15%;
+}
+
+.contact .ville img{
+    margin-bottom: 43%;
+}
+
+
+.contact .boite{
+    margin-top: 3%;
+    margin-bottom: 3%;
+    height: 40px;
+    width: 240px;
+    color: gray;
+    font-size: larger;
+    position: relative;
+    background-color: rgb(18, 15, 41);
+    border-color:rgb(18, 15, 41) ;
+    border-radius: 5px;
+    border: 0
+}
+
+.contact .boite2{
+    margin-bottom: 1%;
+    height: 40px;
+    width: 500px;
+    color: gray;
+    font-size: larger;
+    position: relative;
+    background-color: rgb(18, 15, 41);
+    border-color:rgb(18, 15, 41) ;
+    border-radius: 5px;
+    border: 0
+}
+
+.contact .form-contact {
+    width: 503px;
+    margin-left: 15%;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.contact .form-contact2 {
+    margin-left: 15%;
+    display: flex;
+    
+}
+
+.contact .form-contact3 textarea {
+    color: grey;
+    font-size: 18px;
+    margin-bottom: 1%;
+    margin-left: 15%;
+    display: flex;
+    background-color: rgb(18, 15, 41);
+    border-color:rgb(18, 15, 41) ;
+    border-radius: 5px;
+    border: 0;
+    width: 500px;
+    height: 350px;
+
+}
+
+.contact .connexion {
+    background-color: orange;
+    text-decoration: none;
+    border: 10px solid orange;
+    color: white;
+    margin-left: 15%;
+    font-size: larger;
+    position: relative;
+    padding-left: 3px;
+    border-radius: 5px;
+}
+
+/*-------------------------Contact-------------------------*/
+
+
+
+
+
+/*-------------------------Login-------------------------*/
+
+
+.login {
+    background-image: url(https://bin.smwcentral.net/u/24573/ghost%2Bhouse_night1.png);
+    background-color: rgb(26, 26, 56);
+    color: white;
+    font-family: Avenir;
+    background-size: cover;
+  }
+
+.login .background img{
+    right: 3px;
+    position: relative;
+    color: white;
+    width: 100%;
+    opacity:100%;
+    
+}
+
+.login .content{
+    font-size: larger;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top:50px;
+}
+
+.login .boite{
+    height: 40px;
+    width: 500px;
+    color: gray;
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    background-color: rgb(51, 45, 93);
+    border-radius: 5px;
+    border: 0
+}
+
+.login .connexion {
+    background-color: orange;
+    text-decoration: none;
+    border: 10px solid orange;
+    color: white;
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    padding-left: 3px;
+    border-radius: 5px;
+}
+
+.login a{
     color:white;
 }
 
-.maintext1{
+.login a:link{
+    text-decoration: underline;
+}
+
+.login .box1{
+    width:40%;
+    margin-left:34%;
+}
+
+
+/*-------------------------Login-------------------------*/
+
+/*-------------------------main-------------------------*/
+
+.index{
+    background-color: #100e2e;
+    margin: 0;
+    color:white;
+    font-family: Avenir;
+}
+
+.index .maintext1{
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 64px; font-weight: 10px;
+    font-size: 50px; 
+    font-weight: bold;
 }
-.maintext2{
+.index .maintext2{
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 64px; 
-    font-weight: 10px;
-    margin-top:4%;
+    font-size: 50px; 
+    font-weight: bold;
+
+    margin-top:5%;
 }
-.maintext3{
+.index .maintext3{
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     margin-top:8%;
     color:#92abd4;
 }
-.button-play{
+.index .button-play{
     border-radius: 5px;
     padding: 15px 32px;
     position: absolute;
-    top: 50%;
+    top: 43%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -48,12 +267,12 @@ body{
     transition: 0.3s;
 }
 
-.button-play:hover{
+.index .button-play:hover{
     font-size: 32px;
     border-radius: 50px;
 }
 
-.main button {
+.index .main button {
     background-color: orange;
     border: none;
     color: white;
@@ -65,7 +284,7 @@ body{
 }
 
 
-.main{
+.index .main{
     width: 100%;
     height: 100vh;
     display:flex;
@@ -73,12 +292,12 @@ body{
     align-items:center;
 }
 
-.menu1{
+.index .menu1{
     display:flex;
     justify-content: center;
 }
 
-.menu2{
+.index .menu2{
     width:90%;
     margin:5%;
     height:400px;
@@ -87,7 +306,7 @@ body{
 }
 
 
-.img1{
+.index .img1{
     object-fit: cover;
     position:absolute;
     width: 100%;
@@ -96,7 +315,7 @@ body{
   
 }
 
-.span1{
+.index .span1{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -108,7 +327,7 @@ body{
 
 
 
-.img2{
+.index .img2{
     border-radius:1%;
     margin:2%;
     width: 30%;
@@ -117,7 +336,7 @@ body{
     background-size: cover;
 }
 
-.img3{
+.index .img3{
     border-radius:1%;
     margin:2%;
     width: 20%;
@@ -127,7 +346,7 @@ body{
     height: 350px;
 }
 
-.img4{
+.index .img4{
     border-radius:1%;
     margin:2%;
     width: 20%;
@@ -136,19 +355,19 @@ body{
     background-size: cover;
 }
 
-.img5{
+.index .img5{
     width: 40%;
     height:100%;
 }
 
-.img5 img{
+.index .img5 img{
     border-radius:1%;
     width:100%;
     height:100%;
     object-fit:cover;
 }
 
-.block1{
+.index .block1{
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -159,7 +378,7 @@ body{
     
 }
 
-.block2{
+.index .block2{
     display:flex;
     justify-content:space-between;
     align-items:start;
@@ -168,13 +387,13 @@ body{
     height:45%;
 }
 
-.block3-span1{
+.index .block3-span1{
     margin:auto;
     font-weight: 1000;
     font-size:48px;
 }
 
-.block3-span2{
+.index .block3-span2{
     font-weight: 500;
     margin-bottom:auto;
     font-size:24px;
@@ -182,24 +401,24 @@ body{
 
 }
 
-.text1 {
+.index .text1 {
     display:flex;
     justify-content: center;
     padding-left:8%;
     padding-right:8%;
 }
 
-.text2 {
+.index .text2 {
     display:flex;
     justify-content: center;
     padding:2%;
 }
 
-.teams-parent{
+.index .teams-parent{
     width:100%; height: 600px; display:flex; flex-direction: row; justify-content: center;
 }
 
-.teams{
+.index .teams{
     display:flex;
     align-items: center;
     flex-direction: column;
@@ -209,46 +428,46 @@ body{
     background-color: #0d0b26;
 }
 
-.icons{
+.index .icons{
     width:60%;height:10%;display:flex;justify-content:space-around;flex-direction: row;
 }
 
-.members{
+.index .members{
     font-size:20px; font-weight: 1000;
 }
 
-.teams img{
+.index .teams img{
     margin: 50px;
     width:40%;
     height:30%;
     border-radius: 50%;
 }
 
-h1{
+.index h1{
     margin:5%;
 }
 
 
-.centered {
+.index .centered {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.colordarkblue{
+.index .colordarkblue{
     color: #3724a0;
 }
 
-.colorlightblue{
+.index .colorlightblue{
     color:#92abd4;
 }
 
-.colorwhite{
+.index .colorwhite{
     color: white;
 }
 
-.colorbox1{
+.index .colorbox1{
     border-radius:1%;
     margin:1.5%;
     display:flex;
@@ -259,7 +478,7 @@ h1{
     background-color:#3724a0;
 }
 
-.colorbox2{
+.index .colorbox2{
     border-radius:1%;
     margin:1.5%;
     display:flex;
@@ -270,7 +489,7 @@ h1{
     background-color:#b91ca8;
 }
 
-.colorbox3{
+.index .colorbox3{
     border-radius:1%;
     margin:1.5%;
     display:flex;
@@ -281,7 +500,7 @@ h1{
     background-color:#18a15f;
 }
 
-.colorbox4{
+.index .colorbox4{
     border-radius:1%;
     margin:1.5%;
     display:flex;
@@ -292,11 +511,11 @@ h1{
     background-color:#ec9123
 }
 
-.textdefinition{
+.index .textdefinition{
     text-align: justify; color:#92abd4;
 }
 
-.instagram1{
+.index .instagram1{
     width:200px;
     height:8vh;
     background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1200px-Instagram_icon.png); 
@@ -304,7 +523,7 @@ h1{
     background-repeat:no-repeat; 
     margin:5%
 }
-.instagram2{
+.index .instagram2{
     width:200px;
     height:8vh;
     background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1200px-Instagram_icon.png); 
@@ -312,7 +531,7 @@ h1{
     background-repeat:no-repeat; 
     margin:5%
 }
-.instagram3{
+.index .instagram3{
     width:200px;
     height:8vh;
     background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1200px-Instagram_icon.png); 
@@ -321,31 +540,501 @@ h1{
     margin:5%
 }
 
-.twitter1{
+.index .twitter1{
     width:200px;height:8vh;background-image: url(https://png.pngtree.com/png-vector/20221018/ourmid/pngtree-twitter-social-media-round-icon-png-image_6315985.png); background-size:contain; background-repeat:no-repeat; margin:5%
 }
-.twitter2{
+.index .twitter2{
     width:200px;height:8vh;background-image: url(https://png.pngtree.com/png-vector/20221018/ourmid/pngtree-twitter-social-media-round-icon-png-image_6315985.png); background-size:contain; background-repeat:no-repeat; margin:5%
 }
-.twitter3{
+.index .twitter3{
     width:200px;height:8vh;background-image: url(https://png.pngtree.com/png-vector/20221018/ourmid/pngtree-twitter-social-media-round-icon-png-image_6315985.png); background-size:contain; background-repeat:no-repeat; margin:5%
 }
 
-.pinterest1{
+.index .pinterest1{
     width:200px;height:8vh;background-image: url(https://static-00.iconduck.com/assets.00/pinterest-icon-2048x2048-os3lysf9.png); background-size:contain; background-repeat:no-repeat; margin:5%
 }
-.pinterest2{
+.index .pinterest2{
     width:200px;height:8vh;background-image: url(https://static-00.iconduck.com/assets.00/pinterest-icon-2048x2048-os3lysf9.png); background-size:contain; background-repeat:no-repeat; margin:5%
 }
-.pinterest3{
+.index .pinterest3{
     width:200px;height:8vh;background-image: url(https://static-00.iconduck.com/assets.00/pinterest-icon-2048x2048-os3lysf9.png); background-size:contain; background-repeat:no-repeat; margin:5%
 }
 
-.notre-equipe{
-    display: flex; justify-content: center; font-size: 32px;
+.index .notre-equipe{
+    display: flex; 
+    justify-content: center; 
+    font-size: 32px;
+    font-weight: bold;
 }
 
-.notre-equipe-subtext{
-    display: flex; justify-content: center;color: rgb(209, 209, 209);
+.index .notre-equipe-subtext{
+    display: flex; 
+    justify-content: center;
+    color: rgb(209, 209, 209);
 }
+
+/*-------------------------main-------------------------*/
+
+
+
+
+
+/*-------------------------Jeu-------------------------*/
+
+
+.jeu {
+    background-color: #100e2e;
+    background-image: url(../images/fond.png);
+    background-size: contain;
+    font-family: Avenir;
+}
+
+.jeu .easy{
+    width: 30%;
+    border-collapse: collapse;
+}
+
+.jeu .medium{
+    width: 45%;
+    border-collapse: collapse;
+}
+
+.jeu .hard{
+    width: 60%;
+    border-collapse: collapse;
+}
+
+.jeu th, td {
+    padding: 1px;
+    text-align: center;
+}
+
+.jeu .card img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.jeu .table-container{
+    display:flex;
+    justify-content: center;
+}
+
+/*-------------------------jeu-------------------------*/
+
+
+/*-------------------------Memory-------------------------*/
+
+
+.memory .bouton {
+    background-color: orange;
+    text-decoration: none;
+    border: 10px solid orange;
+    color: white;
+    font-size: 100px;
+    position: relative;
+    padding-left: 3px;
+    border-radius: 5px;
+    width: 500px;
+    height: 200px;
+    
+}
+
+.memory {
+    background-image: url(https://bin.smwcentral.net/u/24573/ghost%2Bhouse_night1.png);
+    background-color: rgb(26, 26, 56);
+    color: white;
+    font-family: avenir;
+    background-size: cover;
+}
+
+.memory .choix {
+    background-color: #3B0661;
+    text-decoration: none;
+    border: 10px solid #3B0661;
+    color: white;
+    font-size: larger;
+    position: relative;
+    padding-left: 3px;
+    border-radius: 5px;
+  }
+
+.memory .content{
+    font-size: larger;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top:50px;
+}
+
+.memory .background img{
+    position: relative;
+    color: white;
+    width: 100%;
+    opacity:100%;
+    
+}
+
+.memory table,
+td {
+  border: 1px solid white;
+  position: relative;
+  font-size: larger;
+  font-family: Arial, Helvetica, sans-serif ;
+  border-inline: 0px;
+  border-top: 0;
+
+}
+
+.memory thead,
+tfoot {
+
+  background-color: orange;
+  color: #fff;
+  
+}
+.memory table {
+    width: 1500px;
+    height: 200px;
+    text-align: center;
+}
+
+.memory .titre {
+    background-color: rgb(26, 26, 56);
+}
+
+.memory .case {
+    background-color: #3B0661;
+}
+
+/*-------------------------Memory----------------------------*/
+
+
+/*-------------------------myAccount-------------------------*/
+
+.myAccount{
+    font-family: Avenir;
+    background-color: rgb(26, 26, 56);
+    color: white;
+}
+
+.myAccount .background img{
+    position: relative;
+    color: white;
+    width: 100%;
+    opacity:60%;
+    
+}
+
+.myAccount .content{
+    font-size: medium;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+
+.myAccount .boite{
+    height: 40px;
+    width: 500px;
+    color: gray;
+    font-size: larger;
+    position: relative;
+    background-color: rgb(18, 15, 41);
+    border-color:rgb(18, 15, 41) ;
+    border-radius: 5px;
+    border: 0;
+    margin-left: 32.6%;
+
+}
+
+.myAccount .appliquer {
+    background-color: orange;
+    text-decoration: none;
+    border: 10px solid orange;
+    color: white;
+    margin-left: 32.6%;
+    font-size: larger;
+    position: relative;
+    padding-left: 3px;
+    border-radius: 5px;
+}
+
+.myAccount .box h2{
+    margin-left: 32.6%;
+}
+
+/*-------------------------myAccount-------------------------*/
+
+
+
+/*-------------------------register-------------------------*/
+
+.register #espace {
+    color: opacity;
+}
+
+.register {
+background-image: url(https://bin.smwcentral.net/u/24573/ghost%2Bhouse_night1.png);
+background-color: rgb(26, 26, 56);
+color: white;
+font-family: avenir;
+background-size: cover;
+}
+
+.register .background img{
+right: 3px;
+position: relative;
+color: white;
+width: 100%;
+opacity:100%;
+
+}
+.register span {
+color: aliceblue;
+font-family: Arial, Helvetica, sans-serif ;
+}
+
+.register .content{
+font-size: larger;
+position: absolute;
+top: 25%;
+left: 50%;
+transform: translate(-50%, -50%);
+margin-top:50px;
+}
+
+
+.register .static {
+width: 250px;
+border: 0px;
+text-align: center;
+}
+.register .absolute {
+position: absolute;
+top: 30px;
+left: 1250px;
+width: 600px;
+border: 0px solid blue;
+text-align: center;
+
+}
+
+
+.register .boite{
+height: 40px;
+width: 500px;
+color: gray;
+font-size: larger;
+position: relative;
+background-color: rgb(51, 45, 93);
+border-radius: 5px;
+border: 0;
+}
+
+.register .connexion {
+background-color: orange;
+text-decoration: none;
+border: 10px solid orange;
+color: white;
+font-size: larger;
+position: relative;
+padding-left: 3px;
+border-radius: 5px;
+}
+
+.register .box1{
+    margin-left: 32.6%;
+
+}
+/*-------------------------register-------------------------*/
+
+
+/*-------------------------chat-------------------------*/
+
+.chat-container {
+    border-radius: 10px;
+    background-color: white;
+    position: fixed;
+    margin-bottom: -26%;
+    bottom: 0;
+    right: 20px;
+    width: 20%;
+    transition: 0.5s;
+
+}
+
+.chat-container:hover {
+    transform: translateY(-95%);
+}
+
+.chat-header {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+
+    background-color: rgb(51, 45, 93);
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+    padding-left: 30px;
+    font-weight: bold;
+}
+
+.chat-messages {
+    padding: 10px;
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+.message {
+    color: black;
+    margin-bottom: 10px;
+}
+
+.message2 {
+    color: black;
+    margin-bottom: 10px;
+}
+
+.test {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.message-sender {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    text-align: right;
+    color: rgb(161, 158, 158);
+}
+
+.message-sender2 {
+    padding-left: 5px;
+    max-width: 50%;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: left;
+    color: rgb(161, 158, 158);
+}
+
+.date {
+    padding-right: 15px;
+    margin-bottom: 10px;
+    text-align: right;
+    font-size: small;
+    color: rgb(161, 158, 158);
+}
+
+.date2 {
+    padding-left: 5px;
+    width: 50%;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: small;
+    color: rgb(161, 158, 158);
+}
+
+
+
+.chat-input {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #f2f2f2;
+}
+
+.message-content {
+    max-width: 50%;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+
+
+    color: white;
+    background-color: orange;
+}
+
+.message-content2 {
+    max-width: 50%;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 100px;
+    background-color: rgb(212, 212, 212);
+    text-align: left;
+    color: black;
+    margin-bottom: 10px;
+}
+
+#message-input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+#send-button {
+    background-color: orange;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/*-------------------------chat-------------------------*/
+
+
+/*-------------------------Scores----------------------------------------------------------------------*/
+
+.scores {
+    background-color: #100e2e;
+    margin: 0;
+    color:white;
+    font-family: Avenir;
+  }
+  
+  
+  .scores table,td {
+    border: 1px solid white;
+    position: relative;
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif ;
+    border-inline: 0px;
+    border-top: 0;
+  
+  }
+  
+  .scores thead,
+  tfoot {
+  
+    background-color: orange;
+    color: #fff;
+    
+  }
+  .scores table {
+      width: 1500px;
+      height: 200px;
+      text-align: center;
+  }
+  
+  .scores .titre {
+      background-color: rgb(26, 26, 56);
+  }
+  
+  .scores .case {
+      background-color: #3B0661;
+  }
+  
+  /*-------------------------Scores---------------------------------------------------------------------*/
+  
 
