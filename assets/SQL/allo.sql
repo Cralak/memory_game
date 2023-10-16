@@ -13,7 +13,10 @@ CREATE TABLE IF  NOT EXIST utilisateur(
 
 CHARACTER SET 'utf8';
 
+----- INSCRIPTION --------------/
 
+INSERT INTO utilisateur(id, email, mot_de_passe, pseudo, date_et_heure, derniere_connexion)
+VALUE  (1, 'superman@gmail.com', 'superman69!', 'xX_superman_Xx', '27/01/46 17:20', NULL)
 
 
 ------ TABLE SCORE ----------------/
@@ -22,7 +25,7 @@ CREATE TABLE score(
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     id_joueur INT UNSIGNED NOT NULL,
     id_jeu INT UNSIGNED NOT NULL,
-    difficulte ENUM('FACILE,MOYEN,DIFFICIL') NOT NULL,
+    difficulte ENUM('FACILE,MOYEN,DIFFICILE') NOT NULL,
     score_partie INT UNSIGNED NOT NULL,
     datetime_partie DATETIME NOT NULL,
     PRIMARY KEY(id)
@@ -55,3 +58,4 @@ CREATE TABLE jeu(
 )
 
 CHARACTER SET 'utf8';
+
