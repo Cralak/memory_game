@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS utilisateur(
     PRIMARY KEY(id)
 )
 
-CHARACTER SET 'utf8';
+CHARACTER SET 'utf8'
 ENGINE=INNODB;
 
 
@@ -23,10 +23,10 @@ CREATE TABLE IF NOT EXISTS score(
     difficulte ENUM('FACILE','MOYEN','DIFFICIL') NOT NULL,
     score_partie INT UNSIGNED NOT NULL,
     datetime_partie DATETIME NOT NULL,
-    PRIMARY KEY(id),
+    PRIMARY KEY(id)
 )
 
-CHARACTER SET 'utf8';
+CHARACTER SET 'utf8'
 ENGINE=INNODB;
 
 
@@ -38,22 +38,22 @@ CREATE TABLE IF NOT EXISTS messages(
     id_jeu INT UNSIGNED NOT NULL,
     message TEXT NOT NULL,
     datetime_message DATETIME NOT NULL,
-    PRIMARY KEY(id),
+    PRIMARY KEY(id)
 )
 
-CHARACTER SET 'utf8';
+CHARACTER SET 'utf8'
 ENGINE=INNODB;
 
 
 
 CREATE TABLE IF NOT EXISTS jeu(
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    nom VARCHAR NOT NULL,
+    nom VARCHAR(20) NOT NULL,
     PRIMARY KEY(id)
 
 )
 
-CHARACTER SET 'utf8';
+CHARACTER SET 'utf8'
 ENGINE=INNODB;
 
 
@@ -86,11 +86,16 @@ VALUES('cralakgaming@gmail.com', 'iLoveGaming', 'Cralak', '2019-10-10', NULL),
 ('viande@gmail.com', 'FreinCassé69', 'LeGrandViande', '2001-11-09', NULL),
 ('borkevgolem@gmail.com', 'FreinTropCourt', 'brokevo', '2016-02-11', NULL);
 
+
+
+
+--- Story 3 ---
 INSERT INTO utilisateur(email,mot_de_passe,pseudo,date_et_heure)
 VALUES('drocsidgaming@gmail.com', '1234', 'Drocsid', '2010-10-10');
 
+--- Story 4 ---
 UPDATE utilisateur
-SET email = 'drocsidddddddgaming@gmail.com' AND SET pseudo = "XtremDrocsid"
+SET email = 'drocsidddddddgaming@gmail.com'
 WHERE id = 4;
 
 UPDATE utilisateur
