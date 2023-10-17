@@ -1,4 +1,4 @@
-SELECT U.username, game_score
+SELECT *
 FROM scores as S
 INNER JOIN users as U
     ON S.player_id = U.id
