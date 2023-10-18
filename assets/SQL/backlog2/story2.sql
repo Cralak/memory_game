@@ -163,7 +163,8 @@ ORDER BY date_envoie DESC;
 
 /* Story 9 */
 
-SELECT messages.*, u1.pseudo AS expediteur, u2.pseudo AS receveur FROM messages
+SELECT u1.pseudo AS expediteur, u2.pseudo AS receveur , contenu,date_envoie
+FROM messages
 RIGHT JOIN utilisateurs AS u1 ON messages.id_expediteur = u1.id
 RIGHT JOIN utilisateurs AS u2 ON messages.id_receveur = u2.id
 WHERE (id_expediteur = 1 AND id_receveur = 2) OR (id_expediteur = 2 AND id_receveur = 1)
@@ -171,7 +172,7 @@ ORDER BY date_envoie DESC;
 
 /* Story 10 */
 
-SELECT DISTINCT services.nom,services.description,services.adresse,services.code_postal,services.ville,services.pays,services.date_service,services.informations, u1.pseudo AS createur FROM services
+SELECT DISTINCT services.nom, services.description, services.adresse, services.code_postal,services.ville,services.pays,services.date_service,services.informations, u1.pseudo AS createur FROM services
 INNER JOIN utilisateurs AS u1 ON services.id_utilisateur = u1.id
 WHERE date_service > NOW()
 AND(
@@ -194,8 +195,8 @@ INNER JOIN utilisateurs AS u2 ON services_utilisateurs.id_utilisateur = u2.id;
 
 /* Story 12 */
 
-delete from services
-where id = '4'
+DELETE FROM services
+WHERE id = '4'
 
 /* Story 13 */
 
@@ -213,6 +214,19 @@ DELETE FROM messages
 WHERE id = '7';
 
 /* Story 16 */
-
+SELECT u.pseudo AS pseudo_createur_service,s.nom AS nom_service,s.description AS descritpion_service,s.adresse AS adresse_service,s.code_postal AS code_postal_service, s.ville AS ville_service, s.pays AS pays_service, s.date_service, s.informations AS informations_service, u.pseudo AS pseudo_utilisateur,u.email AS mail_utilisateur,u.adresse AS adresse_utilisateur,u.code_postal AS code_postal_utilisateur, u.ville AS ville_utilisateur,u.pays AS pays_utilisateur,u.portable AS portable_utlisateur, u.fixe AS fixe_utilisateur,u.date_inscription AS date_inscription_utilisateur, 
+    
+    (SELECT COUNT(*) FROM services_utilisateurs su WHERE su.id_utilisateur = us.id) AS nombre_services_participes
+    FROM services s
+    JOIN utilisateurs u ON s.id_utilisateur = u.id
+    JOIN utilisateurs us ON s.id_utilisateur = us.id
+    ORDER BY s.date_service DESC, s.ville ASC, s.nom ASC;
 
 /* Story 17 */
+
+SELECT services.*, u.pseudo AS createur, us.id
+    FROM services s
+    JOIN utilisateurs u ON s.id_utilisateur = u.id
+    JOIN utilisateurs us ON s.id_utilisateur = us.id
+    ORDER BY s.date_service DESC, s.ville ASC, s.nom ASC
+    limit 1;
