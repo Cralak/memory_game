@@ -1,2 +1,2 @@
 INSERT INTO games(name)
-VALUES('memory');
+VALUES('The Power Of Memory');

@@ -6,10 +6,10 @@ VALUES('1', '1', 'Bonjour', '2002-10-10 10:19:56'),
     ('1', '1', 'jouef', '2005-10-10 10:19:56');
 
 INSERT INTO messages(sender_id, game_id, message, message_date_and_time)
-VALUES('2', '1', 'jajajajaj', '2002-10-10 10:19:56'),
+VALUES( '1', 'jajajajaj', '2002-10-10 10:19:56'),
     ('2', '1', 'Mamoumimama', '2002-10-10 10:20:56'),
     ('2', '1', 'gounbaagaga', '2002-10-10 10:19:56'),
-    ('2', '1', 'kekekekekekek', '2019-10-10 10:19:56'),
+    ('2', '1', 'kekekekekekek', '2023-10-17 11:19:56'),
     ('2', '1', 'MOLABABABABAATORORO', '2005-10-10 10:19:56');
 
 INSERT INTO messages(sender_id, game_id, message, message_date_and_time)
@@ -32,3 +32,9 @@ VALUES('5', '1', 'ZIZI!!!', '2002-10-10 10:19:56'),
     ('5', '1', 'KFJBSF', '2002-10-10 10:19:56'),
     ('5', '1', 'EFKLNQELKF F', '2019-10-10 10:19:56'),
     ('5', '1', 'PJZAKJFD DSFK F', '2005-10-10 10:19:56');
+
+
+/* test */
+
+INSERT INTO messages(sender_id, game_id, message, message_date_and_time)
+VALUES('3', '1', 'AAAAAHHHHHHHHH', NOW());

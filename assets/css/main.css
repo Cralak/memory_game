@@ -40,7 +40,7 @@
 }
 
 .contact .content{
-    font-size: medium;
+    font-size: 2vw;
     position: absolute;
     top: 25%;
     left: 50%;
@@ -60,7 +60,6 @@
     text-align: center;
     align-items: center;
     display: flex;
-    justify-content: space-between;
 }
 
 .contact .tel{
@@ -97,10 +96,10 @@
 .contact .boite{
     margin-top: 3%;
     margin-bottom: 3%;
-    height: 40px;
-    width: 240px;
+    height: 5vh;
+    width: 34vw;
     color: gray;
-    font-size: larger;
+    font-size:2vh;
     position: relative;
     background-color: rgb(18, 15, 41);
     border-color:rgb(18, 15, 41) ;
@@ -110,10 +109,10 @@
 
 .contact .boite2{
     margin-bottom: 1%;
-    height: 40px;
-    width: 500px;
+    height: 5vh;
+    width: 61.5vw;
     color: gray;
-    font-size: larger;
+    font-size: 2vh;
     position: relative;
     background-color: rgb(18, 15, 41);
     border-color:rgb(18, 15, 41) ;
@@ -145,8 +144,8 @@
     border-color:rgb(18, 15, 41) ;
     border-radius: 5px;
     border: 0;
-    width: 500px;
-    height: 350px;
+    width: 61.5vw;
+    height: 30vh;
 
 }
 
@@ -887,7 +886,8 @@ border-radius: 5px;
     position: fixed;
     margin-bottom: -26%;
     bottom: 0;
-    right: 20px;
+    right: 2vw;
+
     width: 20%;
     transition: 0.5s;
 
@@ -903,15 +903,17 @@ border-radius: 5px;
 
     background-color: rgb(51, 45, 93);
     color: #fff;
-    padding: 10px;
+    padding: 5%;
     text-align: left;
-    padding-left: 30px;
+    padding-left: 10%;
     font-weight: bold;
+    font-size: 1.5vw;
 }
 
 .chat-messages {
-    padding: 10px;
-    max-height: 300px;
+    padding: 5%;
+    max-width: 20vw;
+    max-height:40vh;
     overflow-y: scroll;
 }
 
