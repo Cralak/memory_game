@@ -1,9 +1,34 @@
 /*-------------------------Contact-------------------------*/
 
-.contact{
+.contact {
     background-color: rgb(26, 26, 56);
     color: white;
     font-family: Avenir;
+}
+@media screen and (max-width: 768px) {
+    .contact .content {
+        font-size: small;
+        top: 20%;
+    }
+    
+    .contact .cadre {
+        margin-top: 5%;
+        margin-inline: 5%;
+    }
+    
+    .contact .boite, .contact .boite2 {
+        width: 100%;
+    }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .contact .content {
+        font-size: medium;
+    }
+}
+@media screen and (min-width: 1025px) {
+    .contact .content {
+        font-size: large;
+    }
 }
 
 .contact .background img{
@@ -621,7 +646,7 @@
     border-spacing: 50px;
 }
 
-/*-------------------------jeu-------------------------*/
+/*-------------------------Jeu-------------------------*/
 
 
 /*-------------------------Memory-------------------------*/
@@ -636,8 +661,8 @@
     position: relative;
     padding-left: 3px;
     border-radius: 5px;
-    width: 500px;
-    height: 200px;
+    width: 25rem;
+    height: 2em;
     
 }
 
