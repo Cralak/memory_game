@@ -120,10 +120,10 @@ VALUES
 /* Story 7 */
 
 ALTER TABLE messages
-MODIFY date_envoie DEFAULT CURRENT_TIMESTAMP;
+MODIFY date_envoie DATETIME DEFAULT CURRENT_TIMESTAMP;
 
 
-INSERT INTO messages (id_expediteur, id_receveur, contenu, date_envoie)
+INSERT INTO messages (id_expediteur, id_receveur, contenu)
 VALUES
 (1, 2, 'Salut !'),
 (2, 1, 'Ça va bien, merci !'),
@@ -153,20 +153,26 @@ VALUES
 
 /* Story 8 */
 
-SELECT * FROM messages
-WHERE id_expediteur = 1 OR id_receveur = 1
+SELECT u1.pseudo AS expediteur, u2.pseudo AS receveur,contenu,date_envoie
+FROM messages
+RIGHT JOIN utilisateurs AS u1 ON messages.id_expediteur = u1.id
+RIGHT JOIN utilisateurs AS u2 ON messages.id_receveur = u2.id
+WHERE id_expediteur = 1
 ORDER BY date_envoie DESC;
 
 
 /* Story 9 */
 
-SELECT * FROM messages
+SELECT messages.*, u1.pseudo AS expediteur, u2.pseudo AS receveur FROM messages
+RIGHT JOIN utilisateurs AS u1 ON messages.id_expediteur = u1.id
+RIGHT JOIN utilisateurs AS u2 ON messages.id_receveur = u2.id
 WHERE (id_expediteur = 1 AND id_receveur = 2) OR (id_expediteur = 2 AND id_receveur = 1)
 ORDER BY date_envoie DESC;
 
-/* Story 10 -------------------------------------*/
+/* Story 10 */
 
-SELECT * FROM services 
+SELECT DISTINCT services.nom,services.description,services.adresse,services.code_postal,services.ville,services.pays,services.date_service,services.informations, u1.pseudo AS createur FROM services
+INNER JOIN utilisateurs AS u1 ON services.id_utilisateur = u1.id
 WHERE date_service > NOW()
 AND(
     services.nom LIKE '%vaisselle%'
@@ -177,17 +183,36 @@ AND(
 ORDER BY date_service DESC, ville;
 
 /* Story 11 */
+SELECT services.*, description, u1.portable, u1.pseudo  AS createur, u2.pseudo AS inscrit
+FROM services
+INNER JOIN services_utilisateurs ON services.id = services_utilisateurs.id_service
+INNER JOIN utilisateurs AS u1 ON services.id_utilisateur = u1.id
+INNER JOIN utilisateurs AS u2 ON services_utilisateurs.id_utilisateur = u2.id;
 
-SELECT s.*, u1.pseudo AS utilisateur_pseudo, u1.portable AS utilisateur_telephone, u2.pseudo AS inscrit_pseudo
-FROM services s
-INNER JOIN utilisateurs u1 ON s.id_utilisateur = u1.id
-INNER JOIN services_utilisateurs su ON s.id = su.id_service
-INNER JOIN utilisateurs u2 ON su.id_utilisateur = u2.id
-WHERE s.id = '1';
+
+
 
 /* Story 12 */
 
-DELETE services, services_utilisateurs
-FROM services
-INNER JOIN services_utilisateurs ON services.id = services_utilisateurs.id_service
-WHERE services.id = '3';
+delete from services
+where id = '4'
+
+/* Story 13 */
+
+DELETE FROM services_utilisateurs
+WHERE id_service = '7' AND id_utilisateur = '9'
+
+/* Story 14 */
+
+DELETE FROM utilisateurs
+WHERE id = '7'
+
+/* Story 15 */
+
+DELETE FROM messages
+WHERE id = '7';
+
+/* Story 16 */
+
+
+/* Story 17 */
