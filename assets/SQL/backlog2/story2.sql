@@ -172,28 +172,25 @@ ORDER BY date_envoie DESC;
 
 /* Story 10  Manque une condition */ 
 
-SELECT DISTINCT s.nom, s.description, s.adresse, s.code_postal,s.ville,s.pays,s.date_service,s.informations, u1.pseudo AS createur , u2.pseudo AS volontaire
+INSERT INTO services (id_utilisateur, nom, description, adresse, code_postal, ville, pays, date_service)
+VALUES 
+(10, 'Laver ma vaisselle', 'rendez-vous en forme !', '56 boulevard du champs', '75001', 'Paris', 'France', '2077-11-28 15:01'),
+(9, 'Aller se vaisselle', 'rendez-vous en forme !', '56 boulevard du champs', '75001', 'Paris', 'France', '2077-11-01 09:01');
+
+SELECT DISTINCT s.nom, s.description, s.adresse, s.code_postal,s.ville,s.pays,s.date_service,s.informations, u1.pseudo AS createur , u2.pseudo AS inscrit
 FROM services AS s
 LEFT JOIN utilisateurs AS u1 ON s.id_utilisateur = u1.id
 LEFT JOIN services_utilisateurs AS su ON s.id_utilisateur = su.id
 LEFT JOIN utilisateurs AS u2 ON su.id_utilisateur = u2.id
-WHERE date_service > NOW()
-AND u2.pseudo IS NULL
-AND s.nom LIKE '%vaisselle%'
-OR s.code_postal = '75001'
-OR s.ville = 'Paris'
-OR s.pays = 'France'
+WHERE u2.pseudo IS NULL
+AND (
+	s.nom LIKE '%vaisselle%'
+	OR s.code_postal = '75001'
+	OR s.ville = 'Paris'
+	OR s.pays = 'France'
+)
+AND date_service > NOW()
 ORDER BY s.date_service DESC, s.ville ASC;
-
-SELECT U.pseudo, S.nom, S.ville, S.pays, S.date_service, U2.pseudo AS Volontaire
-FROM services as S 
-LEFT JOIN utilisateurs AS U ON S.id_utilisateur = U.id
-LEFT JOIN services_utilisateurs AS SU ON SU.id_service = S.id
-LEFT JOIN utilisateurs AS U2 ON SU.id_utilisateur = U2.id
-WHERE S.ville LIKE 'Paris'
-AND S.pays LIKE 'France'
-AND U2.pseudo IS NULL
-ORDER BY S.date_service DESC, S.ville ASC
 
 
 /* Story 11 */
@@ -244,4 +241,27 @@ JOIN utilisateurs us ON s.id_utilisateur = us.id
 WHERE u.id = 3
 ORDER BY s.date_service ASC, s.ville ASC, s.nom ASC
 LIMIT 1;
+
+
+/* Story 18 */
+
+SELECT n.mois, (SELECT pseudo
+                FROM utilisateurs
+                WHERE id = 2) AS pseudo, (SELECT COUNT(*)
+                                          FROM services_utilisateurs
+                                          JOIN services ON services.id = services_utilisateurs.id_service
+                                          WHERE services_utilisateurs.id_utilisateur = 2
+                                          AND MONTH(date_service) = n.mois) AS Participations_total
+FROM ((SELECT 1 AS mois)
+      UNION (SELECT 2)
+      UNION (SELECT 3)
+      UNION (SELECT 4)
+      UNION (SELECT 5)
+      UNION (SELECT 6)
+      UNION (SELECT 7)
+      UNION (SELECT 8)
+      UNION (SELECT 9)
+      UNION (SELECT 10)
+      UNION (SELECT 11)
+      UNION (SELECT 12)) AS n
 
