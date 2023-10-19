@@ -170,20 +170,21 @@ RIGHT JOIN utilisateurs AS u2 ON messages.id_receveur = u2.id
 WHERE (id_expediteur = 1 AND id_receveur = 2) OR (id_expediteur = 2 AND id_receveur = 1)
 ORDER BY date_envoie DESC;
 
-/* Story 10  Manque une condition ----------------------------------------------------------------------*/
+/* Story 10 */
 
+/* creation de services */
 INSERT INTO services (id_utilisateur, nom, description, adresse, code_postal, ville, pays, date_service)
 VALUES 
 (10, 'Laver ma vaisselle', 'rendez-vous en forme !', '56 boulevard du champs', '75001', 'Paris', 'France', '2077-11-28 15:01'),
 (1, 'ma vaisselle', 'rendez-vous en forme !', '56 boulevard du champs', '75001', 'Paris', 'France', '2077-11-29 15:01');
 
-
+/* affiche tout les services disponibles */
 SELECT s.nom, s.description, s.adresse, s.code_postal,s.ville,s.pays,s.date_service,s.informations, u1.pseudo AS createur , u2.pseudo AS inscrit
 FROM services AS s
 LEFT JOIN utilisateurs AS u1 ON s.id_utilisateur = u1.id
-LEFT JOIN services_utilisateurs AS su ON s.id_utilisateur = su.id
+LEFT JOIN services_utilisateurs AS su ON s.id = su.id_service
 LEFT JOIN utilisateurs AS u2 ON su.id_utilisateur = u2.id
-WHERE u2.pseudo IS NULL
+WHERE su.id IS NULL
 AND (
 	s.nom LIKE '%vaisselle%'
 	OR s.code_postal = '75001'
