@@ -170,14 +170,15 @@ RIGHT JOIN utilisateurs AS u2 ON messages.id_receveur = u2.id
 WHERE (id_expediteur = 1 AND id_receveur = 2) OR (id_expediteur = 2 AND id_receveur = 1)
 ORDER BY date_envoie DESC;
 
-/* Story 10  Manque une condition */ 
+/* Story 10  Manque une condition ----------------------------------------------------------------------*/
 
 INSERT INTO services (id_utilisateur, nom, description, adresse, code_postal, ville, pays, date_service)
 VALUES 
 (10, 'Laver ma vaisselle', 'rendez-vous en forme !', '56 boulevard du champs', '75001', 'Paris', 'France', '2077-11-28 15:01'),
-(9, 'Aller se vaisselle', 'rendez-vous en forme !', '56 boulevard du champs', '75001', 'Paris', 'France', '2077-11-01 09:01');
+(1, 'ma vaisselle', 'rendez-vous en forme !', '56 boulevard du champs', '75001', 'Paris', 'France', '2077-11-29 15:01');
 
-SELECT DISTINCT s.nom, s.description, s.adresse, s.code_postal,s.ville,s.pays,s.date_service,s.informations, u1.pseudo AS createur , u2.pseudo AS inscrit
+
+SELECT s.nom, s.description, s.adresse, s.code_postal,s.ville,s.pays,s.date_service,s.informations, u1.pseudo AS createur , u2.pseudo AS inscrit
 FROM services AS s
 LEFT JOIN utilisateurs AS u1 ON s.id_utilisateur = u1.id
 LEFT JOIN services_utilisateurs AS su ON s.id_utilisateur = su.id
@@ -194,7 +195,7 @@ ORDER BY s.date_service DESC, s.ville ASC;
 
 
 /* Story 11 */
-SELECT services.*, description, u1.portable, u1.pseudo  AS createur, u2.pseudo AS inscrit
+SELECT services.*, services.description, u1.portable, u1.pseudo  AS createur, u2.pseudo AS inscrit
 FROM services
 INNER JOIN services_utilisateurs ON services.id = services_utilisateurs.id_service
 INNER JOIN utilisateurs AS u1 ON services.id_utilisateur = u1.id
@@ -206,42 +207,54 @@ INNER JOIN utilisateurs AS u2 ON services_utilisateurs.id_utilisateur = u2.id;
 /* Story 12 */
 
 DELETE FROM services
-WHERE id = '4'
+WHERE id = '4';
 
 /* Story 13 */
 
 DELETE FROM services_utilisateurs
-WHERE id_service = '7' AND id_utilisateur = '9'
+WHERE id_service = '7' AND id_utilisateur = '9';
 
 /* Story 14 */
 
 DELETE FROM utilisateurs
-WHERE id = '7'
+WHERE id = '7';
 
 /* Story 15 */
 
 DELETE FROM messages
-WHERE id = '7';
+WHERE id = '5';
 
 /* Story 16 A tester si les bons résultats sont retournés */
-SELECT u.pseudo AS pseudo_createur_service,s.nom AS nom_service,s.description AS descritpion_service,s.adresse AS adresse_service,s.code_postal AS code_postal_service, s.ville AS ville_service, s.pays AS pays_service, s.date_service, s.informations AS informations_service, u.pseudo AS pseudo_utilisateur,u.email AS mail_utilisateur,u.adresse AS adresse_utilisateur,u.code_postal AS code_postal_utilisateur, u.ville AS ville_utilisateur,u.pays AS pays_utilisateur,u.portable AS portable_utlisateur, u.fixe AS fixe_utilisateur,u.date_inscription AS date_inscription_utilisateur 
+SELECT u.pseudo AS pseudo_createur_service,s.nom AS nom_service,s.description AS descritpion_service,s.adresse AS adresse_service,s.code_postal AS code_postal_service, s.ville AS ville_service, s.pays AS pays_service, s.date_service, s.informations AS informations_service, us.pseudo AS pseudo_utilisateur,u.email AS mail_utilisateur,u.adresse AS adresse_utilisateur,u.code_postal AS code_postal_utilisateur, u.ville AS ville_utilisateur,u.pays AS pays_utilisateur,u.portable AS portable_utlisateur, u.fixe AS fixe_utilisateur,su.date_inscription AS date_inscription_utilisateur, 
     
-    (SELECT COUNT(*) FROM services_utilisateurs su WHERE su.id_utilisateur = us.id) AS nombre_services_participes
-    FROM services s
-    JOIN utilisateurs u ON s.id_utilisateur = u.id
-    JOIN utilisateurs us ON s.id_utilisateur = us.id
-    ORDER BY s.date_service DESC, s.ville ASC, s.nom ASC;
+(SELECT COUNT(su.id_utilisateur) FROM services_utilisateurs AS su WHERE id_utilisateur = us.id) AS nombre_services_participes
+FROM services s
+INNER JOIN utilisateurs AS u ON s.id_utilisateur = u.id
+INNER JOIN services_utilisateurs AS su ON s.id = su.id_service
+INNER JOIN utilisateurs AS us ON su.id_utilisateur = us.id
+ORDER BY s.date_service DESC, s.ville ASC, s.nom ASC;
 
 /* Story 17 */
+/* creation d'un nouveau service */
+INSERT INTO services (id_utilisateur, nom, description, adresse, code_postal, ville, pays, date_service)
+VALUES 
+(1, 'Laver ma vaisselle', 'rendez-vous en forme !', '56 boulevard du champs', '75001', 'Paris', 'France', '2003-11-28 15:01');
 
-SELECT u.pseudo AS pseudo_createur_service,s.nom AS nom_service,s.description AS descritpion_service,s.adresse AS adresse_service,s.code_postal AS code_postal_service, s.ville AS ville_service, s.pays AS pays_service, s.date_service, s.informations AS informations_service, u.pseudo AS pseudo_utilisateur,u.email AS mail_utilisateur,u.adresse AS adresse_utilisateur,u.code_postal AS code_postal_utilisateur, u.ville AS ville_utilisateur,u.pays AS pays_utilisateur,u.portable AS portable_utlisateur, u.fixe AS fixe_utilisateur,u.date_inscription AS date_inscription_utilisateur
+/* inscription à ce nouveau service */
+INSERT INTO services_utilisateurs (id_service, id_utilisateur, date_inscription)
+VALUES
+(14, 11, '2003-11-15 11:18');
+
+
+
+SELECT u.pseudo AS pseudo_createur_service,s.nom AS nom_service,s.description AS descritpion_service,s.adresse AS adresse_service,s.code_postal AS code_postal_service, s.ville AS ville_service, s.pays AS pays_service, s.date_service, s.informations AS informations_service, us.pseudo AS pseudo_utilisateur,u.email AS mail_utilisateur,u.adresse AS adresse_utilisateur,u.code_postal AS code_postal_utilisateur, u.ville AS ville_utilisateur,u.pays AS pays_utilisateur,u.portable AS portable_utlisateur, u.fixe AS fixe_utilisateur,su.date_inscription AS date_inscription_utilisateur
 FROM services s
-JOIN utilisateurs u ON s.id_utilisateur = u.id
-JOIN utilisateurs us ON s.id_utilisateur = us.id
-WHERE u.id = 3
-ORDER BY s.date_service ASC, s.ville ASC, s.nom ASC
+INNER JOIN utilisateurs AS u ON s.id_utilisateur = u.id
+INNER JOIN services_utilisateurs AS su ON s.id = su.id_service
+INNER JOIN utilisateurs AS us ON su.id_utilisateur = us.id
+WHERE su.id_utilisateur = 11
+ORDER BY s.date_service ASC
 LIMIT 1;
-
 
 /* Story 18 */
 
@@ -263,5 +276,5 @@ FROM ((SELECT 1 AS mois)
       UNION (SELECT 9)
       UNION (SELECT 10)
       UNION (SELECT 11)
-      UNION (SELECT 12)) AS n
+      UNION (SELECT 12)) AS n;
 
