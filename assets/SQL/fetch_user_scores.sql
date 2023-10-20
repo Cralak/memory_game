@@ -1,3 +1,5 @@
+/* Story 12 */
+
 SELECT U.username, S.*
 FROM scores as S
 INNER JOIN users as U
