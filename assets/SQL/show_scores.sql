@@ -1,6 +1,6 @@
 /* Story 7 */
 
-SELECT games.name, users.username, difficult    y, game_score
+SELECT games.name, users.username, difficulty, game_score
 FROM scores
 INNER JOIN games ON games.id=scores.game_id
 INNER JOIN users ON users.id=scores.player_id
