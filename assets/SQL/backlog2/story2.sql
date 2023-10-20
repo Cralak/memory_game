@@ -186,7 +186,7 @@ LEFT JOIN services_utilisateurs AS su ON s.id = su.id_service
 LEFT JOIN utilisateurs AS u2 ON su.id_utilisateur = u2.id
 WHERE su.id IS NULL
 AND (
-	s.nom LIKE '%vaisselle%'
+	s.nom LIKE '%ma%'
 	OR s.code_postal = '75001'
 	OR s.ville = 'Paris'
 	OR s.pays = 'France'
@@ -259,13 +259,18 @@ LIMIT 1;
 
 /* Story 18 */
 
-SELECT m.mois, (SELECT pseudo
-                FROM utilisateurs
-                WHERE id = 2) AS pseudo, (SELECT COUNT(*)
-                                          FROM services_utilisateurs
-                                          JOIN services ON services.id = services_utilisateurs.id_service
-                                          WHERE services_utilisateurs.id_utilisateur = 2
-                                          AND MONTH(date_service) = n.mois) AS Participations_total
+SELECT nb.mois, 
+
+(SELECT pseudo
+FROM utilisateurs
+WHERE id = 2) AS pseudo, 
+
+(SELECT COUNT(*)
+FROM services_utilisateurs AS su
+JOIN services AS s ON s.id = su.id_service
+WHERE su.id_utilisateur = 2
+AND MONTH(date_service) = n.mois) AS Participations_total
+
 FROM ((SELECT 1 AS mois)
       UNION (SELECT 2)
       UNION (SELECT 3)
@@ -277,5 +282,5 @@ FROM ((SELECT 1 AS mois)
       UNION (SELECT 9)
       UNION (SELECT 10)
       UNION (SELECT 11)
-      UNION (SELECT 12)) AS m;
+      UNION (SELECT 12)) AS nb;
 
