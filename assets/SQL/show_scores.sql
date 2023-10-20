@@ -1,10 +1,12 @@
-SELECT games.name, users.username, difficulty, game_score
+/* Story 7 */
+
+SELECT games.name, users.username, difficult    y, game_score
 FROM scores
 INNER JOIN games ON games.id=scores.game_id
 INNER JOIN users ON users.id=scores.player_id
 ORDER BY games.name, difficulty, game_score;
 
-
+/* Story 8 */
 
 SELECT games.name, users.username, difficulty, game_score
 FROM scores

@@ -153,95 +153,92 @@ VALUES
 
 /* Story 8 */
 
-SELECT u1.pseudo AS expediteur, u2.pseudo AS receveur,contenu,date_envoie
-FROM messages
-RIGHT JOIN utilisateurs AS u1 ON messages.id_expediteur = u1.id
-RIGHT JOIN utilisateurs AS u2 ON messages.id_receveur = u2.id
-WHERE id_expediteur = 1 OR id_receveur = 1
-ORDER BY date_envoie DESC;
-
+SELECT U1.pseudo AS expediteur, M.contenu, U2.pseudo AS receveur, M.date_envoie
+FROM messages AS M
+INNER JOIN utilisateurs as U1
+  ON M.id_expediteur = U1.id
+INNER JOIN utilisateurs as U2
+  ON M.id_receveur = U2.id
+WHERE U1.id = 1
+ORDER BY M.date_envoie ASC;
 
 /* Story 9 */
 
-SELECT u1.pseudo AS expediteur, u2.pseudo AS receveur , contenu,date_envoie
-FROM messages
-RIGHT JOIN utilisateurs AS u1 ON messages.id_expediteur = u1.id
-RIGHT JOIN utilisateurs AS u2 ON messages.id_receveur = u2.id
-WHERE (id_expediteur = 1 AND id_receveur = 2) OR (id_expediteur = 2 AND id_receveur = 1)
-ORDER BY date_envoie DESC;
+SELECT U1.pseudo AS expediteur, M.contenu, U2.pseudo AS receveur, M.date_envoie
+FROM messages AS M
+INNER JOIN utilisateurs as U1
+  ON M.id_expediteur = U1.id
+INNER JOIN utilisateurs as U2
+  ON M.id_receveur = U2.id
+WHERE(U1.id = 1 AND U2.ID = 2)
+ORDER BY M.date_envoie DESC;
 
-/* Story 10  Manque une condition */ 
+/* Story 10 NOT DONE*/
 
-SELECT DISTINCT s.nom, s.description, s.adresse, s.code_postal,s.ville,s.pays,s.date_service,s.informations, u1.pseudo AS createur , u2.pseudo AS volontaire
-FROM services AS s
-LEFT JOIN utilisateurs AS u1 ON s.id_utilisateur = u1.id
-LEFT JOIN services_utilisateurs AS su ON s.id_utilisateur = su.id
-LEFT JOIN utilisateurs AS u2 ON su.id_utilisateur = u2.id
-WHERE date_service > NOW()
-AND u2.pseudo IS NULL
-AND s.nom LIKE '%vaisselle%'
-OR s.code_postal = '75001'
-OR s.ville = 'Paris'
-OR s.pays = 'France'
-ORDER BY s.date_service DESC, s.ville ASC;
-
-SELECT U.pseudo, S.nom, S.ville, S.pays, S.date_service, U2.pseudo AS Volontaire
-FROM services as S 
-LEFT JOIN utilisateurs AS U ON S.id_utilisateur = U.id
-LEFT JOIN services_utilisateurs AS SU ON SU.id_service = S.id
-LEFT JOIN utilisateurs AS U2 ON SU.id_utilisateur = U2.id
-WHERE S.ville LIKE 'Paris'
-AND S.pays LIKE 'France'
-AND U2.pseudo IS NULL
-ORDER BY S.date_service DESC, S.ville ASC
-
+SELECT nom, code_postal, ville, pays, date_service
+FROM services
+WHERE services.date_service < NOW()
+ORDER BY services.date_service DESC;
+INNER JOIN services_utilisateurs AS SU ON S.id = SU.id_service
+INNER JOIN utilisateurs AS U1 ON S.id_utilisateur = U1.id
+INNER JOIN utilisateurs AS U2 ON U2.id = SU.id_utilisateur;
 
 /* Story 11 */
-SELECT services.*, description, u1.portable, u1.pseudo  AS createur, u2.pseudo AS inscrit
-FROM services
-INNER JOIN services_utilisateurs ON services.id = services_utilisateurs.id_service
-INNER JOIN utilisateurs AS u1 ON services.id_utilisateur = u1.id
-INNER JOIN utilisateurs AS u2 ON services_utilisateurs.id_utilisateur = u2.id;
 
-
-
+SELECT S.*, U1.pseudo AS crateur_pseudo, U1.portable, (
+  SELECT
+  CASE
+    WHEN SU.id_utilisateur IS NOT NULL THEN U2.pseudo
+    ELSE NULL
+  END) AS inscrit_pseudo
+FROM services AS S
+INNER JOIN services_utilisateurs AS SU ON S.id = SU.id_service
+INNER JOIN utilisateurs AS U1 ON S.id_utilisateur = U1.id
+INNER JOIN utilisateurs AS U2 ON U2.id = SU.id_utilisateur;
 
 /* Story 12 */
 
 DELETE FROM services
-WHERE id = '4'
+WHERE id = 3;
 
 /* Story 13 */
 
 DELETE FROM services_utilisateurs
-WHERE id_service = '7' AND id_utilisateur = '9'
+WHERE (id_service = 3 AND id_utilisateur = 2);
 
 /* Story 14 */
 
 DELETE FROM utilisateurs
-WHERE id = '7'
+WHERE id = 3;
 
 /* Story 15 */
 
 DELETE FROM messages
-WHERE id = '7';
+WHERE id = 3;
 
-/* Story 16 A tester si les bons résultats sont retournés */
-SELECT u.pseudo AS pseudo_createur_service,s.nom AS nom_service,s.description AS descritpion_service,s.adresse AS adresse_service,s.code_postal AS code_postal_service, s.ville AS ville_service, s.pays AS pays_service, s.date_service, s.informations AS informations_service, u.pseudo AS pseudo_utilisateur,u.email AS mail_utilisateur,u.adresse AS adresse_utilisateur,u.code_postal AS code_postal_utilisateur, u.ville AS ville_utilisateur,u.pays AS pays_utilisateur,u.portable AS portable_utlisateur, u.fixe AS fixe_utilisateur,u.date_inscription AS date_inscription_utilisateur 
-    
-    (SELECT COUNT(*) FROM services_utilisateurs su WHERE su.id_utilisateur = us.id) AS nombre_services_participes
-    FROM services s
-    JOIN utilisateurs u ON s.id_utilisateur = u.id
-    JOIN utilisateurs us ON s.id_utilisateur = us.id
-    ORDER BY s.date_service DESC, s.ville ASC, s.nom ASC;
+/* Story 16 */
+
+SELECT S.*, U1.pseudo as createur, U2.*, (
+  SELECT
+  COUNT(*)
+  FROM services_utilisateurs
+  WHERE id_utilisateur = U2.id
+) as nb_services
+FROM services AS S
+INNER JOIN services_utilisateurs AS SU ON S.id = SU.id_service
+INNER JOIN utilisateurs AS U1 ON S.id_utilisateur = U1.id
+INNER JOIN utilisateurs AS U2 ON U2.id = SU.id_utilisateur;
 
 /* Story 17 */
 
-SELECT u.pseudo AS pseudo_createur_service,s.nom AS nom_service,s.description AS descritpion_service,s.adresse AS adresse_service,s.code_postal AS code_postal_service, s.ville AS ville_service, s.pays AS pays_service, s.date_service, s.informations AS informations_service, u.pseudo AS pseudo_utilisateur,u.email AS mail_utilisateur,u.adresse AS adresse_utilisateur,u.code_postal AS code_postal_utilisateur, u.ville AS ville_utilisateur,u.pays AS pays_utilisateur,u.portable AS portable_utlisateur, u.fixe AS fixe_utilisateur,u.date_inscription AS date_inscription_utilisateur
-FROM services s
-JOIN utilisateurs u ON s.id_utilisateur = u.id
-JOIN utilisateurs us ON s.id_utilisateur = us.id
-WHERE u.id = 3
-ORDER BY s.date_service ASC, s.ville ASC, s.nom ASC
+SELECT S.*, U1.pseudo, U2.*, 
+FROM services AS S
+INNER JOIN services_utilisateurs AS SU ON S.id = SU.id_service
+INNER JOIN utilisateurs AS U1 ON S.id_utilisateur = U1.id
+INNER JOIN utilisateurs AS U2 ON U2.id = SU.id_utilisateur
+WHERE U2.id = 2
+ORDER BY S.date_service ASC
 LIMIT 1;
+
+/* Story 18 */
 
