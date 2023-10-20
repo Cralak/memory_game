@@ -225,7 +225,7 @@ WHERE id = '7';
 DELETE FROM messages
 WHERE id = '5';
 
-/* Story 16 A tester si les bons résultats sont retournés */
+/* Story 16 */
 SELECT u.pseudo AS pseudo_createur_service,s.nom AS nom_service,s.description AS descritpion_service,s.adresse AS adresse_service,s.code_postal AS code_postal_service, s.ville AS ville_service, s.pays AS pays_service, s.date_service, s.informations AS informations_service, us.pseudo AS pseudo_utilisateur,u.email AS mail_utilisateur,u.adresse AS adresse_utilisateur,u.code_postal AS code_postal_utilisateur, u.ville AS ville_utilisateur,u.pays AS pays_utilisateur,u.portable AS portable_utlisateur, u.fixe AS fixe_utilisateur,su.date_inscription AS date_inscription_utilisateur, 
     
 (SELECT COUNT(su.id_utilisateur) FROM services_utilisateurs AS su WHERE id_utilisateur = us.id) AS nombre_services_participes
@@ -259,7 +259,7 @@ LIMIT 1;
 
 /* Story 18 */
 
-SELECT n.mois, (SELECT pseudo
+SELECT m.mois, (SELECT pseudo
                 FROM utilisateurs
                 WHERE id = 2) AS pseudo, (SELECT COUNT(*)
                                           FROM services_utilisateurs
@@ -277,5 +277,5 @@ FROM ((SELECT 1 AS mois)
       UNION (SELECT 9)
       UNION (SELECT 10)
       UNION (SELECT 11)
-      UNION (SELECT 12)) AS n;
+      UNION (SELECT 12)) AS m;
 
