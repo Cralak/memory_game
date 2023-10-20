@@ -7,7 +7,3 @@ WHERE id = 3;
 UPDATE users
 SET email = 'drocsidddddddgaming@gmail.com'
 WHERE (id = 4 AND PASS = 'FreinCassé69');
-
-UPDATE users
-SET username = "XtremDrocsid" 
-WHERE id = 4;
