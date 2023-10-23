@@ -1,34 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/header.css">
-    <link rel="stylesheet" href="assets/css/footer.css">
+<?php
+    require_once '../../utils/common.php'; 
+    require_once SITE_ROOT. 'partials/head.php';
+?>
+
 </head>
 <body class="jeu">  
-    <header class="header">
-        <div class="menus">
-            <div>
-                <span class="menu1">The Power Of Memory</span>
-            </div>
-            <div class="menus1">
-                <a href="main.php" class="headerspans"><span>ACCUEIL</span></a>
-                <a href="login.php" class="headerspans"><span>JEU</span></a>
-                <a href="scores.php" class="headerspans"><span>SCORES</span></a>
-                <a href="contact.php" class="headerspans"><span>NOUS CONTACTER</span></a>
-            </div>
-        </div>
-    </header>
+    <!------------------header------------------>
+  <?php
+    require_once SITE_ROOT. 'partials/header.php';
+    ?>
+    <!------------------header------------------>
 
     <br>
     <div class="table-container">
         <table class="hard">
             <tr>
                 <td class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Card_back_01.svg/703px-Card_back_01.svg.png"></td>
-                <td class="card"><img src="https://lastfm.freetls.fastly.net/i/u/ar0/3d881c102755cced5fdb292a5842a339.jpg"></td>
+                <td class="card"><img src="https://i.discogs.com/45awh3SxFqvDliqmf8ZBBttbDN4UPPIo2drNZwWqVqE/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTc4MjM2/MTYtMTYyMDI2NjIw/Ni05OTU0LmpwZWc.jpeg"></td>
                 <td class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Card_back_01.svg/703px-Card_back_01.svg.png"></td>
                 <td class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Card_back_01.svg/703px-Card_back_01.svg.png"></td>
                 <td class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Card_back_01.svg/703px-Card_back_01.svg.png"></td>
@@ -40,10 +31,10 @@
                 <td class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Card_back_01.svg/703px-Card_back_01.svg.png"></td>
                 <td class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Card_back_01.svg/703px-Card_back_01.svg.png"></td>
                 <td class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Card_back_01.svg/703px-Card_back_01.svg.png"></td>
-                <td class="card"><img src="https://lastfm.freetls.fastly.net/i/u/avatar170s/b3719d69a5d5fb38896813363b7c5ea9"></td>
                 <td class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Card_back_01.svg/703px-Card_back_01.svg.png"></td>
                 <td class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Card_back_01.svg/703px-Card_back_01.svg.png"></td>
                 <td class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Card_back_01.svg/703px-Card_back_01.svg.png"></td>
+                <td class="card"><img src="https://i0.wp.com/undergroundunderdogs.com/wp-content/uploads/2020/09/semtary.png?resize=658%2C1024&ssl=1"></td>
                 <td class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Card_back_01.svg/703px-Card_back_01.svg.png"></td>
             </tr>
             <tr>
@@ -54,7 +45,7 @@
                 <td class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Card_back_01.svg/703px-Card_back_01.svg.png"></td>
                 <td class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Card_back_01.svg/703px-Card_back_01.svg.png"></td>
                 <td class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Card_back_01.svg/703px-Card_back_01.svg.png"></td>
-                <td class="card"><img src="https://lastfm.freetls.fastly.net/i/u/avatar170s/b3719d69a5d5fb38896813363b7c5ea9"></td>
+                <td class="card"><img src="https://i0.wp.com/undergroundunderdogs.com/wp-content/uploads/2020/09/semtary.png?resize=658%2C1024&ssl=1"></td>
             </tr>
             <tr>
                 <td class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Card_back_01.svg/703px-Card_back_01.svg.png"></td>
@@ -72,34 +63,11 @@
     <br>
     <br>
 
-    <footer class="footer">
-        <div class="div">
-            <h3>Information</h3>
-            <p>Quisque commodo facilisis purus,interdum volutpat arcu viverra sed.</p>
-            <p>Tel : 06 05 04 03 02</p>
-            <p>Email : support@powerofmemory.com</p>
-            <p>Location : Paris</p>
-            <br>
-            <button> f </button>
-            <button> t </button>
-            <button> G </button>
-            <button> P </button>
-            <button> i </button>
-            <br><br>
-
-        </div>
-        <div class="div">
-            <h3>Power of Memory</h3>
-            <ul>
-                <li><a href="login.php" class="colorwhite"> jouer !</a></li>
-                <br>
-                <li><a href="scores.php" class="colorwhite"> Les scores</a></li>
-                <br>
-                <li><a href="contact.php" class="colorwhite"> Nous contacter</a></li>
-            </ul>
-            <div class="cases"></div>
-        </div>
-    </footer>
+    <!------------------footer------------------>
+  <?php
+    require_once SITE_ROOT. 'partials/footer.php';
+    ?>
+    <!------------------footer------------------>
 
 </body>
 </html>

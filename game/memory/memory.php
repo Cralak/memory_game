@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <?php
-    require_once 'utils/common.php'; 
+    require_once '../../utils/common.php'; 
     require_once SITE_ROOT. 'partials/head.php';
    ?>
 
@@ -17,7 +17,7 @@
     <br>
     </br>
     <div class="background">
-        <img src="assets/images/background4.jpg">
+        <img src="../../assets/images/background4.jpg">
         <div class="content">
             <form>
         <input class="bouton" type ="submit" value="JOUER">
