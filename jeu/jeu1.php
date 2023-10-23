@@ -15,10 +15,10 @@
                 <span class="menu1">The Power Of Memory</span>
             </div>
             <div class="menus1">
-                <a href="main.html" class="headerspans"><span>ACCUEIL</span></a>
-                <a href="login.html" class="headerspans"><span>JEU</span></a>
-                <a href="scores.html" class="headerspans"><span>SCORES</span></a>
-                <a href="contact.html" class="headerspans"><span>NOUS CONTACTER</span></a>
+                <a href="main.php" class="headerspans"><span>ACCUEIL</span></a>
+                <a href="login.php" class="headerspans"><span>JEU</span></a>
+                <a href="scores.php" class="headerspans"><span>SCORES</span></a>
+                <a href="contact.php" class="headerspans"><span>NOUS CONTACTER</span></a>
             </div>
         </div>
     </header>
@@ -75,11 +75,11 @@
         <div class="div">
             <h3>Power of Memory</h3>
             <ul>
-                <li><a href="login.html" class="colorwhite"> jouer !</a></li>
+                <li><a href="login.php" class="colorwhite"> jouer !</a></li>
                 <br>
-                <li><a href="scores.html" class="colorwhite"> Les scores</a></li>
+                <li><a href="scores.php" class="colorwhite"> Les scores</a></li>
                 <br>
-                <li><a href="contact.html" class="colorwhite"> Nous contacter</a></li>
+                <li><a href="contact.php" class="colorwhite"> Nous contacter</a></li>
             </ul>
             <div class="cases"></div>
         </div>

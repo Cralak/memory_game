@@ -1,41 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/header.css">
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/footer.css">
+<?php
+    require_once 'utils/common.php'; 
+    require_once SITE_ROOT. 'partials/head.php';
+   ?>
 
-    <title>Acceuil</title>
 </head>
-
 <body class="index">
-    <!------------------header------------------>
-    <header class="header">
-        <div class="menus">
-            <div>
-                <span class="menu1">The Power Of Memory</span>
-            </div>
-            <div class="menus1">
-                <a href="main.html" class="headerspans"><span>ACCUEIL</span></a>
-                <a href="login.html" class="headerspans"><span>JEU</span></a>
-                <a href="scores.html" class="headerspans"><span>SCORES</span></a>
-                <a href="contact.html" class="headerspans"><span>NOUS CONTACTER</span></a>
-                <a href="myAccount.html" class="headerspans"><span>MON PROFIL</span></a>
 
-            </div>
-        </div>
-    </header>
-    <!------------------header------------------>
-
+    <?php
+        require_once SITE_ROOT. 'partials/header.php';
+    ?>
+    
     <div class="main">
         <img class="img1" src="https://cdn.discordapp.com/attachments/1161205905774350376/1161630511874183228/ghost_house_night1.png?ex=6538ffb8&is=65268ab8&hm=5041261ea2969a5de46d799ff019f3c450eca978c15df12c23d45cb83cae52ef&">
         <div>
             <span class="maintext1">BIENVENUE DANS</span>
             <span class="maintext2">NOTRE STUDIO</span>
             <p class="maintext3">Venez challenger les cerveaux les plus agiles !</p>
-            <a href="login.html"><button class="button-play">JOUER !</button></a>
+            <a href="login.php"><button class="button-play">JOUER !</button></a>
         </div>
     </div>
         
@@ -146,79 +130,9 @@
             </div>
         </div>
     </div>
-    <!------------------chat------------------>
-
-    <div class="chat-container">
-        <div class="chat-header">
-            Chat en direct
-        </div>
-        <div class="chat-messages">
-        <!-- Ajoutez d'autres messages ici -->
-            <div class="message">
-                <div class="message-sender">Utilisateur 1</div>
-                <div class="test">
-                    <div class="message-content">Salut ! Comment ça va ?</div>
-                </div>
-                <div class="date">Aujourd'hui à 15H30</div>
-            </div>
-            <div class="message2">
-                <div class="message-sender2">Utilisateur 2</div>
-                <div class="message-content2">Ça va bien, merci ! Et toi ?</div>
-                <div class="date2">Aujourd'hui à 15H32</div>
-            </div>
-            <div class="message">
-                <div class="message-sender">Utilisateur 1</div>
-                <div class="test">
-                    <div class="message-content">ça va ?</div>
-                </div>
-                <div class="date">Aujourd'hui à 15H37</div>
-            </div>
-            <div class="message2">
-                <div class="message-sender2">Utilisateur 2</div>
-                <div class="message-content2">Et toi ?</div>
-                <div class="date2">Aujourd'hui à 15H39</div>
-            </div>
-        <!-- Ajoutez d'autres messages ici -->
-        </div>
-        <div class="chat-input">
-            <input type="text" id="message-input" placeholder="Saisissez votre message...">
-            <button id="send-button">Envoyer</button>
-        </div>
-    </div>
-    <!------------------chat------------------>
-
-    <!------------------footer------------------>
-    <footer class="footer">
-        <div class="div">
-            <h3>Information</h3>
-            <p>Quisque commodo facilisis purus,interdum volutpat arcu viverra sed.</p>
-            <p><span class="orange">Tel :</span> 06 05 04 03 02</p>
-            <p><span class="orange">Em@il :</span> support@powerofmemory.com</p>
-            <p><span class="orange">Location :</span> Paris</p>
-            <br>
-            <a class="logo" href="https://www.facebook.com/?locale=fr_FR"><img src="assets/images/facebook.png"></a>
-            <a class="logo" href="https://twitter.com/?lang=fr"><img src="assets/images/twitter.png"></a>
-            <a class="logo" href="https://www.pinterest.fr/"><img src="assets/images/pinterest.png"></a>
-            <a class="logo" href="https://www.instagram.com/"><img src="assets/images/instagram.png"></a>
-            <br><br>
-
-        </div>
-        <div class="div">
-            <h3>Power of Memory</h3>
-            <ul class="liste">
-                <li><a href="main.html" class="headerspans"><span>Jouer !</span></a>
-                </li>
-                <br>
-                <li><a href="main.html" class="headerspans"><span>Les scores</span></a>
-                </li>
-                <br>
-                <li><a href="main.html" class="headerspans"><span>Nous contacter</span></a>
-                </li>
-            </ul>
-            <div class="cases"></div>
-        </div>
-    </footer>
-    <!------------------footer------------------>
+    <?php
+    require_once SITE_ROOT. 'partials/footer.php';
+    ?>
 
 </body>
 </html>
