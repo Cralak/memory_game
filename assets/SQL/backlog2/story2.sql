@@ -259,13 +259,13 @@ LIMIT 1;
 
 /* Story 18 */
 
-SELECT nb.mois, 
+SELECT n.mois, 
 
 (SELECT pseudo
 FROM utilisateurs
 WHERE id = 2) AS pseudo, 
 
-(SELECT COUNT(*)
+(SELECT COUNT(su.id_utilisateur)
 FROM services_utilisateurs AS su
 JOIN services AS s ON s.id = su.id_service
 WHERE su.id_utilisateur = 2
@@ -282,5 +282,5 @@ FROM ((SELECT 1 AS mois)
       UNION (SELECT 9)
       UNION (SELECT 10)
       UNION (SELECT 11)
-      UNION (SELECT 12)) AS nb;
+      UNION (SELECT 12)) AS n;
 
