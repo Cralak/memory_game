@@ -65,6 +65,9 @@
     require_once SITE_ROOT. 'partials/chat.php';
     ?>
     <!------------------chat------------------>
+
+
+    
     
     <!------------------header------------------>
   <?php
