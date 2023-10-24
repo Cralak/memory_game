@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<?php
-    require_once 'utils/common.php'; 
-    require_once SITE_ROOT. 'partials/head.php';
-   ?>
-   <?php
-    require_once SITE_ROOT. 'utils/database.php'; 
-   ?>
-   <?php
-    connectToDbAndGetPdo(); 
-   ?>
+    <?php
+    require_once 'utils/common.php';
+    require_once SITE_ROOT . 'partials/head.php';
+    ?>
+    <?php
+    require_once SITE_ROOT . 'utils/database.php';
+    ?>
+    <?php
+    connectToDbAndGetPdo();
+    ?>
 
 </head>
+
 <body class="index">
 
     <?php
-        require_once SITE_ROOT. 'partials/header.php';
+    require_once SITE_ROOT . 'partials/header.php';
     ?>
-    
+
     <div class="main">
         <img class="img1" src="https://cdn.discordapp.com/attachments/1161205905774350376/1161630511874183228/ghost_house_night1.png?ex=6538ffb8&is=65268ab8&hm=5041261ea2969a5de46d799ff019f3c450eca978c15df12c23d45cb83cae52ef&">
         <div>
@@ -28,7 +30,7 @@
             <a href="game/memory/memory.php"><button class="button-play">JOUER !</button></a>
         </div>
     </div>
-        
+
     <div class="menu1">
         <div class="img2"></div>
         <div class="img3"></div>
@@ -73,13 +75,21 @@
 
     <div class="menu2">
         <div class="img5">
-            <img src="https://i0.wp.com/coopwb.in/wp-content/uploads/2024/07/who-is-sam-hyde-20231007132911.jpg"> 
+            <img src="https://i0.wp.com/coopwb.in/wp-content/uploads/2024/07/who-is-sam-hyde-20231007132911.jpg">
         </div>
         <div class="block1">
             <div class="block2">
                 <div class="colorbox1">
-                    <span class="block3-span1">1 567 950</span>
-                    <span class="block3-span2">Euros perdus par les utilisateurs</span>
+                    <span class="block3-span1">
+                        <?php
+                            $pdo = connectToDbAndGetPdo();
+                            $pdoStatement = $pdo->prepare('SELECT COUNT(*) AS gameCount FROM games');
+                            $pdoStatement->execute();
+                            $gameCount = $pdoStatement->fetch();
+                            echo $gameCount->gameCount;
+                        ?>
+                    </span>
+                    <span class="block3-span2">Jeux</span>
                 </div>
                 <div class="colorbox2">
                     <span class="block3-span1">66</span>
@@ -88,7 +98,15 @@
             </div>
             <div class="block2">
                 <div class="colorbox3">
-                    <span class="block3-span1">6 598</span>
+                    <span class="block3-span1">
+                        <?php
+                            $pdo = connectToDbAndGetPdo();
+                            $pdoStatement = $pdo->prepare('SELECT COUNT(*) AS usersCount FROM users');
+                            $pdoStatement->execute();
+                            $users = $pdoStatement->fetch();
+                            echo $users->usersCount;
+                        ?>
+                    </span>
                     <span class="block3-span2">Utilisateurs déportés</span>
                 </div>
                 <div class="colorbox4">
@@ -137,8 +155,9 @@
         </div>
     </div>
     <?php
-    require_once SITE_ROOT. 'partials/footer.php';
+    require_once SITE_ROOT . 'partials/footer.php';
     ?>
 
 </body>
+
 </html>
