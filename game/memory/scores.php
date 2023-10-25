@@ -24,7 +24,7 @@
   </div>
   <br></br>
 
-    <!-------------Recherche-------------------->
+  <!-------------Recherche-------------------->
   <center>
   <div class="search-container">
       <form action="rechercher.php" method="GET">
@@ -33,6 +33,8 @@
       </form>
   </div>
   </center>
+  <!-------------Recherche-------------------->
+  <br>
   <!--------------Tableau------------------>
   <center>
     <table class="scores-table">
