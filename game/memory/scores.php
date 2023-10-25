@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <?php
-    require_once 'utils/common.php'; 
+    require_once '../../utils/common.php'; 
     require_once SITE_ROOT. 'partials/head.php';
    ?>
 
@@ -15,7 +15,7 @@
     <!------------------header------------------>
 
   <div class="background">
-      <img src="assets/images/background4.jpg">
+      <img src="../../assets/images/background4.jpg">
       <div class="content">
           <h1 class="titre">TABLEAU DES SCORES</h1>
       </div>

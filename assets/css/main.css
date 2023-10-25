@@ -1000,6 +1000,16 @@ border-radius: 5px;
 
 /*-------------------------Scores----------------------------------------------------------------------*/
 
+
+.scores-table {
+    background-image: url(https://bin.smwcentral.net/u/24573/ghost%2Bhouse_night1.png);
+    font-family:Avenir;
+    font-style: bold;
+    color: white;
+    background-color: rgb(26, 26, 56);
+  }
+
+
 .scores-table table,
 td {
   border: 1px solid white;
@@ -1055,13 +1065,7 @@ tfoot {
     
 }
 
-.scores-table .scores body {
-  background-image: url(https://bin.smwcentral.net/u/24573/ghost%2Bhouse_night1.png);
-  background-color: rgb(26, 26, 56);
-  color: white;
-  font-family: avenir;
-  background-size: cover;
-}
+
 
 
   

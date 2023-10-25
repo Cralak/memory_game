@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <?php
     require_once 'utils/common.php'; 
+    
     require_once SITE_ROOT. 'partials/head.php';
+
+
    ?>
 
-</head>
+
+
 <body class="login">
 
     <!------------------header------------------>
     <?php
-    require_once SITE_ROOT. 'partials/header.php';
+        require_once SITE_ROOT. 'partials/header.php';
     ?>
     <!------------------header------------------>
 
@@ -25,6 +30,7 @@
     <br></br>    
     <form method="POST" action="memory.php">
         <div class="box1">
+            
             <input class="boite" type="email" id="email" name="email" required placeholder="E mail" >
             </br>
             </br>
