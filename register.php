@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-<?php
-    require_once 'utils/common.php'; 
-    require_once SITE_ROOT. 'partials/head.php';
-   ?>
+    <?php
+    require_once 'utils/common.php';
+    require_once SITE_ROOT . 'partials/head.php';
+    ?>
 
 </head>
+
 <body class="login">
     <!------------------header------------------>
     <?php
-        require_once SITE_ROOT. 'partials/header.php';
+    require_once SITE_ROOT . 'partials/header.php';
     ?>
     <!------------------header------------------>
 
@@ -23,22 +25,22 @@
     </br>
     <br>
 
-    
+
     </br>
-    <form method="POST" action="traitement.php">
+    <form method="POST">
         <div class="box1">
-            <input class="boite" type="text" id="nom" name="nom" required placeholder="Nom" ></br>
+            <input class="boite" type="text" id="nom" name="nom" required placeholder="Nom"></br>
             </br>
-            <input class="boite" type="email" id="email" name="email" required placeholder="E mail" ></br>
+            <input class="boite" type="email" id="email" name="email" required placeholder="E mail"></br>
             </br>
-            <input class="boite" type="password" id="motDePasse" name="motDePasse" required placeholder="Mot de passe" ></br>
+            <input class="boite" type="password" id="motDePasse" name="motDePasse" required placeholder="Mot de passe"></br>
             </br>
-            <input class="boite" type="password" id="motDePasse" name="motDePasse" required placeholder="Confirmer le mot de passe" ></br>
+            <input class="boite" type="password" id="motDePasse" name="motDePasse" required placeholder="Confirmer le mot de passe"></br>
             </br>
             <input class="connexion" type="submit" value="S'INSCRIRE" href="main.php">
-            </br>  
-            </br>  
-            <span>Vous avez déjà un compte ? Connectez vous <a href="login.php">ici</a></span> 
+            </br>
+            </br>
+            <span>Vous avez déjà un compte ? Connectez vous <a href="login.php">ici</a></span>
             <br></br>
         </div>
         </br>
@@ -53,15 +55,16 @@
     <!------------------chat------------------>
 
     <?php
-    require_once SITE_ROOT. 'partials/chat.php';
+    require_once SITE_ROOT . 'partials/chat.php';
     ?>
     <!------------------chat------------------>
 
     <!------------------footer------------------>
     <?php
-    require_once SITE_ROOT. 'partials/footer.php';
+    require_once SITE_ROOT . 'partials/footer.php';
     ?>
     <!------------------footer------------------>
 
 </body>
+
 </html>

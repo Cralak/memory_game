@@ -8,17 +8,30 @@
             <div class="menus1">
                 <a href="<?= PROJECT_FOLDER ?>main.php" class="headerspans"><span>ACCUEIL</span></a>
 
-                <a href="<?= PROJECT_FOLDER ?>game/memory/memory.php" class="headerspans"><span>JEU</span></a>
+                <a href="<?= PROJECT_FOLDER ?>login.php" class="headerspans"><span>JEU</span></a>
 
                 <a href="<?= PROJECT_FOLDER ?>game/memory/scores.php" class="headerspans"><span>SCORES</span></a>
 
                 <a href="<?= PROJECT_FOLDER ?>contact.php" class="headerspans"><span>NOUS CONTACTER</span></a>
-                
-                <a href="<?= PROJECT_FOLDER ?>myAccount.php" class="headerspans"><span>MON PROFIL</span></a>
+
+                <a href="<?= PROJECT_FOLDER ?>myAccount.php" class="headerspans"><span>
+                        <?php
+                        if (isset($_SESSION['userId'])) {
+                            $pdo = connectToDbAndGetPdo();
+                            $pdoStatement = $pdo->prepare('SELECT username FROM users WHERE id = :userIsd');
+                            $pdoStatement->execute([":userId" => ($_SESSION['userId'])]);
+                            $username = $pdoStatement->fetch();
+                            echo $username->username;
+                        } else {
+                            echo "SE CONNECTER";
+                        }
+                        ?>
+                    </span></a>
 
             </div>
         </div>
     </header>
     <!------------------header------------------>
 </body>
+
 </html>

@@ -3,10 +3,8 @@
 
 <?php
     require_once 'utils/common.php'; 
-    
-    require_once SITE_ROOT. 'partials/head.php';
-
-
+    require_once SITE_ROOT . 'partials/head.php';
+    require_once SITE_ROOT . 'utils/database.php';
    ?>
 
 
@@ -27,8 +25,17 @@
         </div>
     </div>
     <br></br>
-    <br></br>    
-    <form method="POST" action="memory.php">
+    <br></br>
+    <?php
+    $pdo = connectToDbAndGetPdo();
+    $pdoStatement = $pdo->prepare('SELECT email,pass FROM users 
+    WHERE email = :email AND pass = :pass');
+    $pdoStatement->execute([":email" => ($_POST['email']), ":pass" => ($_POST['motDePasse'])]);
+    $userInfo = $pdoStatement->fetch();
+    $_SESSION['email'] = $userInfo->email;
+    $_SESSION['motDePasse'] = $userInfo->pass;
+    ?>
+    <form method="POST" action="game/memory/memory.php">
         <div class="box1">
             <input class="boite" type="email" id="email" name="email" required placeholder="E mail" >
             </br>
