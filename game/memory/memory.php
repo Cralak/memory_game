@@ -76,5 +76,6 @@
     require_once SITE_ROOT. 'partials/header.php';
     ?>
     <!------------------header------------------>
+    
 </body>
 </html>
