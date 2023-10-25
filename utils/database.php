@@ -21,6 +21,7 @@ $driver_options = [
 $pdo = connectToDbAndGetPdo();
 
 
+
 function insertusers($pdo, $pseudo, $email, $motDePasse ) :void {
 
     $insertUser = $pdo-> prepare('INSERT INTO users(username, email, pass) VALUES (:username, :email, :pass)');
