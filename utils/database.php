@@ -18,12 +18,28 @@ $driver_options = [
     }
 
 }
+$pdo = connectToDbAndGetPdo();
 
 
-function insertusers($pseudo, $email, $motDePasse ) :void {
+function insertusers($pdo, $pseudo, $email, $motDePasse ) :void {
 
-    $pdo = connectToDbAndGetPdo();
-    $insertUser = $pdo-> prepare('INSERT INTO user(nom, email, pass) VALUES (:nom, :email, :motDePasse)');
-    $insertUser->execute([':email' => $email, ':pass' => $motDePasse, ':nom' => $pseudo]);}
+    $insertUser = $pdo-> prepare('INSERT INTO users(username, email, pass) VALUES (:username, :email, :pass)');
+    $insertUser -> execute([':email' => $email, ':pass' => $motDePasse, ':username' => $pseudo]);}
+
+
+function uniquePseudo($pdo,$pseudo):bool{
+    $pseudoUsed = $pdo-> prepare('SELECT username FROM users WHERE username =:nom');
+    $pseudoUsed->execute([':nom' => $pseudo]);
+    $pseudoUtilise= $pseudoUsed-> fetch();
+    return $pseudoUsed != NULL;
+}
+
+function uniqueEmail($pdo,$email):bool{
+    $emailUsed = $pdo-> prepare('SELECT email FROM users WHERE email = :email');
+    $emailUsed->execute([':email' => $email]);
+    $emailUtilise= $emailUsed-> fetch();
+    return $emailUsed != NULL;
+}
+
 
 ?>
