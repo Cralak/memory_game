@@ -16,7 +16,6 @@
   require_once SITE_ROOT . 'partials/header.php';
   ?>
   <!------------------header------------------>
-
   <div class="background">
     <img src="../../assets/images/background4.jpg">
     <div class="content">
@@ -24,6 +23,16 @@
     </div>
   </div>
   <br></br>
+
+    <!-------------Recherche-------------------->
+  <center>
+  <div class="search-container">
+      <form action="rechercher.php" method="GET">
+          <input type="text" name="q" placeholder="Rechercher...">
+          <button type="submit">Rechercher</button>
+      </form>
+  </div>
+  </center>
   <!--------------Tableau------------------>
   <center>
     <table class="scores-table">
