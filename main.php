@@ -22,7 +22,11 @@
             <span class="maintext1">BIENVENUE DANS</span>
             <span class="maintext2">NOTRE STUDIO</span>
             <p class="maintext3">Venez challenger les cerveaux les plus agiles !</p>
-            <a href="login.php"><button class="button-play">JOUER !</button></a>
+
+            <?php
+                $link = isset($_SESSION['userId']) ? "game/memory/memory.php" : "login.php";
+            ?>
+            <a href="<?= PROJECT_FOLDER . $link ?>"><button class="button-play">JOUER !</button></a>
         </div>
     </div>
 

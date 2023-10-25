@@ -27,15 +27,21 @@
     <br></br>
     <br></br>
     <?php
+
     $pdo = connectToDbAndGetPdo();
-    $pdoStatement = $pdo->prepare('SELECT email,pass FROM users 
-    WHERE email = :email AND pass = :pass');
-    $pdoStatement->execute([":email" => ($_POST['email']), ":pass" => ($_POST['motDePasse'])]);
-    $userInfo = $pdoStatement->fetch();
-    $_SESSION['email'] = $userInfo->email;
-    $_SESSION['motDePasse'] = $userInfo->pass;
+    if(isset($_POST['email']) and isset($_POST['motDePasse'])){
+        $pdoStatement = $pdo->prepare('SELECT id FROM users 
+        WHERE email = :email AND pass = :pass');
+        $pdoStatement->execute([":email" => $_POST['email'], ":pass" => $_POST['motDePasse']]);
+        $userInfo = $pdoStatement->fetch();
+
+        if($userInfo){
+            $_SESSION['userId'] = $userInfo->id;
+            header("location: game/memory/memory.php");       
+        }
+    }
     ?>
-    <form method="POST" action="game/memory/memory.php">
+    <form method="POST">
         <div class="box1">
             <input class="boite" type="email" id="email" name="email" required placeholder="E mail" >
             </br>
