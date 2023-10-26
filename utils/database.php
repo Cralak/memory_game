@@ -1,5 +1,5 @@
 <?php
-function connectToDbAndGetPdo(): PDO
+function connectToDbAndPOSTPdo(): PDO
 {
 $dbname = 'projet_flash';
 $host = 'localhost';
@@ -19,7 +19,7 @@ $driver_options = [
 
 }
 
-$pdo = connectToDbAndGetPdo();
+$pdo = connectToDbAndPOSTPdo();
 
 
 /*--------------INSERT-------------*/
@@ -61,23 +61,43 @@ function updatePassword($pdo,$newPassword,$userId) :void {
 
 
 /*------------SELECT----------*/
+
+
+function PasswordUse($pdo,$password) : bool {
+    $PasswordUsed = $pdo->prepare('SELECT pass FROM users WHERE pass = :pass');
+    $PasswordUsed->execute([':pass' => $password]);
+    $Password_utilise = $PasswordUsed -> fetch();
+    return isset($Password_utilise -> pass);
+}
+
+
+function emailUse($pdo,$email) : bool {
+    $emailUsed = $pdo->prepare('SELECT email FROM users WHERE email = :email');
+    $emailUsed->execute([':email' => $email]);
+    $email_utilise = $emailUsed -> fetch();
+    return isset($email_utilise -> mail);
+}
+
+
+
 function oldEmail($pdo, $Email,$userId): bool
 {
     $OldEmail = $pdo->prepare('SELECT email FROM users WHERE id = :id;');
     $OldEmail -> execute(['id' => $userId]);
-    $actualEmail = $OldEmail -> fetch();
+    $actualEmail = $OldEmail -> fetchColumn();
+
     return $actualEmail == $Email;
+    
 }
 
 function oldPassword($pdo,$Password, $userId): bool {   
 
     $oldPassword = $pdo->prepare('SELECT pass FROM users WHERE id = :id');
     $oldPassword->execute(['id' => $userId]);
-    $currentPassword = $oldPassword -> fetch();
-
+    $currentPassword = $oldPassword -> fetchColumn();
     $Password = hash('sha256', $Password);
 
-
+    
     return $currentPassword == $Password;
 }
 

@@ -28,12 +28,12 @@
     <br></br>
     <?php
 
-    $pdo = connectToDbAndGetPdo();
+    $pdo = connectToDbAndPOSTPdo();
 
-    if(isset($_GET['email']) && isset($_GET['motDePasse'])){
-        $Password = hash('sha256', $_GET['motDePasse']);
+    if(isset($_POST['email']) && isset($_POST['motDePasse'])){
+        $Password = hash('sha256', $_POST['motDePasse']);
         $pdoStatement = $pdo->prepare('SELECT id FROM users WHERE email = :email AND pass = :pass');
-        $pdoStatement->execute([":email" => $_GET['email'], ":pass" => $Password]);
+        $pdoStatement->execute([":email" => $_POST['email'], ":pass" => $Password]);
         $userInfo = $pdoStatement->fetch();
         
         if($userInfo){
@@ -43,16 +43,16 @@
         } 
 
     ?>
-    <form method="GET">
+    <form method="POST">
         <div class="box1">
             <input class="boite" type="email" id="email" name="email" required placeholder="E mail" >
-            <?php if (isset($_GET['email']) && !filter_var($_GET['email'], FILTER_VALIDATE_EMAIL)) : ?>
+            <?php if (isset($_POST['email']) && !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) : ?>
                 <p style="color: red;">L'adresse e-mail n'est pas valide.</p>
             <?php endif ?>
             </br>
             </br>
             <input class="boite" type="password" id="motDePasse" name="motDePasse" required placeholder="Mot de passe" >
-            <?php if (isset($_GET['newPassword']) && !preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/', $_GET['motDePasse'])) : ?>
+            <?php if (isset($_POST['newPassword']) && !preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/', $_POST['motDePasse'])) : ?>
                 <p style="color: red;">Le mot de passe doit : <br> Comprendre au minimum 8 caractères <br>Comprendre au moins un chiffre <br>Comprendre au moins une majuscule <br>Comprendre au moins un caractère spécial.
                 </p>
             <?php endif ?>
