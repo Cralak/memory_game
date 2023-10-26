@@ -54,11 +54,12 @@
           $pdo = connectToDbAndGetPdo();
           $searchValue = isset($_POST['search']) ? $_POST['search'] : "";
           $pdoStatement = $pdo->prepare("SELECT u.username AS username, s.game_score AS game_score, 
-            s.difficulty AS difficulty, s.game_date_and_time AS date 
+            s.difficulty AS difficulty, s.game_date_and_time AS game_date
              FROM scores AS s
              INNER JOIN users AS u ON u.id = s.player_id
              INNER JOIN games AS g ON g.id = s.game_id
-             WHERE username LIKE '%$searchValue%'");
+             WHERE (u.username LIKE '%$searchValue%') OR (s.difficulty LIKE '%$searchValue%') OR (s.game_score LIKE '%$searchValue%') OR (s.game_date_and_time LIKE '%$searchValue%')
+             ORDER BY difficulty");
           $pdoStatement->execute();
           $scores = $pdoStatement->fetchAll();
           ?>
@@ -67,7 +68,7 @@
               <td><?php echo $score->username ?></td>
               <td><?php echo $score->game_score ?></td>
               <td><?php echo $score->difficulty ?></td>
-              <td><?php echo $score->date ?></td>
+              <td><?php echo $score->game_date ?></td>
             </tr>
           <?php endforeach; ?>
         </tbody>
