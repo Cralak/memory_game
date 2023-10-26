@@ -1,3 +1,10 @@
+<?php
+    if(isset($_POST['disconnect'])){
+    session_destroy();
+    header("location:main.php");
+    } 
+?>
+    
 <?php 
 require_once 'utils/common.php';
 require_once 'utils/database.php';
@@ -14,7 +21,8 @@ if (isset($_POST['apply'])) {
         $checkEmail &&
         $checkEmail2 &&
         $checkPass &&
-        !uniqueEmail($pdo,$_POST['nouv_email'],$_SESSION['userId']) &&
+        !uniqueEmail($pdo,$_POST['nouv_email'],$_SESSION['userId'])|| 
+        !memeEmail($pdo,$_POST['nouv_email'],$_SESSION['userId']) &&
         oldEmail($pdo,$_POST['email'],$_SESSION['userId']) &&
         oldPassword($pdo,$_POST['currentPassword'],$_SESSION['userId'])
         
@@ -24,6 +32,8 @@ if (isset($_POST['apply'])) {
         updateEmail($pdo,$newEmail, $_SESSION['userId']);
         updatePassword($pdo,$newPassword,$_SESSION['userId']);
         $feedback = 'modification réussie';
+
+    
     }
 }
 ?>
@@ -56,15 +66,10 @@ if (isset($_POST['apply'])) {
     <form method="POST">
         <input class="appliquer" type="submit" name="disconnect" value="DÉCONNEXION" >
     </form>
-    <?php
-        if(isset($_POST['disconnect'])){
-        session_destroy();
-        header("location:main.php");
-        } 
-    ?>
 
     <br></br>    
-    
+    <center><?php echo($feedback) ?></center>
+
     <form class="box" method="POST">
         <div>
             <h2>Gestion de l'Email :</h2>
@@ -80,12 +85,14 @@ if (isset($_POST['apply'])) {
             </br>
 
             <input class="boite" type="text" id="nouv_email" name="nouv_email" placeholder="Nouvel Em@il" required value="<?php echo isset($_POST['nouv_email']) ? $_POST['nouv_email'] : ''; ?>">
-            
+            <p style="color: white; margin-left: 32.6%;">Vous pouvez utiliser le meme email.</p>
             <?php if (isset($_POST['nouv_email']) && !$checkEmail2) : ?>
                 <p style="color: red; margin-left: 32.6%;">L'adresse e-mail n'est pas valide.</p>
-            <?php elseif(isset($_POST['nouv_email']) && uniqueEmail($pdo,$_POST['nouv_email'],$_SESSION['userId']) == 1): ?>
-                <p style="color: red; margin-left: 32.6%;">L'email est déjà pris.</p>
-            <?php endif ?> 
+
+            <?php elseif(isset($_POST['nouv_email']) && memeEmail($pdo,$_POST['nouv_email'],$_SESSION['userId']) != 1): ?>
+            <?php elseif (isset($_POST['nouv_email']) && uniqueEmail($pdo,$_POST['nouv_email'],$_SESSION['userId']) == 1): ?>
+                    <p style="color: red; margin-left: 32.6%;">L'email est déjà pris par un autre utilisateur.</p>
+            <?php endif ?>
             </br>
 
             
@@ -103,6 +110,7 @@ if (isset($_POST['apply'])) {
             </br>
             <input class="boite" type="password" id="newPassword" name="newPassword" required placeholder="Nouveau Mot de passe" ></br>
             
+            <p style="color: white; margin-left: 32.6%;">Vous pouvez utiliser le meme mot de passe.</p>
             <?php if (isset($_POST['newPassword']) && !$checkPass) : ?>
                 <p style="color: red; margin-left: 32.6%;">Le mot de passe doit : <br> Comprendre au minimum 8 caractères <br>Comprendre au moins un chiffre <br>Comprendre au moins une majuscule <br>Comprendre au moins un caractère spécial.
                 </p>
@@ -123,7 +131,6 @@ if (isset($_POST['apply'])) {
         <br></br>
         <br></br>
 
-    <?php echo($feedback) ?>
     </form>
 
 <!------------------chat------------------>

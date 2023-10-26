@@ -48,6 +48,21 @@ function uniqueEmail($pdo,$email):bool{
 
 }
 
+function memeEmail($pdo,$newEmail,$userId) :bool {
+    $currentEmail = $pdo -> prepare('SELECT email FROM users WHERE id = :id');
+    $currentEmail->execute([':id' => $userId]); 
+    $CurrentEmail = $currentEmail-> fetch();
+
+    return $CurrentEmail == $newEmail;
+}
+
+function memePassword($pdo,$newPassword,$userId) :bool {
+    $currentPass = $pdo -> prepare('SELECT pass FROM users WHERE id = :id');
+    $currentPass->execute([':id' => $userId]); 
+    $CurrentPass = $currentPass-> fetch();
+
+    return $CurrentPass == $newPassword;
+}
 /*----------UPADATE----------*/
 function updateEmail($pdo,$newEmail,$userId) :void {
     $newerEmail = $pdo -> prepare('UPDATE users SET email = :email WHERE id = :id');
