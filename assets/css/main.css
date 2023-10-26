@@ -883,11 +883,19 @@ border-radius: 5px;
     font-size: 1.5vw;
 }
 
+.cat-gif{
+    max-width:100%;
+    max-height:100%;
+}
+
 .chat-messages {
     padding: 5%;
     max-width: 20vw;
+    height:290px;
     max-height:290px;
     overflow-y: scroll;
+    display:flex;
+    flex-direction: column-reverse;
 }
 
 .message {
