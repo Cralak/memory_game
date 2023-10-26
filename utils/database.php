@@ -31,7 +31,7 @@ function insertusers($pdo, $pseudo, $email, $motDePasse ) :void {
 function uniquePseudo($pdo,$pseudo):bool{
     $pseudoUsed = $pdo-> prepare('SELECT username FROM users WHERE username =:nom');
     $pseudoUsed->execute([':nom' => $pseudo]);
-    $pseudoUtilise= $pseudoUsed-> fetch();
+    $pseudoUsed-> fetch();
     return $pseudoUsed != NULL;
 }
 
