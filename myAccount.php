@@ -72,9 +72,9 @@ if (isset($_POST['apply'])) {
             <input class="boite" type="text" id="email" name="email" placeholder="Em@il actuel" required value="<?php echo isset($_POST['email']) ? $_POST['email'] : ''; ?>">
             
             <?php if (isset($_POST['email']) && !$checkEmail) : ?>
-                <p style="color: red;">L'adresse e-mail n'est pas valide</p>
+                <p style="color: red; margin-left: 32.6%;">L'adresse e-mail n'est pas valide</p>
             <?php elseif (isset($_POST['email']) && oldEmail($pdo,$_POST['email'],$_SESSION['userId']) != 1): ?>
-                <p style="color: red;">Ce n'est pas la bonne adresse mail</p>
+                <p style="color: red; margin-left: 32.6%;">Ce n'est pas la bonne adresse mail</p>
             <?php endif ?>
             </br>
             </br>
@@ -82,9 +82,9 @@ if (isset($_POST['apply'])) {
             <input class="boite" type="text" id="nouv_email" name="nouv_email" placeholder="Nouvel Em@il" required value="<?php echo isset($_POST['nouv_email']) ? $_POST['nouv_email'] : ''; ?>">
             
             <?php if (isset($_POST['nouv_email']) && !$checkEmail2) : ?>
-                <p style="color: red;">L'adresse e-mail n'est pas valide.</p>
+                <p style="color: red; margin-left: 32.6%;">L'adresse e-mail n'est pas valide.</p>
             <?php elseif(isset($_POST['nouv_email']) && uniqueEmail($pdo,$_POST['nouv_email'],$_SESSION['userId']) == 1): ?>
-                <p style="color: red;">L'email est déjà pris.</p>
+                <p style="color: red; margin-left: 32.6%;">L'email est déjà pris.</p>
             <?php endif ?> 
             </br>
 
@@ -97,21 +97,21 @@ if (isset($_POST['apply'])) {
         
             <input class="boite" type="password" id="currentPassword" name="currentPassword" required placeholder="Mot de passe actuel"></br>
             <?php if (isset($_POST['currentPassword']) && oldPassword($pdo,$_POST['currentPassword'],$_SESSION['userId']) != 1): ?>
-                <p style="color: red;">Ce n'est pas le bon mot de passe</p>
+                <p style="color: red; margin-left: 32.6%;">Ce n'est pas le bon mot de passe</p>
             <?php endif ?>
 
             </br>
             <input class="boite" type="password" id="newPassword" name="newPassword" required placeholder="Nouveau Mot de passe" ></br>
             
             <?php if (isset($_POST['newPassword']) && !$checkPass) : ?>
-                <p style="color: red;">Le mot de passe doit : <br> Comprendre au minimum 8 caractères <br>Comprendre au moins un chiffre <br>Comprendre au moins une majuscule <br>Comprendre au moins un caractère spécial.
+                <p style="color: red; margin-left: 32.6%;">Le mot de passe doit : <br> Comprendre au minimum 8 caractères <br>Comprendre au moins un chiffre <br>Comprendre au moins une majuscule <br>Comprendre au moins un caractère spécial.
                 </p>
             <?php endif ?>
             </br>
             <input class="boite" type="password" id="confirmedPassword" name="confirmedPassword" required placeholder="Confirmer le nouveau mot de passe" ></br>
             
             <?php if (isset($_POST['confirmedPassword']) && $_POST['newPassword'] != $_POST['confirmedPassword']) : ?>
-                <p style="color: red;">Le mot de passe doit être le même.</p>
+                <p style="color: red; margin-left: 32.6%;">Le mot de passe doit être le même.</p>
             <?php endif ?> 
 
             </br>

@@ -52,7 +52,7 @@
             </br>
             </br>
             <input class="boite" type="password" id="motDePasse" name="motDePasse" required placeholder="Mot de passe" >
-            <?php if (isset($_POST['newPassword']) && !preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/', $_POST['motDePasse'])) : ?>
+            <?php if (isset($_POST['motDePasse']) && !preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/', $_POST['motDePasse'])) : ?>
                 <p style="color: red;">Le mot de passe doit : <br> Comprendre au minimum 8 caractères <br>Comprendre au moins un chiffre <br>Comprendre au moins une majuscule <br>Comprendre au moins un caractère spécial.
                 </p>
             <?php endif ?>
