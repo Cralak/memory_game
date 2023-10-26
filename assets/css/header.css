@@ -3,10 +3,12 @@ body {
     font-style: bold;
     margin: 0px;
     padding: 0px;
+    color: white;
     background-color: rgb(26, 26, 56);
 }
 
 .menus{
+    color: white;
     padding:1.75%;
     font-size: medium;
     margin-left: 5%;
@@ -14,10 +16,6 @@ body {
     width:90%;
     display: flex;
     justify-content: space-between;
-}
-
-.menus span{
-    color:white;
 }
 
 .menus1{
@@ -40,7 +38,7 @@ body {
     width: 100%;
     top: 0px;
     left: 0px;
-    background-color: rgb(0, 0, 0);
+    background-color: black;
     opacity: 0.9;
     position: -webkit-sticky;
     position: sticky;
@@ -58,8 +56,9 @@ body {
 
 .headerspans {
     position: relative;
+    color: white;
 }
-  
+
 .headerspans::before {
     content: '';
     position: absolute;
@@ -77,4 +76,10 @@ body {
 .headerspans:hover::before {
     transform-origin: left;
     transform: scaleX(1);
+}
+
+
+.active{
+    color: #ff6200 !important;
+    font-size: medium;
 }

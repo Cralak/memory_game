@@ -22,7 +22,7 @@
             <span class="maintext1">BIENVENUE DANS</span>
             <span class="maintext2">NOTRE STUDIO</span>
             <p class="maintext3">Venez challenger les cerveaux les plus agiles !</p>
-            <a href="game/memory/memory.php"><button class="button-play">JOUER !</button></a>
+            <a href="login.php"><button class="button-play">JOUER !</button></a>
         </div>
     </div>
 

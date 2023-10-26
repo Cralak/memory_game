@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS users(
     email VARCHAR(90) UNIQUE NOT NULL,
     pass VARCHAR(191) NOT NULL,
     username VARCHAR(30) UNIQUE NOT NULL,
-    date_and_time DATETIME NOT NULL,
+    date_and_time DATETIME DEFAULT CURRENT_TIMESTAMP,
     last_connection DATETIME,
     PRIMARY KEY(id)
 )
@@ -151,6 +151,7 @@ VALUES('cralakgaming@gmail.com', 'iLoveGaming', 'Cralak', '2019-10-10', NULL),
 UPDATE users
 SET pass = 'mypassword123'
 WHERE id = 3;
+
 
 UPDATE users
 SET email = 'drocsidddddddgaming@gmail.com'
