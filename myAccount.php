@@ -49,9 +49,23 @@ if (isset($_GET['apply'])) {
         <div class="content">
             <h1>MON PROFIL</h1>
         </div>
+
     </div>
     <br></br>
     <br></br>    
+
+    <form method="post">
+        <input class="appliquer" type="submit" name="disconnect" value="DÉCONNEXION" >
+    </form>
+    <?php
+        if(isset($_POST['disconnect'])){
+        session_destroy();
+        header("location:main.php");
+        } 
+    ?>
+
+    <br></br>    
+    
     <form class="box" method="POST" action="traitement.php">
         <div>
             <h2>Gestion de l'Email :</h2>
