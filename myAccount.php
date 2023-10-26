@@ -52,6 +52,26 @@ if (isset($_GET['apply'])) {
 
     </div>
     <br></br>
+    <center>
+    <form action="upload_image.php" method="post" enctype="multipart/form-data">
+    <label for="nouvelleImage">Sélectionnez une nouvelle image :</label>
+    <input type="file" name="nouvelleImage" id="nouvelleImage">
+    </form>
+    <?php
+    if (isset($_POST["submit"])) {
+        $uploadDir = "images/";  // Répertoire de destination pour les images
+        $uploadFile = $uploadDir . basename($_FILES["nouvelleImage"]["name"]);
+
+        if (move_uploaded_file($_FILES["nouvelleImage"]["tmp_name"], $uploadFile)) {
+            echo "L'image a été téléchargée avec succès.";
+
+            // Mettez à jour l'URL de l'image dans votre base de données ou où vous stockez cette information.
+        } else {
+            echo "Erreur lors du téléchargement de l'image.";
+        }
+    }
+    ?>
+    </center>
     <br></br>    
 
     <form method="post">
