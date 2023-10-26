@@ -55,6 +55,16 @@ require_once SITE_ROOT . 'utils/database.php';
         </div>
     </header>
     <!------------------header------------------>
+
+    <!------------------chat------------------>
+    <?php
+    if(isset($_SESSION['userId'])){
+        require_once SITE_ROOT. 'partials/chat.php';
+    }
+    ?>
+    <!------------------chat------------------>
+
+
 </body>
 
 </html>

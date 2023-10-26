@@ -148,14 +148,6 @@ if (isset($_GET['apply'])) {
     <?php echo($feedback) ?>
     </form>
 
-<!------------------chat------------------>
-<?php
-    require_once SITE_ROOT. 'partials/chat.php';
-    ?>
-<!------------------chat------------------>
-
-
-
     <!------------------footer------------------>
     <?php
     require_once SITE_ROOT. 'partials/footer.php';
