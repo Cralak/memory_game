@@ -27,54 +27,26 @@
             $users = $pdoStatement->fetchAll();
             ?>
             <?php foreach ($users as $user) : ?>
+                <?php if($user->message == ":cat:"){$user->message = '<img class="gif" src="https://media.tenor.com/0g4MU_tLFPgAAAAd/goofy-ahh-cat.gif">';} ?>
+                <?php if($user->message == ":sematary:"){$user->message = '<img class ="gif" class="gifs" src="https://i.pinimg.com/originals/e8/ae/5f/e8ae5fa65722ea57cc161dbc8b0fd7b8.gif">';} ?>
+
                 <?php if ($user->senderId == $_SESSION['userId']) : ?>
-
-                    <?php if ($user->message == ":cat:") : ?>
-
-                        <div class="message">
-                            <div class="message-sender"><?= $user->senderName ?></div>
-                            <div class="test">
-                                <div class="message-content"> <img class="cat-gif" src="https://media.tenor.com/0g4MU_tLFPgAAAAd/goofy-ahh-cat.gif"></div>
-                            </div>
-                            <div class="date"><?= $user->dateTime ?></div>
+                    <div class="message">
+                        <div class="message-sender"><?= $user->senderName ?></div>
+                        <div class="test">
+                            <div class="message-content"><?= $user->message ?></div>
                         </div>
-
-                    <?php else : ?>
-
-                        <div class="message">
-                            <div class="message-sender"><?= $user->senderName ?></div>
-                            <div class="test">
-                                <div class="message-content"><?= $user->message ?></div>
-                            </div>
-                            <div class="date"><?= $user->dateTime ?></div>
-                        </div>
-
-                    <?php endif; ?>
-
+                        <div class="date"><?= $user->dateTime ?></div>
+                    </div>
                 <?php else : ?>
 
-                    <?php if ($user->message == ":cat:") : ?>
-
-                        <div class="message2">
-                            <div class="message-sender2"><?= $user->senderName ?></div>
-                            <div class="test2">
-                                <div class="message-content2"> <img src="https://media.tenor.com/0g4MU_tLFPgAAAAd/goofy-ahh-cat.gif"></div>
-                            </div>
-                            <div class="date2"><?= $user->dateTime ?></div>
+                    <div class="message2">
+                        <div class="message-sender2"><?= $user->senderName ?></div>
+                        <div class="test2">
+                            <div class="message-content2"><?= $user->message ?></div>
                         </div>
-
-                    <?php else : ?>
-
-                        <div class="message2">
-                            <div class="message-sender2"><?= $user->senderName ?></div>
-                            <div class="test2">
-                                <div class="message-content2"><?= $user->message ?></div>
-                            </div>
-                            <div class="date2"><?= $user->dateTime ?></div>
-                        </div>
-
-                    <?php endif; ?>
-
+                        <div class="date2"><?= $user->dateTime ?></div>
+                    </div>
                 <?php endif; ?>
 
 
