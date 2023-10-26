@@ -3,7 +3,7 @@ require_once 'utils/common.php';
 require_once 'utils/database.php';
 
 if (isset($_GET['register'])) {
-    
+
     $isNameLengthIsOk = preg_match('/.{4,}$/', $_GET['nom']);
     $checkEmail = filter_var($_GET['email'], FILTER_VALIDATE_EMAIL);
     $checkPass = preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/', $_GET['motDePasse']);
@@ -62,10 +62,10 @@ if (isset($_GET['register'])) {
             <?php endif ?>
             </br>
 
-            <input class="boite" type="password" id="confirmationMotDePasse" name="confirmationMotDePasse" placeholder="Confirmer le mot de passe" required  value="<?php echo isset($_GET['confirmationMotDePasse']) ? $_GET['confirmationMotDePasse'] : ''; ?>"></br>
+            <input class="boite" type="password" id="confirmationMotDePasse" name="confirmationMotDePasse" placeholder="Confirmer le mot de passe" required value="<?php echo isset($_GET['confirmationMotDePasse']) ? $_GET['confirmationMotDePasse'] : ''; ?>"></br>
             <?php if (isset($_GET['confirmationMotDePasse']) && $_GET['motDePasse'] !== $_GET['confirmationMotDePasse']) : ?>
                 <p style="color: red;">Le mot de passe doit être le même.</p>
-            <?php endif ?>            
+            <?php endif ?>
             </br>
 
             <input class="connexion" type="submit" value="S'INSCRIRE" name="register" href="main.php">
