@@ -755,6 +755,11 @@ tfoot {
 
 }
 
+.myAccount .box1 p {
+    margin-left: 32.6%;
+    color: red;
+}
+
 .myAccount .appliquer {
     background-color: orange;
     text-decoration: none;
