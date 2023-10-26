@@ -755,11 +755,6 @@ tfoot {
 
 }
 
-.myAccount .box1 p {
-    margin-left: 32.6%;
-    color: red;
-}
-
 .myAccount .appliquer {
     background-color: orange;
     text-decoration: none;
@@ -864,17 +859,15 @@ border-radius: 5px;
     border-radius: 10px;
     background-color: white;
     position: fixed;
-    margin-bottom: -26%;
-    bottom: 0;
+    bottom: -370px;
     right: 2vw;
-
     width: 20%;
     transition: 0.5s;
 
 }
 
 .chat-container:hover {
-    transform: translateY(-95%);
+    transform: translateY(-87%);
 }
 
 .chat-header {
@@ -890,11 +883,19 @@ border-radius: 5px;
     font-size: 1.5vw;
 }
 
+.gif{
+    max-width:100%;
+    max-height:100%;
+}
+
 .chat-messages {
     padding: 5%;
     max-width: 20vw;
-    max-height:40vh;
+    height:290px;
+    max-height:290px;
     overflow-y: scroll;
+    display:flex;
+    flex-direction: column-reverse;
 }
 
 .message {
@@ -960,7 +961,7 @@ border-radius: 5px;
 }
 
 .message-content {
-    max-width: 50%;
+    max-width: 100%;
     width: fit-content;
     border-radius: 10px;
     padding: 10px;
@@ -973,7 +974,7 @@ border-radius: 5px;
 }
 
 .message-content2 {
-    max-width: 50%;
+    max-width: 100%;
     width: fit-content;
     border-radius: 10px;
     padding: 10px;
@@ -1064,7 +1065,7 @@ tfoot {
 
 .scores-table .content{
     position:absolute;
-    top: 200px;
+    top: 200px;v
     left: 50%;
     transform: translate(-50%, -50%);
     

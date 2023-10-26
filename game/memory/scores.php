@@ -6,7 +6,7 @@
   require_once '../../utils/common.php';
   require_once SITE_ROOT . 'partials/head.php';
   require_once SITE_ROOT . 'utils/database.php';
-  connectToDbAndPOSTPdo();
+  connectToDbAndGetPdo();
   ?>
 </head>
 
@@ -51,7 +51,7 @@
             <TD>DERNIERE PARTIE JOUER</TD>
           </tr>
           <?php
-          $pdo = connectToDbAndPOSTPdo();
+          $pdo = connectToDbAndGetPdo();
           $searchValue = isset($_POST['search']) ? $_POST['search'] : "";
           $pdoStatement = $pdo->prepare("SELECT u.username AS username, s.game_score AS game_score, 
             s.difficulty AS difficulty, s.game_date_and_time AS game_date
@@ -78,16 +78,6 @@
     <br></br>
     <br></br>
     <br></br>
-
-
-
-    <!------------------chat------------------>
-    <?php
-    require_once SITE_ROOT . 'partials/chat.php';
-    ?>
-    <!------------------chat------------------>
-
-
 
 
     <!------------------footer------------------>

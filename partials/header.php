@@ -14,7 +14,7 @@ require_once SITE_ROOT . 'utils/database.php';
 
             <?php
                 if (isset($_SESSION['userId'])) {
-                    $pdo = connectToDbAndPOSTPdo();
+                    $pdo = connectToDbAndGetPdo();
                     $pdoStatement = $pdo->prepare('SELECT username FROM users WHERE id = :userId');
                     $pdoStatement->execute([":userId" => $_SESSION['userId']]);
                     $user = $pdoStatement->fetch();
@@ -55,6 +55,16 @@ require_once SITE_ROOT . 'utils/database.php';
         </div>
     </header>
     <!------------------header------------------>
+
+    <!------------------chat------------------>
+    <?php
+    if(isset($_SESSION['userId'])){
+        require_once SITE_ROOT. 'partials/chat.php';
+    }
+    ?>
+    <!------------------chat------------------>
+
+
 </body>
 
 </html>
