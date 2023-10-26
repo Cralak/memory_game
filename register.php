@@ -13,8 +13,8 @@ if (isset($_GET['register'])) {
         $isNameLengthIsOk &&
         $checkEmail &&
         $checkPass &&
-        uniquePseudo($pdo, $_GET['nom']) &&
-        uniqueEmail($pdo, $_GET['email']) &&
+        !uniquePseudo($pdo, $_GET['nom']) &&
+        !uniqueEmail($pdo, $_GET['email']) &&
         $_GET['motDePasse'] == $_GET['confirmationMotDePasse']
     ) {
         $motDePasse = hash('sha256', $_GET['motDePasse']);
@@ -47,16 +47,16 @@ if (isset($_GET['register'])) {
             
             <?php if (isset($_GET['nom']) && !$isNameLengthIsOk) :  ?>
                 <p style="color: red;">Le pseudo doit avoir au moins 4 caractères.</p>
-            <?php elseif(uniquePseudo($pdo, isset($_GET['nom']))): ?>
+            <?php elseif(uniquePseudo($pdo, $_GET['nom'])): ?>
                 <p style="color: red;">Le pseudo est déjà pris.</p>
             <?php endif ?>
             </br>
 
-            <input class="boite" type="email" id="email" name="email" placeholder="E mail" required value="<?php echo isset($_GET['email']) ? $_GET['email'] : ''; ?>"></br>
+            <input class="boite" type="text" id="email" name="email" placeholder="E mail" required value="<?php echo isset($_GET['email']) ? $_GET['email'] : ''; ?>"></br>
             
             <?php if (isset($_GET['email']) && !filter_var($_GET['email'], FILTER_VALIDATE_EMAIL)) : ?>
                 <p style="color: red;">L'adresse e-mail n'est pas valide.</p>
-            <?php elseif(uniqueEmail($pdo, isset($_GET['email']))): ?>
+            <?php elseif(uniqueEmail($pdo, $_GET['email'])): ?>
                 <p style="color: red;">L'email est déjà pris.</p>
             <?php endif ?>
             </br>
@@ -71,7 +71,7 @@ if (isset($_GET['register'])) {
 
             <input class="boite" type="password" id="confirmationMotDePasse" name="confirmationMotDePasse" placeholder="Confirmer le mot de passe" required  value="<?php echo isset($_GET['confirmationMotDePasse']) ? $_GET['confirmationMotDePasse'] : ''; ?>"></br>
             
-            <?php if (isset($_GET['confirmationMotDePasse']) && $_GET['motDePasse'] !== $_GET['confirmationMotDePasse']) : ?>
+            <?php if (isset($_GET['confirmationMotDePasse']) && $_GET['motDePasse'] != $_GET['confirmationMotDePasse']) : ?>
                 <p style="color: red;">Le mot de passe doit être le même.</p>
             <?php endif ?>            
             </br>

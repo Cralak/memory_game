@@ -2,6 +2,8 @@
 require_once 'utils/common.php';
 require_once 'utils/database.php';
 
+$feedback = '';
+
 if (isset($_GET['apply'])) {
     
     $checkEmail = filter_var($_GET['email'], FILTER_VALIDATE_EMAIL);
@@ -9,21 +11,23 @@ if (isset($_GET['apply'])) {
     $checkPass = preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/', $_GET['newPassword']);
     $confirmation = $_GET['newPassword'] == $_GET['confirmedPassword'];
 
-    $feedback = '';
+    $zizi3 = oldPassword($pdo,isset($_GET['currentPassword']),$_SESSION['userId']);
+
+    echo($zizi3);
 
     if (
         $checkEmail &&
         $checkEmail2 &&
         $checkPass &&
-        uniqueEmail($pdo, $_GET['nouv_email']) &&
-        oldEmail($pdo,isset($_GET['email'])) &&
-        oldPassword($pdo,isset($_GET['currentPassword'])) &&
-        $confirmation
+        !uniqueEmail($pdo,isset($_GET['nouv_email']),$_SESSION['userId']) &&
+        oldEmail($pdo,isset($_GET['email']),$_SESSION['userId']) &&
+        oldPassword($pdo,isset($_GET['currentPassword']),$_SESSION['userId'])
+        
     ) {
         $newEmail = $_GET['nouv_email'];
         $newPassword = hash('sha256', $_GET['newPassword']);
-        updateEmail($pdo,$newEmail);
-        updatePassword($pdo,$newPassword);
+        updateEmail($pdo,$newEmail, $_SESSION['userId']);
+        updatePassword($pdo,$newPassword,$_SESSION['userId']);
         $feedback = 'modification réussie';
     }
 }
@@ -54,7 +58,7 @@ if (isset($_GET['apply'])) {
     <br></br>
     <br></br>    
 
-    <form method="post">
+    <form method="GET">
         <input class="appliquer" type="submit" name="disconnect" value="DÉCONNEXION" >
     </form>
     <?php
@@ -66,25 +70,25 @@ if (isset($_GET['apply'])) {
 
     <br></br>    
     
-    <form class="box" method="POST" action="traitement.php">
+    <form class="box" method="GET">
         <div>
             <h2>Gestion de l'Email :</h2>
         
-            <input class="boite" type="email" id="email" name="email" required placeholder="Em@il actuel">
+            <input class="boite" type="email" id="email" name="email" placeholder="Em@il actuel" required value="<?php echo isset($_GET['email']) ? $_GET['email'] : ''; ?>">
             
-            <?php if (isset($_GET['email']) && $checkEmail) : ?>
+            <?php if (isset($_GET['email']) && !$checkEmail) : ?>
                 <p style="color: red;">L'adresse e-mail n'est pas valide</p>
-            <?php elseif (!oldEmail($pdo,isset($_GET['email']))): ?>
+            <?php elseif (!oldEmail($pdo,$_GET['email'],$_SESSION['userId'])): ?>
                 <p style="color: red;">Ce n'est pas la bonne adresse mail</p>
             <?php endif ?>
             </br>
             </br>
 
-            <input class="boite" type="email" id="nouv_email" name="nouv_email" required placeholder="Nouvel Em@il">
+            <input class="boite" type="email" id="nouv_email" name="nouv_email" placeholder="Nouvel Em@il" required value="<?php echo isset($_GET['nouv_email']) ? $_GET['nouv_email'] : ''; ?>">
             
-            <?php if (isset($_GET['nouv_email']) && $checkEmail2) : ?>
+            <?php if (isset($_GET['nouv_email']) && !$checkEmail2) : ?>
                 <p style="color: red;">L'adresse e-mail n'est pas valide.</p>
-            <?php elseif(!uniqueEmail($pdo, isset($_GET['nouv_email']))): ?>
+            <?php elseif(uniqueEmail($pdo, isset($_GET['nouv_email']),$_SESSION['userId'])): ?>
                 <p style="color: red;">L'email est déjà pris.</p>
             <?php endif ?> 
             </br>
@@ -97,15 +101,15 @@ if (isset($_GET['apply'])) {
             <h2>Gestion du mot de passe :</h2>
         
             <input class="boite" type="password" id="currentPassword" name="currentPassword" required placeholder="Mot de passe actuel"></br>
-            
-            <?php if (!oldPassword($pdo,isset($_GET['currentPassword']))): ?>
+            <?php if (isset($_GET['currentPassword'])) : ?>
+            <?php elseif (!oldPassword($pdo,$_GET['currentPassword'],$_SESSION['userId'])): ?>
                 <p style="color: red;">Ce n'est pas le bon mot de passe</p>
             <?php endif ?>
 
             </br>
             <input class="boite" type="password" id="newPassword" name="newPassword" required placeholder="Nouveau Mot de passe" ></br>
             
-            <?php if (isset($_GET['newPassword']) && $checkPass) : ?>
+            <?php if (isset($_GET['newPassword']) && !$checkPass) : ?>
                 <p style="color: red;">Le mot de passe doit : <br> Comprendre au minimum 8 caractères <br>Comprendre au moins un chiffre <br>Comprendre au moins une majuscule <br>Comprendre au moins un caractère spécial.
                 </p>
             <?php endif ?>
