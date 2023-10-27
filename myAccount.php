@@ -29,13 +29,13 @@
     </form>
     <?php
     if (isset($_POST["submit"])) {
-        $uploadDir = "images/";  // Répertoire de destination pour les images
+        $uploadDir = "images/";
         $uploadFile = $uploadDir . basename($_FILES["nouvelleImage"]["name"]);
 
         if (move_uploaded_file($_FILES["nouvelleImage"]["tmp_name"], $uploadFile)) {
             echo "L'image a été téléchargée avec succès.";
 
-            // Mettez à jour l'URL de l'image dans votre base de données ou où vous stockez cette information.
+           
         } else {
             echo "Erreur lors du téléchargement de l'image.";
         }
