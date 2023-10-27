@@ -67,7 +67,7 @@
         }
         ?>
 
-        <form class="chat-input" method="POST">
+        <form autocomplete="off" class="chat-input" method="POST">
             <input type="text" id="message-input" placeholder="Saisissez votre message..." name="message">
             <button id="send-button">Envoyer</button>
         </form>

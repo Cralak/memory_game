@@ -17,7 +17,7 @@
     ?>
 
     <div class="main">
-        <img class="img1" src="https://cdn.discordapp.com/attachments/1161205905774350376/1161630511874183228/ghost_house_night1.png?ex=6538ffb8&is=65268ab8&hm=5041261ea2969a5de46d799ff019f3c450eca978c15df12c23d45cb83cae52ef&">
+        <img class="img1" src="https://i.redd.it/0gqxu3s861aa1.gif">
         <div>
             <span class="maintext1">BIENVENUE DANS</span>
             <span class="maintext2">NOTRE STUDIO</span>
