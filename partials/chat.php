@@ -16,7 +16,7 @@
         </div>
         <div class="chat-messages">
             <?php
-            $pdo = connectToDbAndPOSTPdo();
+            $pdo = connectToDbAndGetPdo();
             $pdoStatement = $pdo->prepare("SELECT U.username AS senderName, M.sender_id AS senderId, M.message_date_and_time as dateTime, M.message AS message
           FROM messages AS M
           INNER JOIN users AS U
@@ -27,12 +27,14 @@
             $users = $pdoStatement->fetchAll();
             ?>
             <?php foreach ($users as $user) : ?>
-                <?php if ($user->message == ":cat:") {
+                <?php if($user->message == ":cat:"){
                     $user->message = '<img class="gif" src="https://media.tenor.com/0g4MU_tLFPgAAAAd/goofy-ahh-cat.gif">';
-                } ?>
-                <?php if ($user->message == ":sematary:") {
-                    $user->message = '<img class ="gif" class="gifs" src="https://i.pinimg.com/originals/e8/ae/5f/e8ae5fa65722ea57cc161dbc8b0fd7b8.gif">';
-                } ?>
+                        // $catUrl = 'https://api.thecatapi.com/v1/images/search?mime_types=gif';
+                        // $content = file_get_contents($catUrl);
+                        // $cats = json_decode($content);
+                        // var_dump($cats);
+                    } ?>
+                <?php if($user->message == ":sematary:"){$user->message = '<img class ="gif" class="gifs" src="https://i.pinimg.com/originals/e8/ae/5f/e8ae5fa65722ea57cc161dbc8b0fd7b8.gif">';} ?>
 
                 <?php if ($user->senderId == $_SESSION['userId']) : ?>
                     <div class="message">
@@ -61,7 +63,7 @@
 
         <?php
         if (isset($_POST['message'])) {
-            $pdo = connectToDbAndPOSTPdo();
+            $pdo = connectToDbAndGetPdo();
             $pdoStatement = $pdo->prepare("INSERT INTO messages(sender_id, message, game_id, message_date_and_time) 
             VALUES(:id , :content, '1', NOW())");
             $pdoStatement->execute([
