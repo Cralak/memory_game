@@ -27,13 +27,7 @@
             $users = $pdoStatement->fetchAll();
             ?>
             <?php foreach ($users as $user) : ?>
-                <?php if($user->message == ":cat:"){
-                    $user->message = '<img class="gif" src="https://media.tenor.com/0g4MU_tLFPgAAAAd/goofy-ahh-cat.gif">';
-                        // $catUrl = 'https://api.thecatapi.com/v1/images/search?mime_types=gif';
-                        // $content = file_get_contents($catUrl);
-                        // $cats = json_decode($content);
-                        // var_dump($cats);
-                    } ?>
+                <?php if($user->message == ":cat:"){$user->message = '<img class="gif" src="https://media.tenor.com/0g4MU_tLFPgAAAAd/goofy-ahh-cat.gif">';} ?>
                 <?php if($user->message == ":sematary:"){$user->message = '<img class ="gif" class="gifs" src="https://i.pinimg.com/originals/e8/ae/5f/e8ae5fa65722ea57cc161dbc8b0fd7b8.gif">';} ?>
 
                 <?php if ($user->senderId == $_SESSION['userId']) : ?>
