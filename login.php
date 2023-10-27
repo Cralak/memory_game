@@ -29,15 +29,16 @@
     <?php
 
     $pdo = connectToDbAndGetPdo();
-    if(isset($_POST['email']) and isset($_POST['motDePasse'])){
-        $pdoStatement = $pdo->prepare('SELECT id FROM users 
-        WHERE email = :email AND pass = :pass');
-        $pdoStatement->execute([":email" => $_POST['email'], ":pass" => $_POST['motDePasse']]);
+    if (isset($_POST['email']) && isset($_POST['motDePasse'])) {
+        $Password = hash('sha256', $_POST['motDePasse']);
+        $pdoStatement = $pdo->prepare('SELECT id FROM users WHERE email = :email AND pass = :pass');
+        $pdoStatement->execute([":email" => $_POST['email'], ":pass" => $Password]);
         $userInfo = $pdoStatement->fetch();
 
-        if($userInfo){
+
+        if ($userInfo) {
             $_SESSION['userId'] = $userInfo->id;
-            header("location: game/memory/memory.php");       
+            header("location: game/memory/memory.php");
         }
     }
     ?>
