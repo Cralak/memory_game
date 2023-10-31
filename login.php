@@ -2,10 +2,10 @@
 <html lang="fr">
 
 <?php
-require_once 'utils/common.php';
-require_once SITE_ROOT . 'partials/head.php';
-require_once SITE_ROOT . 'utils/database.php';
-?>
+    require_once 'utils/common.php'; 
+    require_once SITE_ROOT . 'partials/head.php';
+    require_once SITE_ROOT . 'utils/database.php';
+   ?>
 
 
 
@@ -13,7 +13,7 @@ require_once SITE_ROOT . 'utils/database.php';
 
     <!------------------header------------------>
     <?php
-    require_once SITE_ROOT . 'partials/header.php';
+        require_once SITE_ROOT. 'partials/header.php';
     ?>
     <!------------------header------------------>
 
@@ -26,10 +26,9 @@ require_once SITE_ROOT . 'utils/database.php';
     </div>
     <br></br>
     <br></br>
-
     <?php
-    $pdo = connectToDbAndPOSTPdo();
 
+    $pdo = connectToDbAndGetPdo();
     if (isset($_POST['email']) && isset($_POST['motDePasse'])) {
         $Password = hash('sha256', $_POST['motDePasse']);
         $pdoStatement = $pdo->prepare('SELECT id FROM users WHERE email = :email AND pass = :pass');
@@ -43,28 +42,18 @@ require_once SITE_ROOT . 'utils/database.php';
         }
     }
     ?>
-
-
     <form method="POST">
         <div class="box1">
-            <input class="boite" type="email" id="email" name="email" required placeholder="E mail">
-
-            <?php if (isset($_POST['email']) && !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) : ?>
-                <p style="color: red;">L'adresse e-mail n'est pas valide.</p>
-            <?php endif ?>
+            <input class="boite" type="email" id="email" name="email" required placeholder="E mail" >
             </br>
             </br>
-            <input class="boite" type="password" id="motDePasse" name="motDePasse" required placeholder="Mot de passe">
-            <?php if (isset($_POST['motDePasse']) && !preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/', $_POST['motDePasse'])) : ?>
-                <p style="color: red;">Le mot de passe doit : <br> Comprendre au minimum 8 caractères <br>Comprendre au moins un chiffre <br>Comprendre au moins une majuscule <br>Comprendre au moins un caractère spécial.
-                </p>
-            <?php endif ?>
+            <input class="boite" type="password" id="motDePasse" name="motDePasse" required placeholder="Mot de passe" >
             </br>
             </br>
             <input class="connexion" type="submit" value="CONNEXION">
             </br>
             </br>
-            <span>Vous n'avez pas de compte ? Inscrivez vous <a href="register.php">ici</a></span>
+            <span>Vous n'avez pas de compte ? Inscrivez vous <a href="register.php">ici</a></span>   
         </div>
         <br></br>
         <br></br>
@@ -80,11 +69,10 @@ require_once SITE_ROOT . 'utils/database.php';
 
     <!------------------footer------------------>
     <?php
-    require_once SITE_ROOT . 'partials/footer.php';
+    require_once SITE_ROOT. 'partials/footer.php';
     ?>
     <!------------------footer------------------>
 
 
 </body>
-
 </html>

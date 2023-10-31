@@ -708,11 +708,6 @@ tfoot {
     background-color: #3B0661;
 }
 
-.memory .timer {
-    font-weight: bold;
-    font-size: 4em;
-}
-
 .choix:hover{
     cursor:pointer;
 }
@@ -1075,8 +1070,6 @@ tfoot {
     transform: translate(-50%, -50%);
     
 }
-
-
 
 
 
