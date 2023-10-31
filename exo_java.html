@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    form {
+      display: flex;
+      flex-direction: column;
+      padding-top: 10%;
+    }
+
+    .checkbox {
+      padding-bottom: 4%;
+    }
+  </style>
+
+  <script>
+    function display(text) {
+      texte = document.querySelector(text);
+      if (texte.style.visibility === "hidden") {
+        texte.style.visibility = "visible";
+      } else {
+        texte.style.visibility = "hidden";
+      }
+    }
+
+    function randomColor(text) {
+      texte = document.querySelector(text);
+      var letters = "0123456789ABCDEF";
+      var color = "#";
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      texte.style.color = color;
+    }
+
+    function CreatImg() {
+      let id = document.getElementById("img1");
+      let image = document.createElement("img");
+      image.src =
+        "https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png";
+
+      id.appendChild(image);
+    }
+  </script>
+
+  <body>
+    <div>
+      <input
+        type="button"
+        value="Display Text"
+        onclick="display('#textAcache');"
+      />
+      <input type="button" onclick="display('.img');" />
+      <input
+        type="button"
+        value="Display Color"
+        onclick="randomColor('#textAcache');"
+      />
+      <input type="button" onclick="CreatImg()" />
+    </div>
+
+    <p id="textAcache" style="visibility: visible; color: black">
+      Texte à cacher ou à montrer
+    </p>
+
+    <img
+      class="img"
+      src="https://media.tenor.com/xfsFj7A6lJMAAAAd/galaxy.gif"
+      style="visibility: visible"
+    />
+
+    <div id="img1"></div>
+
+    <form method="GET">
+      <div id="nameContainer">
+        <p>Nom</p>
+
+        <input type="text" id="name" />
+      </div>
+
+      <div id="phoneContainer">
+        <p>Telephone</p>
+        <input type="number" id="phone" />
+      </div>
+
+      <div id="emailContainer">
+        <p>Email</p>
+        <input type="email" id="email" />
+      </div>
+
+      <div id="placeContainer">
+        <p>Pickup Place</p>
+        <select name="Pickup Place" id="place">
+          <option value="France">France</option>
+          <option value="Allemagne">Allemagne</option>
+        </select>
+      </div>
+
+      <div id="radio">
+        <fieldset>
+          <legend>Wich taxi do you require ?</legend>
+          <input type="radio" name="radio" class="radio" />
+          <label for="car">Car</label><br />
+
+          <input type="radio" name="radio" class="radio" />
+          <label for="van">Van</label><br />
+
+          <input type="radio" name="radio" class="radio" />
+          <label for="tuk tuk">Tuk Tuk</label>
+        </fieldset>
+      </div>
+
+      <div id="checkbox">
+        <fieldset>
+          <legend>Extras</legend>
+
+          <div>
+            <input type="checkbox" class="check" checked />
+            <label for="baby">Baby</label>
+          </div>
+
+          <div>
+            <input type="checkbox" class="check" name="wheelchair" />
+            <label for="wheelchair">Wheelchair</label>
+          </div>
+          <div>
+            <input type="checkbox" class="check" name="stock" />
+            <label for="stock">Stock Tip</label>
+          </div>
+        </fieldset>
+      </div>
+
+      <input class="submit" type="button" value="submit booking" />
+    </form>
+
+    <h1>Timer</h1>
+    <p id="timer">00:00:00</p>
+    <button id="startButton">Démarrer</button>
+    <button id="stopButton">Arrêter</button>
+    <button id="resetButton">Réinitialiser</button>
+  </body>
+  <script>
+    document.getElementById("button").addEventListener("click", funtion());
+    {
+      let elements = document.getElementsByClassName("error");
+      while (elements.length > 0) elements[0].remove();
+
+      let name = document.getElementById("name");
+      let email = document.getElementById("email");
+      let tel = document.getElementById("phone");
+      let place = document.getElementById("place");
+      let radio = document.getElementsByClassName("radio");
+      let checkbox = document.getElementsByClassName("checkbox");
+
+      if (name.value == "") {
+        let idname = document.getElementById("nameContainer");
+        idname.insertAdjacentHTML(
+          "beforeend",
+          '<p class="error" > Ce champ doit être rempli </p>'
+        );
+      }
+
+      if (tel.value == "") {
+        let idtel = document.getElementById("phoneContainer");
+        idtel.insertAdjacentHTML(
+          "beforeend",
+          '<p class="error" > Ce champ doit être rempli </p>'
+        );
+      }
+
+      if (email.value == "") {
+        let idemail = document.getElementById("emailContainer");
+        idemail.insertAdjacentHTML(
+          "beforeend",
+          '<p class="error" > Ce champ doit être un email </p>'
+        );
+      }
+
+      if (place.value == "") {
+        let idplace = document.getElementById("placeContainer");
+        idplace.insertAdjacentHTML(
+          "beforeend",
+          '<p class="error" > Veuillez sélectionner une valeur </p>'
+        );
+      }
+
+      if (radio.value == "") {
+        let idtel = document.getElementById("radioContainer");
+        idtel.insertAdjacentHTML(
+          "beforeend",
+          '<p class="error" > Ce champ doit être rempli </p>'
+        );
+      }
+    }
+
+    let timerInterval;
+    let seconds = 0;
+    let minutes = 0;
+    let hours = 0;
+
+    function startTimer() {
+      document.getElementById("startButton").disabled = true;
+      document.getElementById("stopButton").disabled = false;
+      document.getElementById("resetButton").disabled = true;
+      timerInterval = setInterval(updateTimer, 1000);
+    }
+
+    function stopTimer() {
+      document.getElementById("startButton").disabled = false;
+      document.getElementById("stopButton").disabled = true;
+      document.getElementById("resetButton").disabled = false;
+      clearInterval(timerInterval);
+    }
+
+    function resetTimer() {
+      document.getElementById("startButton").disabled = false;
+      document.getElementById("stopButton").disabled = true;
+      document.getElementById("resetButton").disabled = true;
+      clearInterval(timerInterval);
+      seconds = 0;
+      minutes = 0;
+      hours = 0;
+      updateTimer();
+    }
+
+    function updateTimer() {
+      seconds++;
+      if (seconds === 60) {
+        seconds = 0;
+        minutes++;
+        if (minutes === 60) {
+          minutes = 0;
+          hours++;
+        }
+      }
+
+      const timeString = `${hours.toString().padStart(2, "0")}:${minutes
+        .toString()
+        .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+      document.getElementById("timer").textContent = timeString;
+    }
+
+    document
+      .getElementById("startButton")
+      .addEventListener("click", startTimer);
+    document.getElementById("stopButton").addEventListener("click", stopTimer);
+    document
+      .getElementById("resetButton")
+      .addEventListener("click", resetTimer);
+  </script>
+</html>

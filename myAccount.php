@@ -14,8 +14,8 @@
             $checkEmail &&
             $checkEmail2 &&
             $checkPass &&
-            !uniqueEmail($pdo, $_POST['nouv_email'], $_SESSION['userId']) ||
-            !memeEmail($pdo, $_POST['nouv_email'], $_SESSION['userId']) &&
+            (!uniqueEmail($pdo, $_POST['nouv_email'], $_SESSION['userId']) ||
+            !memeEmail($pdo, $_POST['nouv_email'], $_SESSION['userId']) == 1) &&
             oldEmail($pdo, $_POST['email'], $_SESSION['userId']) &&
             oldPassword($pdo, $_POST['currentPassword'], $_SESSION['userId'])
 
@@ -87,9 +87,8 @@
                 <?php if (isset($_POST['nouv_email']) && !$checkEmail2) : ?>
                     <p style="color: red; margin-left: 32.6%;">L'adresse e-mail n'est pas valide.</p>
 
-                <?php elseif (isset($_POST['nouv_email']) && memeEmail($pdo, $_POST['nouv_email'], $_SESSION['userId']) != 1) : ?>
-                <?php elseif (isset($_POST['nouv_email']) && uniqueEmail($pdo, $_POST['nouv_email'], $_SESSION['userId']) == 1) : ?>
-                    <p style="color: red; margin-left: 32.6%;">L'email est déjà pris par un autre utilisateur.</p>
+                <?php elseif (isset($_POST['nouv_email']) && (uniqueEmail($pdo, $_POST['nouv_email']) == 1 || memeEmail($pdo, $_POST['nouv_email'], $_SESSION['userId']) != 1) ): ?>
+                        <p style="color: red; margin-left: 32.6%;">L'email est déjà pris par un autre utilisateur.</p>
                 <?php endif ?>
                 </br>
 

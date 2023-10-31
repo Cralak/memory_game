@@ -50,7 +50,7 @@ function uniqueEmail($pdo,$email):bool{
 
 function memeEmail($pdo,$newEmail,$userId) :bool {
     $currentEmail = $pdo -> prepare('SELECT email FROM users WHERE id = :id');
-    $currentEmail->execute([':id' => $userId]); 
+    $currentEmail->execute([':id' => $_SESSION['userId']]); 
     $CurrentEmail = $currentEmail-> fetch();
 
     return $CurrentEmail == $newEmail;
