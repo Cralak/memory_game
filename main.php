@@ -17,7 +17,7 @@
     ?>
 
     <div class="main">
-        <img class="img1" src="https://i.redd.it/0gqxu3s861aa1.gif">
+        <img class="img1" src="https://i.pinimg.com/originals/1a/a2/00/1aa2008c04d15f46d38b797cb1452ed4.gif">
         <div>
             <span class="maintext1">BIENVENUE DANS</span>
             <span class="maintext2">NOTRE STUDIO</span>

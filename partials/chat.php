@@ -60,13 +60,15 @@
         if (isset($_POST['message'])) {
             $pdo = connectToDbAndGetPdo();
 
-            if ($_POST['message'] == ":cat:"){
+            if ($_POST['message'] == ":cat:") {
                 $catUrl = 'https://api.thecatapi.com/v1/images/search?mime_types=gif';
                 $content = file_get_contents($catUrl);
                 $cats = json_decode($content);
                 $messageContent = '<img class="gif" src="' . $cats[0]->url . '">';
                 var_dump($messageContent);
-            } else {$messageContent = $_POST['message'];}
+            } else {
+                $messageContent = $_POST['message'];
+            }
 
             $pdoStatement = $pdo->prepare("INSERT INTO messages(sender_id, message, game_id, message_date_and_time) 
             VALUES(:id , :content, '1', NOW())");
