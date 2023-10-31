@@ -2,54 +2,48 @@ function generateCards(difficulty) {
 
     let gameBox = document.createElement("div");
     gameBox.id = "gameBox";
-    gameBox.class = "gameBox"
+    gameBox.className = "gameBox"
 
     let selector = document.getElementById("selector");
     selector.innerHTML = '';
-    selector.appendChild(gameBox);
 
-     {
+    let gameBoxContainer = document.createElement("div");
+    gameBoxContainer.className = "gameBoxContainer";
+    gameBoxContainer.id = "gameBoxContainer";
 
-        let nbs = ["0","0","1","1","2","2","3","3","4","4","5","5"]
+    selector.appendChild(gameBoxContainer);
+    gameBoxContainer.appendChild(gameBox);
 
-        for (let i = 0; i < 4; i++) {
-            let row = document.createElement("div");
-            row.id = "row" + i;
-            row.class = "row";
-            gameBox.appendChild(row)
-            
-            for (let j = 0; j < 4; j++) {
-                let card = document.createElement("div");
-                item = nbs[Math.floor(Math.random()*nbs.length)];
-                card.id = "card" + item;
-                nbs.splice(item,1);
-                card.class = "card";
-                row.appendChild(card);
-            }
+
+
+    let nbs = [];
+    for (let i = 0; i < 2; i++) {
+        for (let j = 0; j < 8 + (difficulty * 4); j++) {
+            nbs.unshift(j);
         }
     }
 
-    if (difficulty == 2){
-        let nbs = ["0","0","1","1","2","2","3","3","4","4","5","5","6","6","7","7"]
+    for (let i = 0; i < 4; i++) {
+        let row = document.createElement("div");
+        row.id = i;
+        row.className = "row";
+        gameBox.appendChild(row);
 
-        for (let i = 0; i < 3; i++) {
-            let row = document.createElement("div");
-            row.id = "row" + i;
-            row.class = "row";
-            gameBox.appendChild(row)
-            
-            for (let j = 0; j < 4; j++) {
-                let card = document.createElement("div");
-                item = nbs[Math.floor(Math.random()*nbs.length)];
-                card.id = "card" + item;
-                nbs.splice(item,1);
-                card.class = "card";
-                row.appendChild(card);
-            }
+        for (let j = 0; j < 4 + (difficulty * 2); j++) {
+            let card = document.createElement("div");
+            item = Math.floor(Math.random() * nbs.length);
+
+            card.id = nbs[item];
+            card.className = "card";
+            nbs.splice(item, 1);
+
+            row.appendChild(card);
+
+            let cardBack = document.createElement("img")
+            cardBack.src = "../../assets/images/cartes/card_back.png";
+            card.appendChild(cardBack);
+
         }
     }
-
-    if (difficulty == 3){
-        let nbs = ["0","0","1","1","2","2","3","3","4","4","5","5","6","6","7","7","8","8","9","9"]
-    }
+    console.log(nbs);
 }
