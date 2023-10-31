@@ -6,7 +6,7 @@
     require_once 'utils/common.php';
     require_once SITE_ROOT . 'partials/head.php';
     require_once SITE_ROOT . 'utils/database.php';
-    connectToDbAndPOSTPdo();
+    connectToDbAndGetPdo();
     ?>
 </head>
 
@@ -17,7 +17,7 @@
     ?>
 
     <div class="main">
-        <img class="img1" src="https://i.redd.it/0gqxu3s861aa1.gif">
+        <img class="img1" src="https://i.pinimg.com/originals/1a/a2/00/1aa2008c04d15f46d38b797cb1452ed4.gif">
         <div>
             <span class="maintext1">BIENVENUE DANS</span>
             <span class="maintext2">NOTRE STUDIO</span>
@@ -81,7 +81,7 @@
                 <div class="colorbox1">
                     <span class="block3-span1">
                         <?php
-                            $pdo = connectToDbAndPOSTPdo();
+                            $pdo = connectToDbAndGetPdo();
                             $pdoStatement = $pdo->prepare('SELECT COUNT(*) AS gameCount FROM games');
                             $pdoStatement->execute();
                             $games = $pdoStatement->fetch();
@@ -99,7 +99,7 @@
                 <div class="colorbox3">
                     <span class="block3-span1">
                         <?php
-                            $pdo = connectToDbAndPOSTPdo();
+                            $pdo = connectToDbAndGetPdo();
                             $pdoStatement = $pdo->prepare('SELECT COUNT(*) AS usersCount FROM users');
                             $pdoStatement->execute();
                             $users = $pdoStatement->fetch();

@@ -20,6 +20,7 @@ if (isset($_POST['register'])) {
         $motDePasse = hash('sha256', $_POST['motDePasse']);
         insertusers($pdo, $_POST['nom'], $_POST['email'], $motDePasse);
         $feedback = 'inscription réussie';
+        header("location:login.php");
     }
 }
 ?>

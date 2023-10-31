@@ -14,7 +14,7 @@ require_once SITE_ROOT . 'utils/database.php';
 
             <?php
                 if (isset($_SESSION['userId'])) {
-                    $pdo = connectToDbAndPOSTPdo();
+                    $pdo = connectToDbAndGetPdo();
                     $pdoStatement = $pdo->prepare('SELECT username FROM users WHERE id = :userId');
                     $pdoStatement->execute([":userId" => $_SESSION['userId']]);
                     $user = $pdoStatement->fetch();
