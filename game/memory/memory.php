@@ -15,14 +15,14 @@
     require_once SITE_ROOT . 'partials/header.php';
     ?>
     <!------------------header------------------>
-    <div id="selector">
+    <div id="selector" class="selector">
         <br>
         </br>
         <div class="background">
             <img src="../../assets/images/background4.jpg">
             <div class="content">
                 <form>
-                    <input class="bouton" type="submit" value="JOUER">
+                    <input class="bouton" type="button" onclick="generateCards(1)" value="JOUER">
                 </form>
             </div>
         </div>
@@ -80,6 +80,7 @@
         <br>
         <br>
         <br>
+    </div>
 
 
     <!------------------footer------------------>
@@ -88,7 +89,6 @@
     ?>
     <!------------------footer------------------>
 
-    </div>
     <script src="../../assets/js/scripts.js"></script>
 </body>
 
