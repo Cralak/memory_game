@@ -1088,6 +1088,7 @@ tfoot {
 
 .selector{
     height:100vh;
+    width:100vw;
 }
 
 .gameBoxContainer{
@@ -1105,13 +1106,17 @@ tfoot {
     justify-content: center;
 }
 
-.card{
+.cardDiv{
     padding:5px;
     width:fit-content;
     height:100%;
 }
 
-.card img{
+.cardDiv:hover{
+    cursor: pointer;
+}
+
+.cardImg{
     width:auto;
     height:100%;
 }

@@ -1,3 +1,5 @@
+let cardtotal = 0;
+
 function generateCards(difficulty) {
 
     let gameBox = document.createElement("div");
@@ -17,40 +19,79 @@ function generateCards(difficulty) {
 
 
     let nbs = [];
-    for (let i = 0; i < 2; i++) {
-        for (let j = 0; j < 8 + (difficulty * 4); j++) {
+    for (let i = 1; i < 3; i++) {
+        for (let j = 1; j < 9 + (difficulty * 4); j++) {
             nbs.unshift(j);
         }
     }
 
-    for (let i = 0; i < 4; i++) {
+    cardtotal = nbs.length;
+
+    let count = 0
+    for (let i = 1; i < 5; i++) {
         let row = document.createElement("div");
         row.id = i;
         row.className = "row";
         gameBox.appendChild(row);
 
-        for (let j = 0; j < 4 + (difficulty * 2); j++) {
-            let card = document.createElement("div");
+        for (let j = 1; j < 5 + (difficulty * 2); j++) {
+            count++;
+
+            let cardDiv = document.createElement("div");
             item = Math.floor(Math.random() * nbs.length);
+            cardDiv.className = "cardDiv";
 
-            card.id = nbs[item];
-            card.className = "card";
+            let cardImg = document.createElement("img")
+            cardImg.src = "../../assets/images/cartes/card_back.png";
+            cardImg.className = "cardImg";
+            cardImg.setAttribute("name", nbs[item])
+            cardImg.id = "card" + count;
+
+            cardDiv.addEventListener('click', () => {
+                flipCard(cardDiv);
+            });
+            row.appendChild(cardDiv);
+            cardDiv.appendChild(cardImg);
             nbs.splice(item, 1);
-
-            row.appendChild(card);
-
-            let cardBack = document.createElement("img")
-            cardBack.src = "../../assets/images/cartes/card_back.png";
-            card.appendChild(cardBack);
-
         }
     }
-    console.log(nbs);
-
-
 }
-function flipCard(id) {
-    let x = document.getElementById("card")
-    x.style.marginLeft = "300px"
-    x.style.transition = "1s"
+
+let card1 = null;
+let card2 = null;
+let cardCount = 0;
+
+function flipCard(cardDiv) {
+    cardImg = cardDiv.firstChild;
+    if (cardImg.name != "invalid") {
+        if (card1 == null) {
+            card1 = cardImg;
+            card1.src = "../../assets/images/cartes/sematary/image" + card1.name + ".png";
+            cardCount++;
+        } else if (card2 == null) {
+            if (card1 != cardImg) {
+                card2 = cardImg;
+                card2.src = "../../assets/images/cartes/sematary/image" + card2.name + ".png";
+                cardCount++;
+
+                setTimeout(function () {
+                    if (card1.name == card2.name) {
+                        console.log("test");
+                        card1.style.visibility = "hidden";
+                        card2.style.visibility = "hidden";
+                        card1.setAttribute("name", "invalid");
+                        card2.setAttribute("name", "invalid");
+                    } else if (cardCount >= 2) {
+                        card1.src = "../../assets/images/cartes/card_back.png";
+                        card2.src = "../../assets/images/cartes/card_back.png";
+                    }
+                    card1 = null;
+                    card2 = null;
+                    cardCount = 0;
+
+                    document.getElementsByName("invalid").length == cardtotal ? window.location.replace('http://www.savewalterwhite.com/') : "";
+                }, 1000)
+            }
+        }
+    }
 }
