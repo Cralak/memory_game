@@ -22,7 +22,7 @@
             <img src="../../assets/images/background4.jpg">
             <div class="content">
                 <form>
-                    <input class="bouton" type="button" onclick="generateCards(1)" value="JOUER">
+                    <input class="bouton" type="button" onclick="generateCards(2)" value="JOUER">
                 </form>
             </div>
         </div>
