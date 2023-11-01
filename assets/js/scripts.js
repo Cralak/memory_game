@@ -46,4 +46,11 @@ function generateCards(difficulty) {
         }
     }
     console.log(nbs);
+
+
+}
+function flipCard(id) {
+    let x = document.getElementById("card")
+    x.style.marginLeft = "300px"
+    x.style.transition = "1s"
 }
