@@ -208,6 +208,7 @@
   font-size: 50px;
   font-weight: bold;
 }
+
 .index .maintext2 {
   position: absolute;
   top: 40%;
@@ -218,6 +219,7 @@
 
   margin-top: 5%;
 }
+
 .index .maintext3 {
   position: absolute;
   top: 40%;
@@ -227,6 +229,7 @@
   margin-top: 8%;
   color: #92abd4;
 }
+
 .index .button-play {
   border-radius: 5px;
   padding: 15px 32px;
@@ -504,6 +507,7 @@
   background-repeat: no-repeat;
   margin: 5%;
 }
+
 .index .instagram2 {
   width: 200px;
   height: 8vh;
@@ -512,6 +516,7 @@
   background-repeat: no-repeat;
   margin: 5%;
 }
+
 .index .instagram3 {
   width: 200px;
   height: 8vh;
@@ -529,6 +534,7 @@
   background-repeat: no-repeat;
   margin: 5%;
 }
+
 .index .twitter2 {
   width: 200px;
   height: 8vh;
@@ -537,6 +543,7 @@
   background-repeat: no-repeat;
   margin: 5%;
 }
+
 .index .twitter3 {
   width: 200px;
   height: 8vh;
@@ -554,6 +561,7 @@
   background-repeat: no-repeat;
   margin: 5%;
 }
+
 .index .pinterest2 {
   width: 200px;
   height: 8vh;
@@ -562,6 +570,7 @@
   background-repeat: no-repeat;
   margin: 5%;
 }
+
 .index .pinterest3 {
   width: 200px;
   height: 8vh;
@@ -625,6 +634,7 @@ td {
   display: flex;
   justify-content: center;
 }
+
 .jeu .card {
   background-color: white;
   padding: 5px;
@@ -644,6 +654,9 @@ td {
   position: relative;
   padding-left: 3px;
   border-radius: 5px;
+  height:100px;
+  width:100px;
+  font-size:1.5vw;
 }
 
 .memory {
@@ -697,6 +710,7 @@ tfoot {
   background-color: orange;
   color: #fff;
 }
+
 .memory table {
   width: 70%;
   height: 200px;
@@ -720,8 +734,10 @@ tfoot {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: end;
   margin-inline: 30%;
   font-size: larger;
+
 }
 
 .memory .personnalisation select {
@@ -729,6 +745,11 @@ tfoot {
   color: white;
   border: 0px;
   border-radius: 4px;
+  width:150px;
+  height:100px;
+  display:flex;
+  text-align:center;
+  font-size:2vw;
 }
 
 .choix:hover {
@@ -827,6 +848,7 @@ tfoot {
   border: 0px;
   text-align: center;
 }
+
 .register .absolute {
   position: absolute;
   top: 30px;
@@ -877,6 +899,7 @@ tfoot {
   margin: 5px 0;
   display: none;
 }
+
 #passwordStrength span {
   position: relative;
   height: 100%;
@@ -884,9 +907,11 @@ tfoot {
   background: lightgrey;
   border-radius: 5px;
 }
+
 #passwordStrength span:nth-child(2) {
   margin: 0 3px;
 }
+
 /* tantative de transition */
 #passwordStrength span.active:before {
   content: "";
@@ -900,37 +925,46 @@ tfoot {
   transform: scaleX(0);
   transition: transform 0.3s ease-in-out;
 }
+
 #passwordStrength span:before {
-    transform-origin: left;
+  transform-origin: left;
   transform: scaleX(1);
 }
+
 #passwordStrength span#poor:before {
   background-color: #ff4757;
   transform-origin: left;
   transform: scaleX(1);
 }
+
 #passwordStrength span#weak:before {
   background-color: orange;
   transform-origin: left;
   transform: scaleX(1);
 }
+
 #passwordStrength span#strong:before {
   background-color: #23ad5c;
   transform-origin: left;
   transform: scaleX(1);
 }
+
 #passwordInfo {
   font-size: 15px;
 }
+
 #passwordInfo #poor {
   color: red;
 }
+
 #passwordInfo #weak {
   color: orange;
 }
+
 #passwordInfo #strong {
   color: green;
 }
+
 /*-------------------------register-------------------------*/
 
 /*-------------------------chat-------------------------*/
@@ -1105,6 +1139,7 @@ tfoot {
   background-color: orange;
   color: #fff;
 }
+
 .scores-table table {
   width: 70%;
   height: 200px;
@@ -1140,3 +1175,64 @@ tfoot {
 }
 
 /*-------------------------Scores---------------------------------------------------------------------*/
+
+
+.gameBox {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.selector {
+  height: 100vh;
+  width: 100vw;
+}
+
+.gameBoxContainer {
+  height: 85%;
+  width: 99%;
+  margin-top: 1%;
+}
+
+.row {
+  margin: 5px;
+  width: 100%;
+  height: 25%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.cardDiv {
+  padding: 5px;
+  width: fit-content;
+  height: 100%;
+}
+
+.cardDiv:hover {
+  cursor: pointer;
+}
+
+.cardImg {
+  width: auto;
+  height: 100%;
+}
+
+.animation {
+  transition-timing-function: linear;
+  transition: 0.5s;
+  transform: rotateY(180deg);
+}
+
+.animation2 {
+  transition-timing-function: linear;
+  transition: 0.5s;
+  transform: rotateY(0deg);
+}
+
+.button{
+  width:300px;
+  height:300px;
+}

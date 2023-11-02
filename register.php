@@ -1,24 +1,26 @@
 <?php
 require_once 'utils/common.php';
 require_once 'utils/database.php';
-$feedback = '';
 
+if (isset($_POST['register'])) {
 
-if (isset($_GET['register'])) {
-    $isNameLengthIsOk = preg_match('/.{4,}$/', $_GET['nom']);
-    $checkEmail = filter_var($_GET['email'], FILTER_VALIDATE_EMAIL);
-    $checkPass = preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/', $_GET['motDePasse']);
+    $isNameLengthIsOk = preg_match('/.{4,}$/', $_POST['nom']);
+    $checkEmail = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+    $checkPass = preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/', $_POST['motDePasse']);
+    $feedback = '';
+
     if (
         $isNameLengthIsOk &&
         $checkEmail &&
         $checkPass &&
-        !uniquePseudo($pdo, $_GET['nom']) &&
-        !uniqueEmail($pdo, $_GET['email']) &&
-        $_GET['motDePasse'] == $_GET['confirmationMotDePasse']
+        uniquePseudo($pdo, $_POST['nom']) &&
+        uniqueEmail($pdo, $_POST['email']) &&
+        $_POST['motDePasse'] == $_POST['confirmationMotDePasse']
     ) {
-        $motDePasse = hash('sha256', $_GET['motDePasse']);
-        insertusers($pdo, $_GET['nom'], $_GET['email'], $motDePasse);
+        $motDePasse = hash('sha256', $_POST['motDePasse']);
+        insertusers($pdo, $_POST['nom'], $_POST['email'], $motDePasse);
         $feedback = 'inscription réussie';
+        header("location:login.php");
     }
 }
 ?>
@@ -30,6 +32,7 @@ if (isset($_GET['register'])) {
     <!------------------header------------------>
     <?php require_once SITE_ROOT . 'partials/header.php'; ?>
     <!------------------header------------------>
+
     <div class="background">
         <img src="assets/images/background4.jpg">
         <div class="content">
@@ -39,7 +42,7 @@ if (isset($_GET['register'])) {
     </br>
     <br>
     </br>
-    <form method="GET">
+    <form method="POST">
         <div class="box1">
             <div>
                 <input class="boite" type="text" id="nom" name="nom" placeholder="Nom" required value="<?php echo isset($_GET['nom']) ? $_GET['nom'] : ''; ?>"></br>
@@ -99,7 +102,9 @@ if (isset($_GET['register'])) {
     </br>
     <br>
     </br>
+
     <?php echo $feedback ?>
+
     <!------------------footer------------------>
     <?php require_once SITE_ROOT . 'partials/footer.php'; ?>
     <!------------------footer------------------>
