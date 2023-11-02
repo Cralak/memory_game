@@ -16,6 +16,7 @@
     ?>
     <!------------------header------------------>
 
+    <div class="selector" id="selector">
     <br>
     </br>
     <div class="background">
@@ -44,17 +45,9 @@
             </select>
         </div>
 
-        <input type="button" class="bouton" value="JOUER" onclick="creatMemory()">
+        <input type="button" class="bouton" value="JOUER" onclick="generateCards(0,1)">
     </div>
-
-    <div class="time">
-        <p id="timer">00:00:00</p>
-        <button id="startButton">Démarrer</button>
-        <button id="stopButton">Arrêter</button>
-        <button id="resetButton">Réinitialiser</button>
-    </div>
-
-
+</div>
     <!------------------footer------------------>
     <?php
     require_once SITE_ROOT . 'partials/footer.php';
@@ -63,55 +56,7 @@
 
 
 
-    <script>
-        let timerInterval;
-        let seconds = 0;
-        let minutes = 0;
-        let hours = 0;
-
-        function startTimer() {
-            document.getElementById("startButton").disabled = true;
-            document.getElementById("stopButton").disabled = false;
-            document.getElementById("resetButton").disabled = true;
-            timerInterval = setInterval(updateTimer, 1000);
-        }
-
-        function stopTimer() {
-            document.getElementById("startButton").disabled = false;
-            document.getElementById("stopButton").disabled = true;
-            document.getElementById("resetButton").disabled = false;
-            clearInterval(timerInterval);
-        }
-
-        function resetTimer() {
-            document.getElementById("startButton").disabled = false;
-            document.getElementById("stopButton").disabled = true;
-            document.getElementById("resetButton").disabled = true;
-            clearInterval(timerInterval);
-            seconds = 0;
-            minutes = 0;
-            hours = 0;
-            updateTimer();
-        }
-
-        function updateTimer() {
-            seconds++;
-            if (seconds === 60) {
-                seconds = 0;
-                minutes++;
-                if (minutes === 60) {
-                    minutes = 0;
-                    hours++;
-                }
-            }
-
-            const timeString = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-            document.getElementById("timer").textContent = timeString;
-        }
-
-        document.getElementById("startButton").addEventListener("click", startTimer);
-        document.getElementById("stopButton").addEventListener("click", stopTimer);
-        document.getElementById("resetButton").addEventListener("click", resetTimer);
+    <script src="../../assets/js/scripts.js">
     </script>
 </body>
 
