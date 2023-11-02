@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS scores(
     player_id INT UNSIGNED NOT NULL,
     game_id INT UNSIGNED NOT NULL,
     difficulty ENUM('easy','medium','hard') NOT NULL,
-    game_score INT UNSIGNED NOT NULL,
+    game_score INT NOT NULL,
     game_date_and_time DATETIME NOT NULL,
     PRIMARY KEY(id)
 )

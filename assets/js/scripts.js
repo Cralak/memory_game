@@ -2,7 +2,22 @@ let cardtotal = 0;
 
 let chosenTheme;
 
+let wrongGuess = 0;
+let goodGuess = 0;
+
+let score = 0;
+
+let startTime = 0;
+let intervalID;
+let seconds;
+let minutes;
+let dif;
+
 function generateCards(difficulty, theme) {
+
+
+
+    startTimer();
 
     chosenTheme = theme;
 
@@ -17,8 +32,12 @@ function generateCards(difficulty, theme) {
     gameBoxContainer.className = "gameBoxContainer";
     gameBoxContainer.id = "gameBoxContainer";
 
+    let timerBox = document.createElement("div");
+    timerBox.id = "timer";
+
     selector.appendChild(gameBoxContainer);
     gameBoxContainer.appendChild(gameBox);
+    gameBoxContainer.appendChild(timerBox);
 
 
 
@@ -90,21 +109,20 @@ function flipCard(cardDiv) {
 
                 setTimeout(function() {
                     if (card1.name == card2.name && cardCount >= 2) {
-                        console.log("test");
                         card1.style.visibility = "hidden";
                         card2.style.visibility = "hidden";
                         card1.setAttribute("name", "invalid");
                         card2.setAttribute("name", "invalid");
                         card1 = null;
                         card2 = null;
-                        document.getElementsByName("invalid").length == cardtotal ? window.location.replace('http://www.savewalterwhite.com/') : "";
+                        document.getElementsByName("invalid").length == cardtotal ? showScore() : "";
+                        goodGuess++;
                     } else {
 
                         card1.classList.add("animation2");
                         card2.classList.add("animation2");
 
                         setTimeout(function(){
-
                             card1.src = "../../assets/images/cartes/card_back.png";
                             card2.src = "../../assets/images/cartes/card_back.png";
                             card1.classList.remove("animation");
@@ -115,13 +133,65 @@ function flipCard(cardDiv) {
                                 card1 = null;
                                 card2 = null;
                                 cardCount = 0;
-                                console.log(cardtotal,document.getElementsByName("invalid").length);
-                            }, 100)
+                                wrongGuess++;
+                            }, 100);
 
                         },100);
                     }
-                }, 800)
+                }, 800);
             }
-        } else {console.log("cock");}
+        }
     }
+}
+
+function getDifTheme(){
+    dif = document.getElementById("difficulty");
+    dif = dif.options[dif.selectedIndex].id
+    theme = document.getElementById("theme");
+    theme = theme.options[theme.selectedIndex].id
+    generateCards(dif,theme);
+}
+
+function showScore(){
+    score = (-wrongGuess*1000 +goodGuess*2000)-(seconds*10)-(minutes*1000)
+    endTimer();
+    setTimeout(function(){
+    window.alert("Félicitation, vous avez fait " + score + " points !");
+    gameBox = document.getElementById("gameBox");
+    gameBox.innerHTML = "";
+    restartButton = document.createElement("button");
+    restartButton.innerText = "RESTART";
+    restartButton.setAttribute("type","button");
+    restartButton.setAttribute("onclick","returnToSelect()");
+    restartButton.className = "bouton";
+    gameBox.appendChild(restartButton);
+    },1000);
+}
+
+function returnToSelect(){
+    window.location.href = "";
+}
+
+function startTimer(){
+    if (!intervalID) {
+      startTime = new Date().getTime();
+      intervalID = setInterval(updateTimer, 1);
+    }
+}
+
+function endTimer(){
+    if (intervalID) {
+      clearInterval(intervalID);
+      intervalID = null;
+    }
+}
+
+function updateTimer(){
+    let currentTime = new Date().getTime();
+    let elapsedTime = currentTime - startTime;
+    minutes = Math.floor(elapsedTime / 60000);
+    seconds = Math.floor((elapsedTime % 60000) / 1000);
+    let milliseconds = elapsedTime % 1000;
+    let timerDisplay = document.getElementById("timer");
+    timerDisplay.innerText = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}:${String(milliseconds).padStart(3, "0")}`;
 }
