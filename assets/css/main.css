@@ -1,31 +1,31 @@
 /*-------------------------Contact-------------------------*/
 
-.contact{
+.contact {
     background-color: rgb(26, 26, 56);
     color: white;
     font-family: Avenir;
 }
 
-.contact .background img{
+.contact .background img {
     position: relative;
     color: white;
     width: 100%;
-    opacity:60%;
-    
+    opacity: 60%;
+
 }
 
-.contact .content{
+.contact .content {
     font-size: 2vw;
     position: absolute;
     top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
+
 }
 
 
 
-.contact .cadre{
+.contact .cadre {
     margin-top: 7%;
     margin-bottom: 3%;
     margin-inline: 15%;
@@ -37,52 +37,52 @@
     display: flex;
 }
 
-.contact .tel{
+.contact .tel {
     padding-block: 3%;
     padding-inline: 11%;
     background-color: rgb(18, 15, 41);
 }
 
-.contact .mail{
+.contact .mail {
     padding-block: 3%;
     padding-inline: 5%;
     background-color: rgb(18, 15, 41);
 }
 
-.contact .ville{
+.contact .ville {
     padding-block: 3%;
     padding-inline: 12%;
     background-color: rgb(18, 15, 41);
 }
 
-.contact .tel img{
+.contact .tel img {
     margin-bottom: 30%;
 }
 
-.contact .mail img{
+.contact .mail img {
     margin-bottom: 15%;
 }
 
-.contact .ville img{
+.contact .ville img {
     margin-bottom: 43%;
 }
 
 
-.contact .boite{
+.contact .boite {
     margin-top: 3%;
     margin-bottom: 3%;
     height: 5vh;
     width: 34vw;
     color: gray;
-    font-size:2vh;
+    font-size: 2vh;
     position: relative;
     background-color: rgb(18, 15, 41);
-    border-color:rgb(18, 15, 41) ;
+    border-color: rgb(18, 15, 41);
     border-radius: 5px;
     border: 0
 }
 
-.contact .boite2{
+.contact .boite2 {
     margin-bottom: 1%;
     height: 5vh;
     width: 61.5vw;
@@ -90,7 +90,7 @@
     font-size: 2vh;
     position: relative;
     background-color: rgb(18, 15, 41);
-    border-color:rgb(18, 15, 41) ;
+    border-color: rgb(18, 15, 41);
     border-radius: 5px;
     border: 0
 }
@@ -100,13 +100,13 @@
     margin-left: 15%;
     display: flex;
     justify-content: space-between;
-    
+
 }
 
 .contact .form-contact2 {
     margin-left: 15%;
     display: flex;
-    
+
 }
 
 .contact .form-contact3 textarea {
@@ -116,7 +116,7 @@
     margin-left: 15%;
     display: flex;
     background-color: rgb(18, 15, 41);
-    border-color:rgb(18, 15, 41) ;
+    border-color: rgb(18, 15, 41);
     border-radius: 5px;
     border: 0;
     width: 61.5vw;
@@ -151,27 +151,27 @@
     color: white;
     font-family: Avenir;
     background-size: cover;
-  }
+}
 
-.login .background img{
+.login .background img {
     right: 3px;
     position: relative;
     color: white;
     width: 100%;
-    opacity:100%;
-    
+    opacity: 100%;
+
 }
 
-.login .content{
+.login .content {
     font-size: larger;
     position: absolute;
     top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
-    margin-top:50px;
+    margin-top: 50px;
 }
 
-.login .boite{
+.login .boite {
     height: 40px;
     width: 500px;
     color: gray;
@@ -195,13 +195,13 @@
     border-radius: 5px;
 }
 
-.login a{
-    color:white;
+.login a {
+    color: white;
 }
 
-.login .box1{
-    width:40%;
-    margin-left:34%;
+.login .box1 {
+    width: 40%;
+    margin-left: 34%;
 }
 
 
@@ -209,41 +209,44 @@
 
 /*-------------------------main-------------------------*/
 
-.index{
+.index {
     background-color: #100e2e;
     margin: 0;
-    color:white;
+    color: white;
     font-family: Avenir;
 }
 
-.index .maintext1{
+.index .maintext1 {
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 50px; 
+    font-size: 50px;
     font-weight: bold;
 }
-.index .maintext2{
+
+.index .maintext2 {
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 50px; 
+    font-size: 50px;
     font-weight: bold;
 
-    margin-top:5%;
+    margin-top: 5%;
 }
-.index .maintext3{
+
+.index .maintext3 {
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    margin-top:8%;
-    color:#92abd4;
+    margin-top: 8%;
+    color: #92abd4;
 }
-.index .button-play{
+
+.index .button-play {
     border-radius: 5px;
     padding: 15px 32px;
     position: absolute;
@@ -251,7 +254,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    margin-top:12%;
+    margin-top: 12%;
     background-color: orange;
     border: none;
     color: white;
@@ -262,7 +265,7 @@
     transition: 0.3s;
 }
 
-.index .button-play:hover{
+.index .button-play:hover {
     font-size: 32px;
     border-radius: 50px;
 }
@@ -279,61 +282,62 @@
 }
 
 
-.index .main{
+.index .main {
     width: 100%;
     height: 100vh;
-    display:flex;
+    display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
 }
 
-.index .menu1{
-    display:flex;
+.index .menu1 {
+    display: flex;
     justify-content: center;
 }
 
-.index .menu2{
-    width:90%;
-    margin:5%;
-    height:400px;
-    display:flex;
-    justify-content:center;
+.index .menu2 {
+    width: 90%;
+    margin: 5%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
 }
 
 
-.index .img1{
+.index .img1 {
     object-fit: cover;
-    position:absolute;
+    position: absolute;
     width: 100%;
-    height: 100%;;
+    height: 100%;
+    ;
     top: 0;
-  
+
 }
 
-.index .span1{
+.index .span1 {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size:64px;
+    font-size: 64px;
     -webkit-text-stroke: 1px;
     -webkit-text-stroke-color: red;
 }
 
 
 
-.index .img2{
-    border-radius:1%;
-    margin:2%;
+.index .img2 {
+    border-radius: 1%;
+    margin: 2%;
     width: 30%;
     height: 350px;
     background-image: url(https://images.genius.com/fe32220de8f1756cb2a499735aade45d.999x999x1.jpg);
     background-size: cover;
 }
 
-.index .img3{
-    border-radius:1%;
-    margin:2%;
+.index .img3 {
+    border-radius: 1%;
+    margin: 2%;
     width: 20%;
     height: 350px;
     background-image: url(../images/pixelle.jpg);
@@ -341,105 +345,114 @@
     height: 350px;
 }
 
-.index .img4{
-    border-radius:1%;
-    margin:2%;
+.index .img4 {
+    border-radius: 1%;
+    margin: 2%;
     width: 20%;
     height: 350px;
     background-image: url(https://i.pinimg.com/1200x/a1/1c/ef/a11cefd353e434f5a43d9a4d3a0301aa.jpg);
     background-size: cover;
 }
 
-.index .img5{
+.index .img5 {
     width: 40%;
-    height:100%;
+    height: 100%;
 }
 
-.index .img5 img{
-    border-radius:1%;
-    width:100%;
-    height:100%;
-    object-fit:cover;
+.index .img5 img {
+    border-radius: 1%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.index .block1{
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:start;
-    margin-left:1%;
-    width:50%;
-    height:100%;
-    
+.index .block1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin-left: 1%;
+    width: 50%;
+    height: 100%;
+
 }
 
-.index .block2{
-    display:flex;
-    justify-content:space-between;
-    align-items:start;
-    margin:1%;
-    width:90%;
-    height:45%;
+.index .block2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin: 1%;
+    width: 90%;
+    height: 45%;
 }
 
-.index .block3-span1{
-    margin:auto;
+.index .block3-span1 {
+    margin: auto;
     font-weight: 1000;
-    font-size:48px;
+    font-size: 48px;
 }
 
-.index .block3-span2{
+.index .block3-span2 {
     font-weight: 500;
-    margin-bottom:auto;
-    font-size:24px;
-    text-align:center;
+    margin-bottom: auto;
+    font-size: 24px;
+    text-align: center;
 
 }
 
 .index .text1 {
-    display:flex;
+    display: flex;
     justify-content: center;
-    padding-left:8%;
-    padding-right:8%;
+    padding-left: 8%;
+    padding-right: 8%;
 }
 
 .index .text2 {
-    display:flex;
+    display: flex;
     justify-content: center;
-    padding:2%;
+    padding: 2%;
 }
 
-.index .teams-parent{
-    width:100%; height: 600px; display:flex; flex-direction: row; justify-content: center;
+.index .teams-parent {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
-.index .teams{
-    display:flex;
+.index .teams {
+    display: flex;
     align-items: center;
     flex-direction: column;
-    margin:1%;
-    width:25%;
-    height:70%;
+    margin: 1%;
+    width: 25%;
+    height: 70%;
     background-color: #0d0b26;
 }
 
-.index .icons{
-    width:60%;height:10%;display:flex;justify-content:space-around;flex-direction: row;
+.index .icons {
+    width: 60%;
+    height: 10%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
 }
 
-.index .members{
-    font-size:20px; font-weight: 1000;
+.index .members {
+    font-size: 20px;
+    font-weight: 1000;
 }
 
-.index .teams img{
+.index .teams img {
     margin: 50px;
-    width:40%;
-    height:30%;
+    width: 40%;
+    height: 30%;
     border-radius: 50%;
 }
 
-.index h1{
-    margin:5%;
+.index h1 {
+    margin: 5%;
 }
 
 
@@ -450,120 +463,157 @@
     transform: translate(-50%, -50%);
 }
 
-.index .colordarkblue{
+.index .colordarkblue {
     color: #3724a0;
 }
 
-.index .colorlightblue{
-    color:#92abd4;
+.index .colorlightblue {
+    color: #92abd4;
 }
 
-.index .colorwhite{
+.index .colorwhite {
     color: white;
 }
 
-.index .colorbox1{
-    border-radius:1%;
-    margin:1.5%;
-    display:flex;
+.index .colorbox1 {
+    border-radius: 1%;
+    margin: 1.5%;
+    display: flex;
     justify-content: center;
     flex-direction: column;
-    width:46%;
-    height:90%;
-    background-color:#3724a0;
+    width: 46%;
+    height: 90%;
+    background-color: #3724a0;
 }
 
-.index .colorbox2{
-    border-radius:1%;
-    margin:1.5%;
-    display:flex;
+.index .colorbox2 {
+    border-radius: 1%;
+    margin: 1.5%;
+    display: flex;
     justify-content: center;
     flex-direction: column;
-    width:46%;
-    height:90%;
-    background-color:#b91ca8;
+    width: 46%;
+    height: 90%;
+    background-color: #b91ca8;
 }
 
-.index .colorbox3{
-    border-radius:1%;
-    margin:1.5%;
-    display:flex;
+.index .colorbox3 {
+    border-radius: 1%;
+    margin: 1.5%;
+    display: flex;
     justify-content: center;
     flex-direction: column;
-    width:46%;
-    height:90%;
-    background-color:#18a15f;
+    width: 46%;
+    height: 90%;
+    background-color: #18a15f;
 }
 
-.index .colorbox4{
-    border-radius:1%;
-    margin:1.5%;
-    display:flex;
+.index .colorbox4 {
+    border-radius: 1%;
+    margin: 1.5%;
+    display: flex;
     justify-content: center;
     flex-direction: column;
-    width:46%;
-    height:90%;
-    background-color:#ec9123
+    width: 46%;
+    height: 90%;
+    background-color: #ec9123
 }
 
-.index .textdefinition{
-    text-align: justify; color:#92abd4;
+.index .textdefinition {
+    text-align: justify;
+    color: #92abd4;
 }
 
-.index .instagram1{
-    width:200px;
-    height:8vh;
-    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1200px-Instagram_icon.png); 
-    background-size:contain; 
-    background-repeat:no-repeat; 
-    margin:5%
-}
-.index .instagram2{
-    width:200px;
-    height:8vh;
-    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1200px-Instagram_icon.png); 
-    background-size:contain; 
-    background-repeat:no-repeat; 
-    margin:5%
-}
-.index .instagram3{
-    width:200px;
-    height:8vh;
-    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1200px-Instagram_icon.png); 
-    background-size:contain; 
-    background-repeat:no-repeat; 
-    margin:5%
+.index .instagram1 {
+    width: 200px;
+    height: 8vh;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1200px-Instagram_icon.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 5%
 }
 
-.index .twitter1{
-    width:200px;height:8vh;background-image: url(https://png.pngtree.com/png-vector/20221018/ourmid/pngtree-twitter-social-media-round-icon-png-image_6315985.png); background-size:contain; background-repeat:no-repeat; margin:5%
-}
-.index .twitter2{
-    width:200px;height:8vh;background-image: url(https://png.pngtree.com/png-vector/20221018/ourmid/pngtree-twitter-social-media-round-icon-png-image_6315985.png); background-size:contain; background-repeat:no-repeat; margin:5%
-}
-.index .twitter3{
-    width:200px;height:8vh;background-image: url(https://png.pngtree.com/png-vector/20221018/ourmid/pngtree-twitter-social-media-round-icon-png-image_6315985.png); background-size:contain; background-repeat:no-repeat; margin:5%
-}
-
-.index .pinterest1{
-    width:200px;height:8vh;background-image: url(https://static-00.iconduck.com/assets.00/pinterest-icon-2048x2048-os3lysf9.png); background-size:contain; background-repeat:no-repeat; margin:5%
-}
-.index .pinterest2{
-    width:200px;height:8vh;background-image: url(https://static-00.iconduck.com/assets.00/pinterest-icon-2048x2048-os3lysf9.png); background-size:contain; background-repeat:no-repeat; margin:5%
-}
-.index .pinterest3{
-    width:200px;height:8vh;background-image: url(https://static-00.iconduck.com/assets.00/pinterest-icon-2048x2048-os3lysf9.png); background-size:contain; background-repeat:no-repeat; margin:5%
+.index .instagram2 {
+    width: 200px;
+    height: 8vh;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1200px-Instagram_icon.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 5%
 }
 
-.index .notre-equipe{
-    display: flex; 
-    justify-content: center; 
+.index .instagram3 {
+    width: 200px;
+    height: 8vh;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1200px-Instagram_icon.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 5%
+}
+
+.index .twitter1 {
+    width: 200px;
+    height: 8vh;
+    background-image: url(https://png.pngtree.com/png-vector/20221018/ourmid/pngtree-twitter-social-media-round-icon-png-image_6315985.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 5%
+}
+
+.index .twitter2 {
+    width: 200px;
+    height: 8vh;
+    background-image: url(https://png.pngtree.com/png-vector/20221018/ourmid/pngtree-twitter-social-media-round-icon-png-image_6315985.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 5%
+}
+
+.index .twitter3 {
+    width: 200px;
+    height: 8vh;
+    background-image: url(https://png.pngtree.com/png-vector/20221018/ourmid/pngtree-twitter-social-media-round-icon-png-image_6315985.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 5%
+}
+
+.index .pinterest1 {
+    width: 200px;
+    height: 8vh;
+    background-image: url(https://static-00.iconduck.com/assets.00/pinterest-icon-2048x2048-os3lysf9.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 5%
+}
+
+.index .pinterest2 {
+    width: 200px;
+    height: 8vh;
+    background-image: url(https://static-00.iconduck.com/assets.00/pinterest-icon-2048x2048-os3lysf9.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 5%
+}
+
+.index .pinterest3 {
+    width: 200px;
+    height: 8vh;
+    background-image: url(https://static-00.iconduck.com/assets.00/pinterest-icon-2048x2048-os3lysf9.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 5%
+}
+
+.index .notre-equipe {
+    display: flex;
+    justify-content: center;
     font-size: 32px;
     font-weight: bold;
 }
 
-.index .notre-equipe-subtext{
-    display: flex; 
+.index .notre-equipe-subtext {
+    display: flex;
     justify-content: center;
     color: rgb(209, 209, 209);
 }
@@ -583,23 +633,24 @@
     background-size: contain;
 }
 
-.jeu .easy{
+.jeu .easy {
     width: 30%;
-    
+
     border-spacing: 5px;
 }
 
-.jeu .medium{
+.jeu .medium {
     width: 45%;
     border-collapse: collapse;
 }
 
-.jeu .hard{
+.jeu .hard {
     width: 60%;
     border-collapse: collapse;
 }
 
-.jeu th, td {
+.jeu th,
+td {
     padding: 1px;
     text-align: center;
 }
@@ -609,10 +660,11 @@
     max-height: 100%;
 }
 
-.jeu .table-container{
-    display:flex;
+.jeu .table-container {
+    display: flex;
     justify-content: center;
 }
+
 .jeu .card {
     background-color: white;
     padding: 5px;
@@ -637,7 +689,7 @@
     border-radius: 5px;
     width: 500px;
     height: 200px;
-    
+
 }
 
 .memory {
@@ -657,43 +709,44 @@
     position: relative;
     padding-left: 3px;
     border-radius: 5px;
-  }
+}
 
-  .memory .content{
+.memory .content {
     font-size: larger;
     position: absolute;
     top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
-    margin-top:50px;
+    margin-top: 50px;
 }
 
-.memory .background img{
+.memory .background img {
     position: relative;
     color: white;
     width: 100%;
-    opacity:100%;
-    
+    opacity: 100%;
+
 }
 
 .memory table,
 td {
-  border: 1px solid white;
-  position: relative;
-  font-size: larger;
-  font-family: Arial, Helvetica, sans-serif ;
-  border-inline: 0px;
-  border-top: 0;
+    border: 1px solid white;
+    position: relative;
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+    border-inline: 0px;
+    border-top: 0;
 
 }
 
 .memory thead,
 tfoot {
 
-  background-color: orange;
-  color: #fff;
-  
+    background-color: orange;
+    color: #fff;
+
 }
+
 .memory table {
     width: 70%;
     height: 200px;
@@ -708,8 +761,8 @@ tfoot {
     background-color: #3B0661;
 }
 
-.choix:hover{
-    cursor:pointer;
+.choix:hover {
+    cursor: pointer;
 }
 
 /*-------------------------Memory----------------------------*/
@@ -717,38 +770,38 @@ tfoot {
 
 /*-------------------------myAccount-------------------------*/
 
-.myAccount{
+.myAccount {
     font-family: Avenir;
     background-color: rgb(26, 26, 56);
     color: white;
 }
 
-.myAccount .background img{
+.myAccount .background img {
     position: relative;
     color: white;
     width: 100%;
-    opacity:60%;
-    
+    opacity: 60%;
+
 }
 
-.myAccount .content{
+.myAccount .content {
     font-size: medium;
     position: absolute;
     top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
+
 }
 
 
-.myAccount .boite{
+.myAccount .boite {
     height: 40px;
     width: 500px;
     color: gray;
     font-size: larger;
     position: relative;
     background-color: rgb(18, 15, 41);
-    border-color:rgb(18, 15, 41) ;
+    border-color: rgb(18, 15, 41);
     border-radius: 5px;
     border: 0;
     margin-left: 32.6%;
@@ -767,7 +820,7 @@ tfoot {
     border-radius: 5px;
 }
 
-.myAccount .box h2{
+.myAccount .box h2 {
     margin-left: 32.6%;
 }
 
@@ -782,73 +835,75 @@ tfoot {
 }
 
 .register {
-background-image: url(https://bin.smwcentral.net/u/24573/ghost%2Bhouse_night1.png);
-background-color: rgb(26, 26, 56);
-color: white;
-font-family: avenir;
-background-size: cover;
+    background-image: url(https://bin.smwcentral.net/u/24573/ghost%2Bhouse_night1.png);
+    background-color: rgb(26, 26, 56);
+    color: white;
+    font-family: avenir;
+    background-size: cover;
 }
 
-.register .background img{
-right: 3px;
-position: relative;
-color: white;
-width: 100%;
-opacity:100%;
+.register .background img {
+    right: 3px;
+    position: relative;
+    color: white;
+    width: 100%;
+    opacity: 100%;
 }
 
-.register .content{
-font-size: larger;
-position: absolute;
-top: 25%;
-left: 50%;
-transform: translate(-50%, -50%);
-margin-top:50px;
+.register .content {
+    font-size: larger;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 50px;
 }
 
 
 .register .static {
-width: 250px;
-border: 0px;
-text-align: center;
+    width: 250px;
+    border: 0px;
+    text-align: center;
 }
+
 .register .absolute {
-position: absolute;
-top: 30px;
-left: 1250px;
-width: 600px;
-border: 0px solid blue;
-text-align: center;
+    position: absolute;
+    top: 30px;
+    left: 1250px;
+    width: 600px;
+    border: 0px solid blue;
+    text-align: center;
 
 }
 
 
-.register .boite{
-height: 40px;
-width: 500px;
-color: gray;
-font-size: larger;
-position: relative;
-background-color: rgb(51, 45, 93);
-border-radius: 5px;
-border: 0;
+.register .boite {
+    height: 40px;
+    width: 500px;
+    color: gray;
+    font-size: larger;
+    position: relative;
+    background-color: rgb(51, 45, 93);
+    border-radius: 5px;
+    border: 0;
 }
 
 .register .connexion {
-background-color: orange;
-text-decoration: none;
-border: 10px solid orange;
-color: white;
-font-size: larger;
-position: relative;
-padding-left: 3px;
-border-radius: 5px;
+    background-color: orange;
+    text-decoration: none;
+    border: 10px solid orange;
+    color: white;
+    font-size: larger;
+    position: relative;
+    padding-left: 3px;
+    border-radius: 5px;
 }
 
-.register .box1{
+.register .box1 {
     margin-left: 32.6%;
 
 }
+
 /*-------------------------register-------------------------*/
 
 
@@ -883,18 +938,18 @@ border-radius: 5px;
     font-size: 1.5vw;
 }
 
-.gif{
-    max-width:100%;
-    max-height:100%;
+.gif {
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .chat-messages {
     padding: 5%;
     max-width: 20vw;
-    height:290px;
-    max-height:290px;
+    height: 290px;
+    max-height: 290px;
     overflow-y: scroll;
-    display:flex;
+    display: flex;
     flex-direction: column-reverse;
 }
 
@@ -1009,32 +1064,33 @@ border-radius: 5px;
 
 .scores-table {
     background-image: url(https://bin.smwcentral.net/u/24573/ghost%2Bhouse_night1.png);
-    font-family:Avenir;
+    font-family: Avenir;
     font-style: bold;
     color: white;
     background-color: rgb(26, 26, 56);
-  }
+}
 
 
 .scores-table table,
 td {
-  border: 1px solid white;
-  position: relative;
-  font-size: larger;
-  font-family: Arial, Helvetica, sans-serif ;
-  border-inline: 0px;
-  border-top: 0;
-  color:white;
+    border: 1px solid white;
+    position: relative;
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+    border-inline: 0px;
+    border-top: 0;
+    color: white;
 
 }
 
 .scores-table thead,
 tfoot {
 
-  background-color: orange;
-  color: #fff;
-  
+    background-color: orange;
+    color: #fff;
+
 }
+
 .scores-table table {
     width: 70%;
     height: 200px;
@@ -1042,43 +1098,43 @@ tfoot {
 }
 
 .scores-table .titre {
-    color:white;
+    color: white;
 }
 
 .scores-table .case {
     background-color: #3B0661;
 }
 
-.scores-table .scores .content{
-  font-size: larger;
-  position: absolute;
-  top: 25%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin-top:50px;
+.scores-table .scores .content {
+    font-size: larger;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 50px;
 }
 
-.scores-table .background img{
-    width:100%;
-  
+.scores-table .background img {
+    width: 100%;
+
 }
 
-.scores-table .content{
-    position:absolute;
+.scores-table .content {
+    position: absolute;
     top: 200px;
     left: 50%;
     transform: translate(-50%, -50%);
-    
+
 }
 
 
 
 
-  
-  /*-------------------------Scores---------------------------------------------------------------------*/
-  
 
-.gameBox{
+/*-------------------------Scores---------------------------------------------------------------------*/
+
+
+.gameBox {
     height: 100%;
     width: 100%;
     display: flex;
@@ -1086,37 +1142,49 @@ tfoot {
     justify-content: center;
 }
 
-.selector{
-    height:100vh;
-    width:100vw;
+.selector {
+    height: 100vh;
+    width: 100vw;
 }
 
-.gameBoxContainer{
-    height:85%;
-    width:99%;
+.gameBoxContainer {
+    height: 85%;
+    width: 99%;
     margin-top: 1%;
 }
 
-.row{
-    margin:5px;
-    width:100%;
-    height:25%;
-    display:flex;
+.row {
+    margin: 5px;
+    width: 100%;
+    height: 25%;
+    display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-.cardDiv{
-    padding:5px;
-    width:fit-content;
-    height:100%;
+.cardDiv {
+    padding: 5px;
+    width: fit-content;
+    height: 100%;
 }
 
-.cardDiv:hover{
+.cardDiv:hover {
     cursor: pointer;
 }
 
-.cardImg{
-    width:auto;
-    height:100%;
+.cardImg {
+    width: auto;
+    height: 100%;
+}
+
+.animation {
+    transition-timing-function: linear;
+    transition: 0.5s;
+    transform :rotateY(180deg);
+}
+
+.animation2 {
+    transition-timing-function: linear;
+    transition: 0.5s;
+    transform :rotateY(0deg);
 }
