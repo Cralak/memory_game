@@ -21,35 +21,31 @@
     <div class="background">
         <img src="../../assets/images/background4.jpg">
         <div class="content">
-            <form>
-                <h1 style="font: size 70px;">JEU</h1>
-            </form>
+            <h1>JEU</h1>
         </div>
     </div>
-        <div class="personnalisation">
-        <h2>Personnalisation</h2>
-            <div class="theme">
+    <h2 class="titre">PERSONNALISATION</h2>
+    <div class="personnalisation">
+        <div class="theme">
             <p>Thèmes</p>
             <select name="theme" id="theme">
                 <option value="Theme 1">Theme 1</option>
                 <option value="Theme 2">Theme 2</option>
                 <option value="Theme 2">Theme 3</option>
             </select>
-            <div class="difficulty">
+        </div>
+
+        <div class="difficulty">
             <p>Difficultés</p>
-            <select name="theme" id="theme">
+            <select name="difficulty" id="difficulty">
                 <option value="Facile">Facile</option>
                 <option value="Normal">Normal</option>
                 <option value="Difficile">Difficile</option>
             </select>
-            </div>
-
-            <input type="button" id="jouer" value="JOUER" onclick="creatMemory()">
         </div>
-    <br>
-    <br>
-    <br>
-    <br>
+
+        <input type="button" class="bouton" value="JOUER" onclick="creatMemory()">
+    </div>
 
     <div class="time">
         <p id="timer">00:00:00</p>
@@ -116,12 +112,6 @@
         document.getElementById("startButton").addEventListener("click", startTimer);
         document.getElementById("stopButton").addEventListener("click", stopTimer);
         document.getElementById("resetButton").addEventListener("click", resetTimer);
-
-
-
-
-        
-        creatMemory()
     </script>
 </body>
 
