@@ -30,9 +30,9 @@
             <div class="theme">
                 <p>Thèmes</p>
                 <select name="theme" id="theme">
-                    <option id="1" value="Theme 1">Theme 1</option>
-                    <option id="2" value="Theme 2">Theme 2</option>
-                    <option id="3" value="Theme 2">Theme 3</option>
+                    <option id="1" value="Theme 1">Cat</option>
+                    <option id="2" value="Theme 2">Kanye</option>
+                    <option id="3" value="Theme 2">???</option>
                 </select>
             </div>
 

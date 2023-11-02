@@ -153,7 +153,7 @@ function getDifTheme(){
 }
 
 function showScore(){
-    score = (-wrongGuess*1000 +goodGuess*2000)-(seconds*10)-(minutes*1000)
+    score = (-wrongGuess*1000 +goodGuess*3000)-(seconds*10)-(minutes*1000)
     endTimer();
     setTimeout(function(){
     window.alert("Félicitation, vous avez fait " + score + " points !");
