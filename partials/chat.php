@@ -17,12 +17,13 @@
         <div class="chat-messages">
             <?php
             $pdo = connectToDbAndPOSTPdo();
+
             $pdoStatement = $pdo->prepare("SELECT U.username AS senderName, M.sender_id AS senderId, M.message_date_and_time as dateTime, M.message AS message
-          FROM messages AS M
-          INNER JOIN users AS U
-          ON U.id = M.sender_id
-        --   WHERE message_date_and_time >= NOW() - INTERVAL 1 DAY
-          ORDER BY M.message_date_and_time DESC");
+            FROM messages AS M
+            INNER JOIN users AS U
+            ON U.id = M.sender_id
+            WHERE message_date_and_time >= NOW() - INTERVAL 1 DAY
+            ORDER BY M.message_date_and_time DESC");
             $pdoStatement->execute();
             $users = $pdoStatement->fetchAll();
             ?>
@@ -55,13 +56,11 @@
 
 
             <?php endforeach; ?>
-
-
         </div>
 
 
 
-        <form class="chat-input" method="POST">
+        <form class="chat-input" >
             <input type="text" id="message-input" placeholder="Saisissez votre message..." name="message">
             <button id="send-button">Envoyer</button>
         </form>
@@ -72,10 +71,13 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
+    var $user = '<?= $_SESSION['pseudo'] ?>';</script>
+<script>
     // Soumettre nouveau chat
 
     let message = document.getElementsByClassName('chat-input')[0]
     message.addEventListener('submit', (e) => {
+        console.log('test');
         e.preventDefault();
 
         $.ajax({
@@ -86,28 +88,47 @@
                 send: true
             },
             success: function(data) {
-                //Récupérer les enregistrements du chat et les ajouter à div avec id=chat-messages
                 $('#chat-messages').html(data);
-                //Effacer la boîte de dialogue après une soumission réussie
                 $('#message-input').val('');
+                displayMessage(message, '<?= $user->senderName ?>', '<?= $user->dateTime ?>');
+
             }
         })
     });
-    
-    // //Nouveau chat
 
-    // setInterval(function () {
+    //Nouveau chat
+
+    // setInterval(function() {
     //     $.ajax({
     //         url: 'utils/obtenirChat.php',
-    //         type: 'post',
-    //         data: {
-    //             get: true
-    //         },
+    //         dataType: 'json',
     //         success: function(data) {
     //             $('#chat-messages').html(data);
+    //             scrollChatToBottom();
     //         }
     //     })
     // }, 1000);
+
+
+    function displayMessage(message) {
+        let date = new Date();
+        const chatMessages = document.querySelector('.chat-messages');
+
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('message');
+        messageElement.innerHTML = `
+    <div class="message-sender">${senderName}</div>
+    <div class="message-content">${message}</div>
+    <div class="message-statu"> ${dateTime.getFullYear() + "-" + Math.floor(date.getMonth() + 1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds()} </div>
+  `;
+
+        chatMessages.appendChild(messageElement);
+    }
+
+    function scrollChatToBottom() {
+        const chatMessages = document.querySelector('.chat-messages');
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
 </script>
 
 </html>
