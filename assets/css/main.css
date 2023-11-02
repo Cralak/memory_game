@@ -637,103 +637,104 @@ td {
 /*-------------------------Memory-------------------------*/
 
 .memory .bouton {
-  background-color: orange;
-  text-decoration: none;
-  border: 10px solid orange;
-  color: white;
-  position: relative;
-  padding-left: 3px;
-  border-radius: 5px;
-}
-
-.memory {
-  background-image: url(https://bin.smwcentral.net/u/24573/ghost%2Bhouse_night1.png);
-  background-color: rgb(26, 26, 56);
-  color: white;
-  font-family: avenir;
-  background-size: cover;
-}
-
-.memory .choix {
-  background-color: #3b0661;
-  text-decoration: none;
-  border: 10px solid #3b0661;
-  color: white;
-  font-size: larger;
-  position: relative;
-  padding-left: 3px;
-  border-radius: 5px;
-}
-
-.memory .content {
-  font-size: larger;
-  position: absolute;
-  font-size: 40px;
-  top: 25%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin-top: 50px;
-}
-
-.memory .background img {
-  position: relative;
-  color: white;
-  width: 100%;
-  opacity: 100%;
-}
-
-.memory table,
-td {
-  border: 1px solid white;
-  position: relative;
-  font-size: larger;
-  font-family: Arial, Helvetica, sans-serif;
-  border-inline: 0px;
-  border-top: 0;
-}
-
-.memory thead,
-tfoot {
-  background-color: orange;
-  color: #fff;
-}
-.memory table {
-  width: 70%;
-  height: 200px;
-  text-align: center;
-}
-
-.memory .titre {
-  text-align: center;
-}
-
-.memory .case {
-  background-color: #3b0661;
-}
-
-.memory .timer {
-  font-weight: bold;
-  font-size: 4em;
-}
-
-.memory .personnalisation {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-inline: 30%;
-  font-size: larger;
-}
-
-.memory .personnalisation select {
-  background-color: orange;
-  color: white;
-  border: 0px;
-  border-radius: 4px;
-}
-
-.choix:hover {
-  cursor: pointer;
-}
+    background-color: orange;
+    text-decoration: none;
+    border: 10px solid orange;
+    color: white;
+    position: relative;
+    padding-left: 3px;
+    border-radius: 5px;
+  }
+  
+  .memory {
+    background-image: url(https://bin.smwcentral.net/u/24573/ghost%2Bhouse_night1.png);
+    background-color: rgb(26, 26, 56);
+    color: white;
+    font-family: avenir;
+    background-size: cover;
+  }
+  
+  .memory .choix {
+    background-color: #3b0661;
+    text-decoration: none;
+    border: 10px solid #3b0661;
+    color: white;
+    font-size: larger;
+    position: relative;
+    padding-left: 3px;
+    border-radius: 5px;
+  }
+  
+  .memory .content {
+    font-size: larger;
+    position: absolute;
+    font-size: 40px;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 50px;
+  }
+  
+  .memory .background img {
+    position: relative;
+    color: white;
+    width: 100%;
+    opacity: 100%;
+  }
+  
+  .memory table,
+  td {
+    border: 1px solid white;
+    position: relative;
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+    border-inline: 0px;
+    border-top: 0;
+  }
+  
+  .memory thead,
+  tfoot {
+    background-color: orange;
+    color: #fff;
+  }
+  .memory table {
+    width: 70%;
+    height: 200px;
+    text-align: center;
+  }
+  
+  .memory .titre {
+    text-align: center;
+  }
+  
+  .memory .case {
+    background-color: #3b0661;
+  }
+  
+  .memory .timer {
+    font-weight: bold;
+    font-size: 4em;
+  }
+  
+  .memory .personnalisation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-inline: 30%;
+    font-size: larger;
+  }
+  
+  .memory .personnalisation select {
+    background-color: orange;
+    color: white;
+    border: 0px;
+    border-radius: 4px;
+  }
+  
+  .choix:hover {
+    cursor: pointer;
+  }
+  
 
 /*-------------------------Memory----------------------------*/
 

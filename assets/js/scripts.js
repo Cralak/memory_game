@@ -95,3 +95,20 @@ function flipCard(cardDiv) {
         }
     }
 }
+
+function flipCardAnime(id) {
+    let x = document.getElementById("card")
+    x.style.marginLeft = "300px"
+    x.style.transition = "1s"
+}
+
+function terminer() {
+    window.alert()
+}
+
+$.ajax({
+    type: "POST",
+    url: "database.php",
+    data:{score: score},
+    success
+})
