@@ -1,6 +1,10 @@
 let cardtotal = 0;
 
-function generateCards(difficulty) {
+let chosenTheme;
+
+function generateCards(difficulty, theme) {
+
+    chosenTheme = theme;
 
     let gameBox = document.createElement("div");
     gameBox.id = "gameBox";
@@ -66,33 +70,59 @@ function flipCard(cardDiv) {
     if (cardImg.name != "invalid") {
         if (card1 == null) {
             card1 = cardImg;
-            card1.src = "../../assets/images/cartes/sematary/image" + card1.name + ".png";
-            cardCount++;
+            card1.classList.add("animation");
+            setTimeout(function () {
+                card1.src = "../../assets/images/themes/" + chosenTheme + "/image" + card1.name + ".png";
+                cardCount++;
+            }, 100)
+
         } else if (card2 == null) {
             if (card1 != cardImg) {
                 card2 = cardImg;
-                card2.src = "../../assets/images/cartes/sematary/image" + card2.name + ".png";
-                cardCount++;
+
+                card2.classList.add("animation");
 
                 setTimeout(function () {
-                    if (card1.name == card2.name) {
+                    card2.src = "../../assets/images/themes/" + chosenTheme + "/image" + card2.name + ".png";
+                    cardCount++;
+                }, 100);
+
+
+                setTimeout(function() {
+                    if (card1.name == card2.name && cardCount >= 2) {
                         console.log("test");
                         card1.style.visibility = "hidden";
                         card2.style.visibility = "hidden";
                         card1.setAttribute("name", "invalid");
                         card2.setAttribute("name", "invalid");
-                    } else if (cardCount >= 2) {
-                        card1.src = "../../assets/images/cartes/card_back.png";
-                        card2.src = "../../assets/images/cartes/card_back.png";
-                    }
-                    card1 = null;
-                    card2 = null;
-                    cardCount = 0;
+                        card1 = null;
+                        card2 = null;
+                        document.getElementsByName("invalid").length == cardtotal ? window.location.replace('http://www.savewalterwhite.com/') : "";
+                    } else {
 
-                    document.getElementsByName("invalid").length == cardtotal ? window.location.replace('http://www.savewalterwhite.com/') : "";
-                }, 1000)
+                        card1.classList.add("animation2");
+                        card2.classList.add("animation2");
+
+                        setTimeout(function(){
+
+                            card1.src = "../../assets/images/cartes/card_back.png";
+                            card2.src = "../../assets/images/cartes/card_back.png";
+                            card1.classList.remove("animation");
+                            card2.classList.remove("animation");
+                            setTimeout(function(){
+                                card1.classList.remove("animation2");
+                                card2.classList.remove("animation2");
+                                card1 = null;
+                                card2 = null;
+                                cardCount = 0;
+                                console.log(cardtotal,document.getElementsByName("invalid").length);
+                            }, 100)
+
+                        },100);
+                    }
+                }, 800)
             }
-        }
+        } else {console.log("cock");}
     }
 }
 

@@ -27,12 +27,18 @@
             $users = $pdoStatement->fetchAll();
             ?>
             <?php foreach ($users as $user) : ?>
-                <?php if ($user->message == ":cat:") {
-                    $user->message = '<img class="gif" src="https://media.tenor.com/0g4MU_tLFPgAAAAd/goofy-ahh-cat.gif">';
-                } ?>
                 <?php if ($user->message == ":sematary:") {
                     $user->message = '<img class ="gif" class="gifs" src="https://i.pinimg.com/originals/e8/ae/5f/e8ae5fa65722ea57cc161dbc8b0fd7b8.gif">';
-                } ?>
+                }
+
+                if ($user->message == ":cat:") {
+                    $catUrl = 'https://api.thecatapi.com/v1/images/search?mime_types=gif';
+                    $content = file_get_contents($catUrl);
+                    $cats = json_decode($content);
+                    $user->message = '<img class="gif" src="' . $cats[0]->url . '">';
+                }
+                ?>
+
 
                 <?php if ($user->senderId == $_SESSION['userId']) : ?>
                     <div class="message">
@@ -59,55 +65,24 @@
 
         </div>
 
+        <?php
+        if (isset($_POST['message'])) {
+            $pdo = connectToDbAndGetPdo();
+            $pdoStatement = $pdo->prepare("INSERT INTO messages(sender_id, message, game_id, message_date_and_time) 
+            VALUES(:id , :content, '1', NOW())");
+            $pdoStatement->execute([
+                ":id" => $_SESSION['userId'],
+                ":content" => $_POST['message']
+            ]);
+        }
+        ?>
 
-
-        <form class="chat-input" method="POST">
+        <form autocomplete="off" class="chat-input" method="POST">
             <input type="text" id="message-input" placeholder="Saisissez votre message..." name="message">
             <button id="send-button">Envoyer</button>
         </form>
     </div>
     <!------------------chat------------------>
 </body>
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script>
-    // Soumettre nouveau chat
-
-    let message = document.getElementsByClassName('chat-input')[0]
-    message.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        $.ajax({
-            url: 'utils/envoyerChat.php',
-            type: 'post',
-            data: {
-                message: $('#message-input').val(),
-                send: true
-            },
-            success: function(data) {
-                //Récupérer les enregistrements du chat et les ajouter à div avec id=chat-messages
-                $('#chat-messages').html(data);
-                //Effacer la boîte de dialogue après une soumission réussie
-                $('#message-input').val('');
-            }
-        })
-    });
-    
-    // //Nouveau chat
-
-    // setInterval(function () {
-    //     $.ajax({
-    //         url: 'utils/obtenirChat.php',
-    //         type: 'post',
-    //         data: {
-    //             get: true
-    //         },
-    //         success: function(data) {
-    //             $('#chat-messages').html(data);
-    //         }
-    //     })
-    // }, 1000);
-</script>
 
 </html>
