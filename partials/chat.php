@@ -23,7 +23,7 @@
             INNER JOIN users AS U
             ON U.id = M.sender_id
             WHERE message_date_and_time >= NOW() - INTERVAL 1 DAY
-            ORDER BY M.message_date_and_time DESC");
+            ORDER BY M.message_date_and_time ASC");
             $pdoStatement->execute();
             $users = $pdoStatement->fetchAll();
             ?>
@@ -60,7 +60,7 @@
 
 
 
-        <form class="chat-input" >
+        <form class="chat-input">
             <input type="text" id="message-input" placeholder="Saisissez votre message..." name="message">
             <button id="send-button">Envoyer</button>
         </form>
@@ -71,7 +71,8 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
-    var $user = '<?= $_SESSION['pseudo'] ?>';</script>
+    var $user = '<?= $_SESSION['pseudo'] ?>';
+</script>
 <script>
     // Soumettre nouveau chat
 
@@ -81,17 +82,15 @@
         e.preventDefault();
 
         $.ajax({
-            url: 'utils/envoyerChat.php',
+            url: '../../utils/envoyerChat.php',
             type: 'post',
             data: {
                 message: $('#message-input').val(),
-                send: true
             },
             success: function(data) {
-                $('#chat-messages').html(data);
+                displayMessage($('#message-input').val())
                 $('#message-input').val('');
-                displayMessage(message, '<?= $user->senderName ?>', '<?= $user->dateTime ?>');
-
+                scrollChatToBottom()
             }
         })
     });
@@ -103,7 +102,6 @@
     //         url: 'utils/obtenirChat.php',
     //         dataType: 'json',
     //         success: function(data) {
-    //             $('#chat-messages').html(data);
     //             scrollChatToBottom();
     //         }
     //     })
@@ -113,16 +111,20 @@
     function displayMessage(message) {
         let date = new Date();
         const chatMessages = document.querySelector('.chat-messages');
-
+        console.log('test1')
         const messageElement = document.createElement('div');
         messageElement.classList.add('message');
         messageElement.innerHTML = `
-    <div class="message-sender">${senderName}</div>
+    <div class="message-sender"><?= $_SESSION['userId'] ?></div>
+    <div class="test">
     <div class="message-content">${message}</div>
-    <div class="message-statu"> ${dateTime.getFullYear() + "-" + Math.floor(date.getMonth() + 1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds()} </div>
+    </div>
+    <div class="date"> ${date.getFullYear() + "-" + Math.floor(date.getMonth() + 1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds()} </div>
   `;
 
         chatMessages.appendChild(messageElement);
+        console.log(messageElement)
+
     }
 
     function scrollChatToBottom() {

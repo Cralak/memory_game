@@ -1009,7 +1009,7 @@ tfoot {
   max-height: 290px;
   overflow-y: scroll;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
 }
 
 .message {
