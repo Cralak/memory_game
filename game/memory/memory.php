@@ -53,6 +53,7 @@
     require_once SITE_ROOT . 'partials/footer.php';
     ?>
     <!------------------footer------------------>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../../assets/js/script_jeu.js">
     </script>
 </body>

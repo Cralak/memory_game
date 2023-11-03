@@ -1,3 +1,5 @@
+
+
 let cardtotal = 0;
 
 let chosenTheme;
@@ -12,6 +14,11 @@ let intervalID;
 let seconds;
 let minutes;
 let dif;
+
+document.cookie = "score =" + score + "; SameSite=None; Secure";
+document.cookie = "dif =" + dif + "; SameSite=None; Secure";
+
+
 
 function generateCards(difficulty, theme) {
 
@@ -153,8 +160,24 @@ function getDifTheme(){
 }
 
 function showScore(){
-    score = (-wrongGuess*1000 +goodGuess*3000)-(seconds*50)-(minutes*3000)
+    score = (-wrongGuess*1000 +goodGuess*3000)-(seconds*50)-(minutes*3000);
     endTimer();
+
+    console.log(dif, score);
+
+
+    $.ajax({
+        url: "../../utils/envoyerScore.php",
+        type: "post",
+        data: {
+          dif: dif,
+          score: score,
+        },
+        success: function (data) {
+          console.log("réussie");
+        },
+      });
+
     setTimeout(function(){
     window.alert("Félicitation, vous avez fait " + score + " points !");
     gameBox = document.getElementById("gameBox");
