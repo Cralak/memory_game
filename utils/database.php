@@ -1,11 +1,11 @@
 <?php
-function connectToDbAndPOSTPdo(): PDO
+function connectToDbAndGetPdo(): PDO
 {
-$dbname = 'projet_flash';
+$dbname = 'memory';
 $host = 'localhost';
 $dsn = "mysql:dbname=$dbname;host=$host;charset=utf8";
 $user = 'root';
-$pass = '';
+$pass = 'root';
 $driver_options = [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ
@@ -18,7 +18,7 @@ $driver_options = [
     }
 
 }
-$pdo = connectToDbAndPOSTPdo();
+$pdo = connectToDbAndGetPdo();
 
 
 
