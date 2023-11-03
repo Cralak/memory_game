@@ -28,7 +28,7 @@
     <br></br>
     <?php
 
-    $pdo = connectToDbAndGetPdo();
+    $pdo = connectToDbAndPOSTPdo();
     if (isset($_POST['email']) && isset($_POST['motDePasse'])) {
         $Password = hash('sha256', $_POST['motDePasse']);
         $pdoStatement = $pdo->prepare('SELECT id FROM users WHERE email = :email AND pass = :pass');

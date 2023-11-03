@@ -16,29 +16,24 @@
         </div>
         <div class="chat-messages">
             <?php
-            $pdo = connectToDbAndGetPdo();
+            $pdo = connectToDbAndPOSTPdo();
+
             $pdoStatement = $pdo->prepare("SELECT U.username AS senderName, M.sender_id AS senderId, M.message_date_and_time as dateTime, M.message AS message
-          FROM messages AS M
-          INNER JOIN users AS U
-          ON U.id = M.sender_id
-        --   WHERE message_date_and_time >= NOW() - INTERVAL 1 DAY
-          ORDER BY M.message_date_and_time DESC");
+            FROM messages AS M
+            INNER JOIN users AS U
+            ON U.id = M.sender_id
+            WHERE message_date_and_time >= NOW() - INTERVAL 1 DAY
+            ORDER BY M.message_date_and_time DESC");
             $pdoStatement->execute();
             $users = $pdoStatement->fetchAll();
             ?>
             <?php foreach ($users as $user) : ?>
+                <?php if ($user->message == ":cat:") {
+                    $user->message = '<img class="gif" src="https://media.tenor.com/0g4MU_tLFPgAAAAd/goofy-ahh-cat.gif">';
+                } ?>
                 <?php if ($user->message == ":sematary:") {
                     $user->message = '<img class ="gif" class="gifs" src="https://i.pinimg.com/originals/e8/ae/5f/e8ae5fa65722ea57cc161dbc8b0fd7b8.gif">';
-                }
-
-                if ($user->message == ":cat:") {
-                    $catUrl = 'https://api.thecatapi.com/v1/images/search?mime_types=gif';
-                    $content = file_get_contents($catUrl);
-                    $cats = json_decode($content);
-                    $user->message = '<img class="gif" src="' . $cats[0]->url . '">';
-                }
-                ?>
-
+                } ?>
 
                 <?php if ($user->senderId == $_SESSION['userId']) : ?>
                     <div class="message">
@@ -61,28 +56,79 @@
 
 
             <?php endforeach; ?>
-
-
         </div>
 
-        <?php
-        if (isset($_POST['message'])) {
-            $pdo = connectToDbAndGetPdo();
-            $pdoStatement = $pdo->prepare("INSERT INTO messages(sender_id, message, game_id, message_date_and_time) 
-            VALUES(:id , :content, '1', NOW())");
-            $pdoStatement->execute([
-                ":id" => $_SESSION['userId'],
-                ":content" => $_POST['message']
-            ]);
-        }
-        ?>
 
-        <form autocomplete="off" class="chat-input" method="POST">
+
+        <form class="chat-input" >
             <input type="text" id="message-input" placeholder="Saisissez votre message..." name="message">
             <button id="send-button">Envoyer</button>
         </form>
     </div>
     <!------------------chat------------------>
 </body>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    var $user = '<?= $_SESSION['pseudo'] ?>';</script>
+<script>
+    // Soumettre nouveau chat
+
+    let message = document.getElementsByClassName('chat-input')[0]
+    message.addEventListener('submit', (e) => {
+        console.log('test');
+        e.preventDefault();
+
+        $.ajax({
+            url: 'utils/envoyerChat.php',
+            type: 'post',
+            data: {
+                message: $('#message-input').val(),
+                send: true
+            },
+            success: function(data) {
+                $('#chat-messages').html(data);
+                $('#message-input').val('');
+                displayMessage(message, '<?= $user->senderName ?>', '<?= $user->dateTime ?>');
+
+            }
+        })
+    });
+
+    //Nouveau chat
+
+    // setInterval(function() {
+    //     $.ajax({
+    //         url: 'utils/obtenirChat.php',
+    //         dataType: 'json',
+    //         success: function(data) {
+    //             $('#chat-messages').html(data);
+    //             scrollChatToBottom();
+    //         }
+    //     })
+    // }, 1000);
+
+
+    function displayMessage(message) {
+        let date = new Date();
+        const chatMessages = document.querySelector('.chat-messages');
+
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('message');
+        messageElement.innerHTML = `
+    <div class="message-sender">${senderName}</div>
+    <div class="message-content">${message}</div>
+    <div class="message-statu"> ${dateTime.getFullYear() + "-" + Math.floor(date.getMonth() + 1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds()} </div>
+  `;
+
+        chatMessages.appendChild(messageElement);
+    }
+
+    function scrollChatToBottom() {
+        const chatMessages = document.querySelector('.chat-messages');
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+</script>
 
 </html>
