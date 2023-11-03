@@ -1,7 +1,7 @@
 <?php
 require_once('database.php');
 require_once('common.php');
-$pdo = connectToDbAndPOSTPdo();
+$pdo = connectToDbAndGetPdo();
 $pdoStatement = $pdo->prepare("SELECT U.username AS senderName, M.sender_id AS senderId, M.message_date_and_time as dateTime, M.message AS message
           FROM messages AS M
           INNER JOIN users AS U
