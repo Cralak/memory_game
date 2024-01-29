@@ -48,7 +48,7 @@
 
             <td>POINTS</td>
             <td>DIFFCULTY</td>
-            <TD>DERNIERE PARTIE JOUER</TD>
+            <td>DERNIERE PARTIE JOUER</td>
           </tr>
           <?php
           $pdo = connectToDbAndPOSTPdo();

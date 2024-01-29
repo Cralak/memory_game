@@ -1,6 +1,6 @@
 <?php
 require_once('common.php');
-require_once('database.php');
+require_once SITE_ROOT . ('utils/database.php');
 
 if (isset($_POST['message'])) {
     $pdo = connectToDbAndPOSTPdo();

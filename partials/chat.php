@@ -78,7 +78,6 @@
 
     let message = document.getElementsByClassName('chat-input')[0]
     message.addEventListener('submit', (e) => {
-        console.log('test');
         e.preventDefault();
 
         $.ajax({
@@ -90,7 +89,7 @@
             success: function(data) {
                 displayMessage($('#message-input').val())
                 $('#message-input').val('');
-                scrollChatToBottom()
+                
             }
         })
     });
@@ -99,7 +98,7 @@
 
     // setInterval(function() {
     //     $.ajax({
-    //         url: 'utils/obtenirChat.php',
+    //         url: '../../utils/obtenirChat.php',
     //         dataType: 'json',
     //         success: function(data) {
     //             scrollChatToBottom();
